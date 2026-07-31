@@ -3,12 +3,102 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="埼玉県議会議員・柿沼貴志さんのプロフィール、活動報告、政策、行田市への思い、市民の声を県政へ届けるための情報DXです。郷土の声を県政に届け、行田市と埼玉県をつなぐ活動を、スマートフォンで分かりやすく紹介します。">
-  <meta name="theme-color" content="#238b68">
+  <meta name="description" content="埼玉県議会議員・柿沼貴志さんのプロフィール、活動報告、政策、行田市への思い、市民の声を県政へ届けるための情報DXです。">
+  <meta name="theme-color" content="#d66d29">
+
   <link rel="manifest" href="manifest.json">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=20260731">
+
   <title>柿沼貴志議員 活動報告DX</title>
+
+  <style>
+    :root{
+      --p:#d66d29;
+      --d:#743714;
+      --s:#fff5eb;
+      --a:#f0b477;
+      --t:#2d2722;
+      --l:#ead5c4;
+    }
+
+    .activity-news{
+      border:2px solid var(--a);
+      background:linear-gradient(135deg,#fff,var(--s));
+    }
+
+    .activity-news h2{
+      color:var(--d);
+    }
+
+    .latest-list{
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+    }
+
+    .article-card{
+      overflow:hidden;
+      border:1px solid var(--l);
+      border-radius:16px;
+      background:#fff;
+      box-shadow:0 3px 12px #7b4b2214;
+    }
+
+    .article-card-image{
+      display:block;
+      width:100%;
+      height:190px;
+      object-fit:cover;
+    }
+
+    .article-card-content{
+      padding:16px;
+    }
+
+    .article-card-date{
+      margin:0 0 5px;
+      color:#806f64;
+      font-size:14px;
+      font-weight:800;
+    }
+
+    .article-card-title{
+      margin:0 0 8px;
+      color:var(--d);
+      font-size:21px;
+      line-height:1.45;
+    }
+
+    .article-card-summary{
+      margin:0 0 12px;
+      white-space:pre-wrap;
+      font-size:16px;
+      line-height:1.8;
+    }
+
+    .article-card-button{
+      display:block;
+      padding:12px;
+      border-radius:11px;
+      background:var(--p);
+      color:#fff;
+      font-weight:900;
+      text-align:center;
+      text-decoration:none;
+    }
+
+    .activity-message{
+      margin:0;
+      color:#70645d;
+      font-size:15px;
+    }
+
+    .activity-error{
+      color:#9d3827;
+    }
+  </style>
 </head>
+
 <body>
   <header class="topbar">
     <div class="mark">DX</div>
@@ -17,61 +107,334 @@
 
   <main>
     <section class="hero">
-      <img class="hero-image" src="https://ichirohns-jpg.github.io/kakinuma-takashi-dx/profile_photo_3.jpg" alt="柿沼貴志議員">
+      <img
+        class="hero-image"
+        src="https://ichirohns-jpg.github.io/kakinuma-takashi-dx/profile_photo_3.jpg"
+        alt="柿沼貴志議員"
+      >
+
       <div class="hero-cover">
         <p class="eyebrow">地域活動・政策情報</p>
         <h1>柿沼貴志議員 活動報告DX</h1>
-        <p>埼玉県議会議員・柿沼貴志さんのプロフィール、活動報告、政策、行田市への思い、市民の声を県政へ届けるための情報DXです。郷土の声を県政に届け、行田市と埼玉県をつなぐ活動を、スマートフォンで分かりやすく紹介します。</p>
+        <p>
+          埼玉県議会議員・柿沼貴志さんのプロフィール、活動報告、政策、行田市への思い、市民の声を県政へ届けるための情報DXです。
+          郷土の声を県政に届け、行田市と埼玉県をつなぐ活動を、スマートフォンで分かりやすく紹介します。
+        </p>
       </div>
+    </section>
+
+    <section class="card activity-news">
+      <h2>最新の活動報告</h2>
+      <p class="photo-note">
+        柿沼貴志さんの最新の活動をお知らせします。
+      </p>
+
+      <div id="latestReports" class="latest-list">
+        <p class="activity-message">活動報告を読み込んでいます。</p>
+      </div>
+
+      <a class="link-button" href="archive.html">
+        活動報告をもっと読む
+      </a>
     </section>
 
     <section class="card">
       <h2>柿沼貴志</h2>
-      <p>郷土の声を県政に。若い力で行動し、県と市のパイプ役・架け橋となる。主なテーマは、教育改革、学校・部活動の地域展開、住みやすいまちづくり、道路・通学路・インフラ整備、防災、福祉避難所、警察・危機管理、子どもの健康、地域河川の改修、観光・地域活性化、県や国の出先機関を守ることです。市民の声を聞き、行田市の発展を埼玉県の発展につなげます。</p>
-      <p>柿沼貴志さんは、埼玉県議会議員（東第1区・行田市）として活動し、2026年3月時点では総務県民生活委員会の委員長を務めています。</p>
+
+      <p>
+        郷土の声を県政に。若い力で行動し、県と市のパイプ役・架け橋となる。
+        主なテーマは、教育改革、学校・部活動の地域展開、住みやすいまちづくり、
+        道路・通学路・インフラ整備、防災、福祉避難所、警察・危機管理、
+        子どもの健康、地域河川の改修、観光・地域活性化、
+        県や国の出先機関を守ることです。
+      </p>
+
+      <p>
+        市民の声を聞き、行田市の発展を埼玉県の発展につなげます。
+      </p>
+
+      <p>
+        柿沼貴志さんは、埼玉県議会議員（東第1区・行田市）として活動し、
+        2026年3月時点では総務県民生活委員会の委員長を務めています。
+      </p>
     </section>
 
     <section class="card">
       <h2>プロフィール</h2>
-      <p>柿沼貴志（かきぬまたかし）。昭和50年11月11日生まれ。埼玉県行田市桜町出身、現在は栄町在住。林英臣政経塾所属。元行田市議会議員、現埼玉県議会議員です。幼少期から野球・空手に取り組み、高校時代は空手部主将として県の強化選手に選ばれ、団体組手で2年連続関東大会に出場しました。卒業後は建築石材業で9年修行し、平成15年から地元に戻り、ムサシ石材有限会社で家業を営んでいます。平成23年に行田市議会議員に初当選、平成31年に埼玉県議会議員に初当選し、令和5年に2期目へ当選。現在は埼玉県議会議員として、行田市の発展を埼玉県の発展につなげる活動を続けています。</p>
-      <p class="small">埼玉県議会議員（東第1区・行田市）／自民　埼玉県行田市・東第1区</p>
+
+      <p>
+        柿沼貴志（かきぬまたかし）。
+        昭和50年11月11日生まれ。
+        埼玉県行田市桜町出身、現在は栄町在住。
+        林英臣政経塾所属。
+        元行田市議会議員、現埼玉県議会議員です。
+      </p>
+
+      <p>
+        幼少期から野球・空手に取り組み、高校時代は空手部主将として県の強化選手に選ばれ、
+        団体組手で2年連続関東大会に出場しました。
+      </p>
+
+      <p>
+        卒業後は建築石材業で9年修行し、平成15年から地元に戻り、
+        ムサシ石材有限会社で家業を営んでいます。
+      </p>
+
+      <p>
+        平成23年に行田市議会議員に初当選、
+        平成31年に埼玉県議会議員に初当選し、
+        令和5年に2期目へ当選。
+        現在は埼玉県議会議員として、
+        行田市の発展を埼玉県の発展につなげる活動を続けています。
+      </p>
+
+      <p class="small">
+        埼玉県議会議員（東第1区・行田市）／自民
+        埼玉県行田市・東第1区
+      </p>
     </section>
 
     <section class="card">
       <h2>政策・活動</h2>
-      <p>県と行田市のパイプ役となり、県と市をつなぐ架け橋として行動します。教育改革、学校教育環境の整備、部活動の地域展開、子どもたちの未来、住みやすいまちづくり、安全な道路・通学路、インフラ整備、防災・福祉避難所、警察・危機管理、地域河川の改修と調節池整備、観光振興、地域活性化、県や国の出先機関を守ることなどに取り組んでいます。県議会では、警察本部庁舎の独立化、ギャンブル等依存症対策、新生児マススクリーニング検査、学校・部活動改革、福祉避難所の開設訓練、忍川の河川改修、見沼代用水開削300年に向けた支援などについて質問しています。</p>
+
+      <p>
+        県と行田市のパイプ役となり、
+        県と市をつなぐ架け橋として行動します。
+      </p>
+
+      <p>
+        教育改革、学校教育環境の整備、部活動の地域展開、
+        子どもたちの未来、住みやすいまちづくり、
+        安全な道路・通学路、インフラ整備、
+        防災・福祉避難所、警察・危機管理、
+        地域河川の改修と調節池整備、
+        観光振興、地域活性化、
+        県や国の出先機関を守ることなどに取り組んでいます。
+      </p>
+
+      <p>
+        県議会では、警察本部庁舎の独立化、
+        ギャンブル等依存症対策、
+        新生児マススクリーニング検査、
+        学校・部活動改革、
+        福祉避難所の開設訓練、
+        忍川の河川改修、
+        見沼代用水開削300年に向けた支援などについて質問しています。
+      </p>
     </section>
 
     <section class="card action">
       <h2>市民相談</h2>
-      <p>政治に関するご意見・ご要望、行田市や埼玉県の地域課題、教育・子ども・学校に関する声、防災・安全・道路・河川など暮らしに関する相談、講演会のご依頼、学生ボランティアへの参加希望を受け付けています。ご意見やご要望は、公式ホームページのお問い合わせフォーム、電話、メールからお寄せください。</p>
-      <a class="main-button" href="#contact">相談・問い合わせ</a>
+
+      <p>
+        政治に関するご意見・ご要望、
+        行田市や埼玉県の地域課題、
+        教育・子ども・学校に関する声、
+        防災・安全・道路・河川など暮らしに関する相談、
+        講演会のご依頼、
+        学生ボランティアへの参加希望を受け付けています。
+      </p>
+
+      <p>
+        ご意見やご要望は、
+        公式ホームページのお問い合わせフォーム、
+        電話、メールからお寄せください。
+      </p>
+
+      <a class="main-button" href="#contact">
+        相談・問い合わせ
+      </a>
     </section>
 
     <section class="card">
       <h2>写真</h2>
-      <p class="photo-note">写真は左右にスワイプしてご覧いただけます。</p>
+
+      <p class="photo-note">
+        写真は左右にスワイプしてご覧いただけます。
+      </p>
+
       <div class="gallery">
-        <img src="https://ichirohns-jpg.github.io/kakinuma-takashi-dx/report_kaiha_2.jpg" alt="柿沼貴志議員の活動写真" loading="lazy">
-        <img src="https://ichirohns-jpg.github.io/kakinuma-takashi-dx/resolution_photo_1.jpg" alt="柿沼貴志議員の活動写真" loading="lazy">
-        <img src="https://ichirohns-jpg.github.io/kakinuma-takashi-dx/profile_photo_5.jpg" alt="柿沼貴志議員の活動写真" loading="lazy">
-        <img src="https://ichirohns-jpg.github.io/kakinuma-takashi-dx/profile_photo_2.jpg" alt="柿沼貴志議員の活動写真" loading="lazy">
-        <img src="https://ichirohns-jpg.github.io/kakinuma-takashi-dx/report_kaiha_1.jpg" alt="柿沼貴志議員の活動写真" loading="lazy">
+        <img
+          src="https://ichirohns-jpg.github.io/kakinuma-takashi-dx/report_kaiha_2.jpg"
+          alt="柿沼貴志議員の活動写真"
+          loading="lazy"
+        >
+
+        <img
+          src="https://ichirohns-jpg.github.io/kakinuma-takashi-dx/resolution_photo_1.jpg"
+          alt="柿沼貴志議員の活動写真"
+          loading="lazy"
+        >
+
+        <img
+          src="https://ichirohns-jpg.github.io/kakinuma-takashi-dx/profile_photo_5.jpg"
+          alt="柿沼貴志議員の活動写真"
+          loading="lazy"
+        >
+
+        <img
+          src="https://ichirohns-jpg.github.io/kakinuma-takashi-dx/profile_photo_2.jpg"
+          alt="柿沼貴志議員の活動写真"
+          loading="lazy"
+        >
+
+        <img
+          src="https://ichirohns-jpg.github.io/kakinuma-takashi-dx/report_kaiha_1.jpg"
+          alt="柿沼貴志議員の活動写真"
+          loading="lazy"
+        >
       </div>
     </section>
 
     <section id="contact" class="card">
       <h2>リンク</h2>
-      <a class="link-button" href="https://www.kakinuma-takashi.com/index.html" target="_blank" rel="noopener">ホームページ</a>
-      <a class="link-button" href="https://www.facebook.com/takashi.kakinuma.73" target="_blank" rel="noopener">Facebook</a>
-      <a class="link-button" href="https://twitter.com/KakinumaTakashi" target="_blank" rel="noopener">X（旧Twitter）</a>
-      <a class="link-button" href="https://www.kakinuma-takashi.com/blog/" target="_blank" rel="noopener">ブログ</a>
-      <a class="link-button" href="https://www.youtube.com/@takashi5011" target="_blank" rel="noopener">YouTubeチャンネル</a>
-      <p class="contact">連絡先：埼玉県議会議員 柿沼貴志 事務所<br>〒361-0077 埼玉県行田市忍2-17-12<br>電話：048-554-1377<br>FAX：048-577-3154<br>メール：takashi-kakinuma@mbr.nifty.com</p>
+
+      <a
+        class="link-button"
+        href="https://www.kakinuma-takashi.com/index.html"
+        target="_blank"
+        rel="noopener"
+      >
+        ホームページ
+      </a>
+
+      <a
+        class="link-button"
+        href="https://www.facebook.com/takashi.kakinuma.73"
+        target="_blank"
+        rel="noopener"
+      >
+        Facebook
+      </a>
+
+      <a
+        class="link-button"
+        href="https://twitter.com/KakinumaTakashi"
+        target="_blank"
+        rel="noopener"
+      >
+        X（旧Twitter）
+      </a>
+
+      <a
+        class="link-button"
+        href="https://www.kakinuma-takashi.com/blog/"
+        target="_blank"
+        rel="noopener"
+      >
+        ブログ
+      </a>
+
+      <a
+        class="link-button"
+        href="https://www.youtube.com/@takashi5011"
+        target="_blank"
+        rel="noopener"
+      >
+        YouTubeチャンネル
+      </a>
+
+      <p class="contact">
+        連絡先：埼玉県議会議員 柿沼貴志 事務所<br>
+        〒361-0077 埼玉県行田市忍2-17-12<br>
+        電話：048-554-1377<br>
+        FAX：048-577-3154<br>
+        メール：takashi-kakinuma@mbr.nifty.com
+      </p>
     </section>
   </main>
 
-  <footer>DXコードジェネレーターで作成</footer>
-  <script src="app.js" defer></script>
+  <footer>
+    DXコードジェネレーターで作成
+  </footer>
+
+  <script src="app.js?v=20260731" defer></script>
+
+  <script>
+    (function(){
+      'use strict';
+
+      var GAS_URL='https://script.google.com/macros/s/AKfycby4VxnadXWsXtn27EcABG-TEVP3b5oKUsKxoGzhztNolL6LojXTyb5h3-VXaIJRC7Xx/exec';
+      var SITE_KEY='kakinuma-takashi-dx';
+      var list=document.getElementById('latestReports');
+
+      function escapeHtml(value){
+        return String(value||'').replace(/[&<>"']/g,function(ch){
+          return{
+            '&':'&amp;',
+            '<':'&lt;',
+            '>':'&gt;',
+            '"':'&quot;',
+            "'":'&#39;'
+          }[ch];
+        });
+      }
+
+      function safeUrl(value){
+        var url=String(value||'').trim();
+        return /^https:\/\//i.test(url)?escapeHtml(url):'';
+      }
+
+      function summary(value){
+        var text=String(value||'').replace(/\s+/g,' ').trim();
+        if(text.length>110)return text.slice(0,110)+'…';
+        return text;
+      }
+
+      function articleCard(article){
+        var articleId=encodeURIComponent(article.articleId||'');
+        var articleUrl='article.html?id='+articleId+'&site='+encodeURIComponent(SITE_KEY);
+        var image='';
+        var images=Array.isArray(article.images)?article.images:[];
+
+        if(images.length){
+          var imageUrl=safeUrl(images[0]);
+          if(imageUrl){
+            image='<img class="article-card-image" src="'+imageUrl+'" alt="'+escapeHtml(article.title||'活動報告')+'" loading="lazy">';
+          }
+        }
+
+        return '<article class="article-card">'+
+          image+
+          '<div class="article-card-content">'+
+          '<p class="article-card-date">'+escapeHtml(article.publishDate||'')+'</p>'+
+          '<h3 class="article-card-title">'+escapeHtml(article.title||'活動報告')+'</h3>'+
+          '<p class="article-card-summary">'+escapeHtml(summary(article.body||''))+'</p>'+
+          '<a class="article-card-button" href="'+articleUrl+'">この記事を読む</a>'+
+          '</div>'+
+          '</article>';
+      }
+
+      function loadArticles(){
+        fetch(
+          GAS_URL+'?action=publicArticles&siteKey='+encodeURIComponent(SITE_KEY),
+          {cache:'no-store'}
+        )
+        .then(function(response){
+          if(!response.ok)throw new Error('記事データを取得できません。');
+          return response.json();
+        })
+        .then(function(data){
+          if(!data||!data.ok||!Array.isArray(data.articles)){
+            throw new Error('公開記事がありません。');
+          }
+
+          var articles=data.articles.slice(0,3);
+
+          if(!articles.length){
+            list.innerHTML='<p class="activity-message">現在公開中の活動報告はありません。</p>';
+            return;
+          }
+
+          list.innerHTML=articles.map(articleCard).join('');
+        })
+        .catch(function(){
+          list.innerHTML='<p class="activity-message activity-error">活動報告は準備中です。</p>';
+        });
+      }
+
+      loadArticles();
+    })();
+  </script>
 </body>
 </html>
