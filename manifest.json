@@ -1,0 +1,12 @@
+{
+  "name": "柿沼貴志議員 活動報告DX",
+  "short_name": "柿沼貴志DX",
+  "description": "柿沼貴志議員のプロフィール、活動報告、政策、市民相談を紹介する情報DXです。",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#e9f8f0",
+  "theme_color": "#238b68",
+  "lang": "ja"
+}
