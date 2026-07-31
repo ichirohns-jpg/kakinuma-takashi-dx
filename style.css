@@ -1,0 +1,259 @@
+:root {
+  --p: #238b68;
+  --d: #126047;
+  --s: #e9f8f0;
+  --a: #80cfa4;
+  --t: #26332d;
+  --l: #dce9e1;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 0;
+  overflow-x: hidden;
+  background: linear-gradient(180deg, var(--s), #ffffff 45%, #f6fbf8);
+  color: var(--t);
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+  line-height: 1.7;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 18px;
+  background: var(--p);
+  color: #ffffff;
+  box-shadow: 0 3px 12px #0002;
+}
+
+.mark {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  flex: 0 0 40px;
+  border-radius: 12px;
+  background: #ffffff;
+  color: var(--p);
+  font-weight: 900;
+  letter-spacing: -1px;
+}
+
+.brand {
+  min-width: 0;
+  overflow: hidden;
+  font-size: 17px;
+  font-weight: 800;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+main {
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 16px 0 40px;
+}
+
+.hero {
+  position: relative;
+  min-height: 220px;
+  margin: 0 14px 16px;
+  overflow: hidden;
+  border-radius: 22px;
+  background: var(--d);
+  color: #ffffff;
+}
+
+.hero-image {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  opacity: 0.8;
+}
+
+.hero-cover {
+  padding: 24px 20px;
+  background: linear-gradient(180deg, #0000, var(--d) 72%);
+}
+
+.hero-image + .hero-cover {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--a);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.hero h1 {
+  margin: 5px 0;
+  font-size: clamp(24px, 7vw, 32px);
+  line-height: 1.3;
+}
+
+.hero p:last-child {
+  margin: 0;
+  font-size: 14px;
+}
+
+.card {
+  margin: 16px 14px;
+  padding: 20px 17px;
+  border: 1px solid var(--l);
+  border-radius: 19px;
+  background: #fffffff2;
+  box-shadow: 0 5px 18px #1a583c19;
+}
+
+.card h2 {
+  margin: 0 0 12px;
+  color: var(--d);
+  font-size: 20px;
+  line-height: 1.4;
+}
+
+.card p {
+  margin: 7px 0;
+  white-space: pre-wrap;
+}
+
+.small,
+.contact {
+  color: #68766e;
+  font-size: 13px;
+}
+
+.contact {
+  overflow-wrap: anywhere;
+}
+
+.photo-note {
+  margin-top: -4px !important;
+  color: #68766e;
+  font-size: 13px !important;
+}
+
+.gallery {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding: 4px 2px 12px;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scrollbar-color: var(--a) transparent;
+  scrollbar-width: thin;
+}
+
+.gallery::-webkit-scrollbar {
+  height: 7px;
+}
+
+.gallery::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.gallery::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: var(--a);
+}
+
+.gallery img {
+  width: 220px;
+  height: 220px;
+  flex: 0 0 220px;
+  object-fit: cover;
+  border-radius: 12px;
+  scroll-snap-align: start;
+}
+
+.link-button,
+.main-button {
+  display: block;
+  margin: 10px 0;
+  padding: 13px;
+  border-radius: 12px;
+  background: var(--p);
+  color: #ffffff;
+  font-weight: 800;
+  text-align: center;
+  text-decoration: none;
+}
+
+.link-button:active,
+.main-button:active {
+  transform: scale(0.98);
+}
+
+.main-button {
+  background: var(--a);
+  color: var(--d);
+}
+
+.video {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #102d24;
+}
+
+.video iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.action {
+  border-color: var(--a);
+  background: linear-gradient(135deg, #ffffff, var(--s));
+}
+
+footer {
+  padding: 20px;
+  color: #78847d;
+  font-size: 12px;
+  text-align: center;
+}
+
+@media (min-width: 600px) {
+  .card {
+    padding: 24px 22px;
+  }
+
+  .gallery img {
+    width: 240px;
+    height: 240px;
+    flex-basis: 240px;
+  }
+}
