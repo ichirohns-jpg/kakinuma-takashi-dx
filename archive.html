@@ -1,0 +1,604 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#e87518">
+  <meta name="description" content="柿沼貴志議員の活動報告一覧">
+  <meta property="og:title" content="活動報告一覧｜柿沼貴志議員">
+  <meta property="og:description" content="柿沼貴志議員の活動報告を新しい順にご覧いただけます。">
+  <meta property="og:url" content="https://ichirohns-jpg.github.io/kakinuma-takashi-dx/archive.html">
+  <title>活動報告一覧｜柿沼貴志議員</title>
+
+  <style>
+    :root{
+      --orange:#e87518;
+      --orange-dark:#a94d0b;
+      --cream:#fff8ef;
+      --brown:#39271d;
+      --muted:#715e52;
+      --line:#ead8c7;
+      --white:#fff;
+    }
+
+    *{box-sizing:border-box}
+
+    html{scroll-behavior:smooth}
+
+    body{
+      margin:0;
+      background:var(--cream);
+      color:var(--brown);
+      font-family:-apple-system,BlinkMacSystemFont,
+      "Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+      font-size:17px;
+      line-height:1.8;
+    }
+
+    a{color:inherit}
+
+    .wrap{
+      width:min(100% - 28px,820px);
+      margin:auto;
+    }
+
+    .top{
+      background:linear-gradient(135deg,#f28a28,var(--orange));
+      color:#fff;
+      padding:18px 0 25px;
+      box-shadow:0 2px 12px #9c4b1826;
+    }
+
+    .topline{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+    }
+
+    .brand{
+      font-weight:800;
+      font-size:18px;
+      letter-spacing:.04em;
+    }
+
+    .home{
+      display:inline-block;
+      background:#fff;
+      color:var(--orange-dark);
+      padding:8px 13px;
+      border-radius:999px;
+      font-size:14px;
+      font-weight:800;
+      text-decoration:none;
+      white-space:nowrap;
+    }
+
+    h1{
+      margin:24px 0 4px;
+      font-size:clamp(28px,7vw,44px);
+      line-height:1.25;
+      letter-spacing:.04em;
+    }
+
+    .lead{
+      margin:0;
+      color:#fff8f1;
+      font-size:15px;
+    }
+
+    main{
+      padding:24px 0 56px;
+    }
+
+    .tools{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      margin-bottom:18px;
+    }
+
+    .search{
+      min-width:0;
+      flex:1;
+      border:2px solid var(--line);
+      border-radius:14px;
+      background:#fff;
+      padding:13px 15px;
+      color:var(--brown);
+      font:inherit;
+      font-size:16px;
+    }
+
+    .count{
+      font-size:14px;
+      color:var(--muted);
+      white-space:nowrap;
+    }
+
+    .notice{
+      padding:20px;
+      border:1px solid var(--line);
+      border-radius:18px;
+      background:#fff;
+      text-align:center;
+      color:var(--muted);
+    }
+
+    .notice.error{
+      color:#9e2e1e;
+      background:#fff3ef;
+    }
+
+    .list{
+      display:grid;
+      gap:18px;
+    }
+
+    .card{
+      overflow:hidden;
+      border:1px solid var(--line);
+      border-radius:20px;
+      background:var(--white);
+      box-shadow:0 5px 18px #6f351310;
+    }
+
+    .card-body{
+      padding:20px;
+    }
+
+    .thumb{
+      display:block;
+      width:100%;
+      aspect-ratio:16/8.5;
+      object-fit:cover;
+      background:#f6e8da;
+    }
+
+    .date{
+      margin:0 0 4px;
+      color:var(--orange-dark);
+      font-size:14px;
+      font-weight:800;
+    }
+
+    .title{
+      margin:0 0 10px;
+      font-size:clamp(21px,5.5vw,30px);
+      line-height:1.45;
+    }
+
+    .summary{
+      margin:0;
+      color:var(--muted);
+      font-size:16px;
+      white-space:pre-line;
+      overflow-wrap:anywhere;
+    }
+
+    .read{
+      display:inline-block;
+      margin-top:17px;
+      padding:12px 18px;
+      border-radius:999px;
+      background:var(--orange);
+      color:#fff;
+      text-decoration:none;
+      font-weight:800;
+    }
+
+    .read:active{
+      transform:translateY(1px);
+    }
+
+    .back{
+      display:block;
+      margin:28px auto 0;
+      width:max-content;
+      padding:11px 18px;
+      border:2px solid var(--orange);
+      border-radius:999px;
+      color:var(--orange-dark);
+      font-weight:800;
+      text-decoration:none;
+      background:#fff;
+    }
+
+    footer{
+      padding:24px 0 36px;
+      text-align:center;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    .hidden{
+      display:none!important;
+    }
+
+    @media(min-width:650px){
+      .list{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+      }
+
+      .card:first-child{
+        grid-column:span 2;
+      }
+
+      .card:first-child .thumb{
+        aspect-ratio:16/6;
+      }
+
+      .card:first-child .card-body{
+        padding:25px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="top">
+    <div class="wrap">
+      <div class="topline">
+        <div class="brand">柿沼貴志議員</div>
+        <a class="home" href="index.html">トップへ戻る</a>
+      </div>
+
+      <h1>活動報告一覧</h1>
+      <p class="lead">柿沼貴志議員の活動を、新しい順にご紹介します。</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="tools">
+      <input
+        id="search"
+        class="search"
+        type="search"
+        placeholder="記事を検索"
+        aria-label="記事を検索"
+      >
+      <span id="count" class="count"></span>
+    </div>
+
+    <div id="loading" class="notice">
+      活動報告を読み込んでいます。
+    </div>
+
+    <div id="error" class="notice error hidden"></div>
+
+    <div id="empty" class="notice hidden">
+      公開中の活動報告はまだありません。
+    </div>
+
+    <section id="list" class="list" aria-live="polite"></section>
+
+    <a class="back" href="index.html">
+      トップページへ戻る
+    </a>
+  </main>
+
+  <footer>© 柿沼貴志議員</footer>
+
+  <script>
+    const GAS_URL =
+      'https://script.google.com/macros/s/AKfycby4VxnadXWsXtn27EcABG-TEVP3b5oKUsKxoGzhztNolL6LojXTyb5h3-VXaIJRC7Xx/exec';
+
+    const SITE_KEY = 'kakinuma-takashi-dx';
+
+    const list = document.getElementById('list');
+    const loading = document.getElementById('loading');
+    const errorBox = document.getElementById('error');
+    const empty = document.getElementById('empty');
+    const count = document.getElementById('count');
+    const search = document.getElementById('search');
+
+    let articles = [];
+
+    function esc(value){
+      return String(value ?? '').replace(/[&<>'"]/g, function(ch){
+        return {
+          '&':'&amp;',
+          '<':'&lt;',
+          '>':'&gt;',
+          "'":'&#39;',
+          '"':'&quot;'
+        }[ch];
+      });
+    }
+
+    function cleanText(value){
+      const box = document.createElement('div');
+      box.innerHTML = String(value ?? '');
+
+      return (box.textContent || box.innerText || '')
+        .replace(/\s+/g,' ')
+        .trim();
+    }
+
+    function urlValue(value){
+      const url = String(value || '').trim();
+
+      if(!url || !/^https?:\/\//i.test(url)){
+        return '';
+      }
+
+      return url;
+    }
+
+    function first(obj, keys){
+      for(const key of keys){
+        if(
+          obj &&
+          obj[key] !== undefined &&
+          obj[key] !== null &&
+          String(obj[key]).trim() !== ''
+        ){
+          return obj[key];
+        }
+      }
+
+      return '';
+    }
+
+    function normalize(row){
+      const images = [];
+
+      if(Array.isArray(row && row.images)){
+        images.push(...row.images);
+      }
+
+      for(let i = 1; i <= 6; i++){
+        images.push(
+          first(row, [
+            'image' + i,
+            '画像' + i,
+            'photo' + i
+          ])
+        );
+      }
+
+      return {
+        id:String(
+          first(row,['articleId','id','記事ID']) || ''
+        ).trim(),
+
+        title:String(
+          first(row,['articleTitle','title','記事タイトル']) ||
+          '活動報告'
+        ).trim(),
+
+        date:String(
+          first(row,[
+            'publishDate',
+            'date',
+            '公開日',
+            'createdAt',
+            '作成日'
+          ]) || ''
+        ).trim(),
+
+        body:String(
+          first(row,[
+            'articleBody',
+            'body',
+            '本文',
+            '記事本文'
+          ]) || ''
+        ).trim(),
+
+        images:images
+          .map(urlValue)
+          .filter(Boolean)
+          .filter((v,i,a) => a.indexOf(v) === i),
+
+        status:String(
+          first(row,[
+            'publicStatus',
+            'status',
+            '公開状態'
+          ]) || ''
+        ).trim(),
+
+        sort:String(
+          first(row,[
+            'sortOrder',
+            'updatedAt',
+            'updateDate',
+            '更新日'
+          ]) || ''
+        ).trim()
+      };
+    }
+
+    function visible(row){
+      const s = row.status.toLowerCase();
+
+      return !s ||
+        (
+          !s.includes('非公開') &&
+          !s.includes('下書き') &&
+          s !== 'false' &&
+          s !== '0'
+        );
+    }
+
+    function dateNumber(value){
+      const n = Date.parse(
+        String(value)
+          .replace(/年|月/g,'/')
+          .replace(/日/g,'')
+      );
+
+      return Number.isNaN(n) ? 0 : n;
+    }
+
+    function youtubeThumb(text){
+      const m = String(text || '').match(
+        /(?:youtube\.com\/(?:watch\?v=|shorts\/|embed\/)|youtu\.be\/)([A-Za-z0-9_-]{6,})/i
+      );
+
+      return m
+        ? 'https://i.ytimg.com/vi/' + m[1] + '/hqdefault.jpg'
+        : '';
+    }
+
+    function articleLink(article){
+      return 'article.html?id=' +
+        encodeURIComponent(article.id) +
+        '&site=' +
+        encodeURIComponent(SITE_KEY);
+    }
+
+    function render(){
+      const keyword = search.value.trim().toLowerCase();
+
+      const filtered = articles.filter(function(article){
+        if(!keyword){
+          return true;
+        }
+
+        return (
+          article.title + ' ' + cleanText(article.body)
+        ).toLowerCase().includes(keyword);
+      });
+
+      count.textContent = filtered.length + '件';
+      list.innerHTML = '';
+
+      empty.classList.toggle(
+        'hidden',
+        filtered.length !== 0
+      );
+
+      if(!filtered.length){
+        return;
+      }
+
+      filtered.forEach(function(article){
+        const image =
+          article.images[0] ||
+          youtubeThumb(article.body);
+
+        const cleanBody = cleanText(article.body);
+        const summary = cleanBody.slice(0,150);
+
+        const card = document.createElement('article');
+        card.className = 'card';
+
+        card.innerHTML =
+          (
+            image
+              ? '<img class="thumb" src="' +
+                esc(image) +
+                '" alt="" loading="lazy">'
+              : ''
+          ) +
+
+          '<div class="card-body">' +
+
+          '<p class="date">' +
+          esc(article.date || '公開記事') +
+          '</p>' +
+
+          '<h2 class="title">' +
+          esc(article.title) +
+          '</h2>' +
+
+          (
+            summary
+              ? '<p class="summary">' +
+                esc(summary) +
+                (cleanBody.length > 150 ? '…' : '') +
+                '</p>'
+              : ''
+          ) +
+
+          '<a class="read" href="' +
+          esc(articleLink(article)) +
+          '">この記事を読む</a>' +
+
+          '</div>';
+
+        const imageElement = card.querySelector('img');
+
+        if(imageElement){
+          imageElement.addEventListener(
+            'error',
+            function(){
+              imageElement.remove();
+            },
+            {once:true}
+          );
+        }
+
+        list.appendChild(card);
+      });
+    }
+
+    async function loadArticles(){
+      const endpoint =
+        GAS_URL +
+        '?action=publicArticles' +
+        '&siteKey=' +
+        encodeURIComponent(SITE_KEY) +
+        '&_=' +
+        Date.now();
+
+      try{
+        const response = await fetch(
+          endpoint,
+          {cache:'no-store'}
+        );
+
+        if(!response.ok){
+          throw new Error(
+            '記事データを取得できませんでした。'
+          );
+        }
+
+        const json = await response.json();
+
+        const rows =
+          Array.isArray(json)
+            ? json
+            : (
+              json.publicArticles ||
+              json.articles ||
+              (
+                json.data &&
+                (json.data.articles || json.data)
+              ) ||
+              json.items ||
+              []
+            );
+
+        articles = rows
+          .map(normalize)
+          .filter(function(article){
+            return article.id && visible(article);
+          });
+
+        articles.sort(function(a,b){
+          return dateNumber(b.date || b.sort) -
+            dateNumber(a.date || a.sort);
+        });
+
+        loading.classList.add('hidden');
+        render();
+
+      }catch(error){
+        loading.classList.add('hidden');
+
+        errorBox.textContent =
+          '活動報告の読み込みに失敗しました。時間をおいて再度お試しください。';
+
+        errorBox.classList.remove('hidden');
+      }
+    }
+
+    search.addEventListener('input',render);
+
+    loadArticles();
+  </script>
+</body>
+</html>
