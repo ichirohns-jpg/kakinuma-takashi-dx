@@ -1,341 +1,754 @@
 <!doctype html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="埼玉県議会議員・柿沼貴志さんのプロフィール、活動報告、政策、行田市への思い、市民の声を県政へ届けるための情報DXです。">
-  <meta name="theme-color" content="#d66d29">
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#263b52">
+  <meta name="description" content="埼玉県議会議員・柿沼貴志の活動報告、プロフィール、政策、市民相談をご紹介します。">
+  <meta property="og:title" content="柿沼貴志｜郷土の声を県政に">
+  <meta property="og:description" content="埼玉県議会議員・柿沼貴志の活動報告、プロフィール、政策、市民相談をご紹介します。">
+  <meta property="og:image" content="https://ichirohns-jpg.github.io/kakinuma-takashi-dx/profile_photo_3.jpg">
+  <meta property="og:url" content="https://ichirohns-jpg.github.io/kakinuma-takashi-dx/">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="manifest" href="manifest.json">
-  <link rel="stylesheet" href="style.css?v=20260731">
-
-  <title>柿沼貴志議員 活動報告DX</title>
+  <title>柿沼貴志｜郷土の声を県政に</title>
 
   <style>
     :root{
-      --p:#d66d29;
-      --d:#743714;
-      --s:#fff5eb;
-      --a:#f0b477;
-      --t:#2d2722;
-      --l:#ead5c4;
+      --navy:#263b52;
+      --navy-deep:#1b2b3c;
+      --orange:#d8792b;
+      --cream:#f5f1ea;
+      --paper:#fffdf9;
+      --text:#29313a;
+      --muted:#68727c;
+      --line:#ddd7ce;
+      --shadow:0 8px 26px rgba(35,48,61,.10);
     }
 
-    .activity-news{
-      border:2px solid var(--a);
-      background:linear-gradient(135deg,#fff,var(--s));
+    *{box-sizing:border-box}
+
+    html{scroll-behavior:smooth}
+
+    body{
+      margin:0;
+      background:var(--cream);
+      color:var(--text);
+      font-family:-apple-system,BlinkMacSystemFont,
+      "Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+      font-size:17px;
+      line-height:1.85;
+      overflow-x:hidden;
     }
 
-    .activity-news h2{
-      color:var(--d);
+    img{
+      display:block;
+      max-width:100%;
     }
 
-    .latest-list{
+    a{
+      color:inherit;
+      -webkit-tap-highlight-color:transparent;
+    }
+
+    .site-header{
+      position:sticky;
+      top:0;
+      z-index:10;
+      background:rgba(255,253,249,.96);
+      border-bottom:1px solid var(--line);
+      backdrop-filter:blur(10px);
+    }
+
+    .header-inner{
+      width:min(100% - 28px,1040px);
+      margin:auto;
+      padding:12px 0 10px;
+    }
+
+    .header-top{
       display:flex;
-      flex-direction:column;
+      align-items:center;
+      justify-content:space-between;
       gap:14px;
     }
 
-    .article-card{
-      overflow:hidden;
-      border:1px solid var(--l);
-      border-radius:16px;
-      background:#fff;
-      box-shadow:0 3px 12px #7b4b2214;
+    .site-name{
+      display:block;
+      color:var(--navy-deep);
+      font-size:20px;
+      font-weight:900;
+      line-height:1.25;
+      text-decoration:none;
+      letter-spacing:.04em;
     }
 
-    .article-card-image{
+    .site-name small{
       display:block;
+      margin-top:3px;
+      color:var(--muted);
+      font-family:Georgia,serif;
+      font-size:10px;
+      font-weight:700;
+      letter-spacing:.16em;
+    }
+
+    .official-link{
+      padding:8px 12px;
+      border:1px solid var(--navy);
+      border-radius:999px;
+      color:var(--navy);
+      font-size:13px;
+      font-weight:800;
+      text-decoration:none;
+      white-space:nowrap;
+    }
+
+    .nav{
+      display:flex;
+      gap:7px;
+      overflow-x:auto;
+      margin-top:10px;
+      padding-bottom:2px;
+      scrollbar-width:none;
+    }
+
+    .nav::-webkit-scrollbar{
+      display:none;
+    }
+
+    .nav a{
+      flex:0 0 auto;
+      padding:6px 10px;
+      border-radius:8px;
+      color:var(--muted);
+      font-size:13px;
+      font-weight:800;
+      text-decoration:none;
+    }
+
+    .nav a:first-child,
+    .nav a:hover{
+      background:var(--navy);
+      color:#fff;
+    }
+
+    main{
+      width:min(100% - 28px,1040px);
+      margin:auto;
+      padding:24px 0 60px;
+    }
+
+    .hero{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      min-height:430px;
+      overflow:hidden;
+      border-radius:22px;
+      background:var(--paper);
+      box-shadow:var(--shadow);
+    }
+
+    .hero-copy{
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      padding:clamp(28px,5vw,64px);
+    }
+
+    .eyebrow{
+      margin:0 0 12px;
+      color:var(--orange);
+      font-size:14px;
+      font-weight:900;
+      letter-spacing:.08em;
+    }
+
+    .hero h1{
+      margin:0;
+      color:var(--navy-deep);
+      font-size:clamp(32px,5vw,58px);
+      line-height:1.25;
+      letter-spacing:.06em;
+    }
+
+    .hero h1 small{
+      display:block;
+      margin-bottom:10px;
+      color:var(--muted);
+      font-size:clamp(16px,2vw,22px);
+      letter-spacing:.03em;
+    }
+
+    .slogan{
+      margin:22px 0 0;
+      padding-left:16px;
+      border-left:5px solid var(--orange);
+      color:var(--navy);
+      font-size:clamp(22px,3vw,34px);
+      font-weight:900;
+      line-height:1.5;
+    }
+
+    .hero-text{
+      max-width:34em;
+      margin:20px 0 0;
+      color:var(--muted);
+      font-size:16px;
+      line-height:2;
+    }
+
+    .hero-photo{
+      min-height:430px;
+      background:var(--navy);
+    }
+
+    .hero-photo img{
       width:100%;
-      height:190px;
+      height:100%;
+      min-height:430px;
       object-fit:cover;
     }
 
-    .article-card-content{
+    .section{
+      margin-top:34px;
+      padding:clamp(22px,4vw,42px);
+      border:1px solid var(--line);
+      border-radius:20px;
+      background:var(--paper);
+      box-shadow:var(--shadow);
+    }
+
+    .section-heading{
+      display:flex;
+      align-items:baseline;
+      gap:12px;
+      margin:0 0 18px;
+      padding-bottom:12px;
+      border-bottom:1px solid var(--line);
+      color:var(--navy-deep);
+    }
+
+    .section-heading span{
+      color:var(--orange);
+      font-family:Georgia,serif;
+      font-size:14px;
+      font-weight:900;
+      letter-spacing:.12em;
+    }
+
+    .section-heading strong{
+      font-size:clamp(25px,4vw,36px);
+      line-height:1.35;
+    }
+
+    .section-lead{
+      margin:0 0 20px;
+      color:var(--muted);
+    }
+
+    .latest-list{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:18px;
+    }
+
+    .report-card{
+      overflow:hidden;
+      border:1px solid var(--line);
+      border-radius:15px;
+      background:#fff;
+    }
+
+    .report-image{
+      width:100%;
+      aspect-ratio:16/10;
+      object-fit:cover;
+      background:#ebe6de;
+    }
+
+    .report-body{
       padding:16px;
     }
 
-    .article-card-date{
+    .report-date{
       margin:0 0 5px;
-      color:#806f64;
-      font-size:14px;
-      font-weight:800;
+      color:var(--orange);
+      font-size:13px;
+      font-weight:900;
     }
 
-    .article-card-title{
+    .report-title{
       margin:0 0 8px;
-      color:var(--d);
-      font-size:21px;
-      line-height:1.45;
+      color:var(--navy-deep);
+      font-size:20px;
+      line-height:1.5;
     }
 
-    .article-card-summary{
-      margin:0 0 12px;
-      white-space:pre-wrap;
-      font-size:16px;
+    .report-summary{
+      display:-webkit-box;
+      margin:0;
+      overflow:hidden;
+      color:var(--muted);
+      font-size:15px;
       line-height:1.8;
+      white-space:pre-line;
+      -webkit-box-orient:vertical;
+      -webkit-line-clamp:4;
     }
 
-    .article-card-button{
+    .report-link{
       display:block;
-      padding:12px;
-      border-radius:11px;
-      background:var(--p);
+      margin-top:14px;
+      padding:10px;
+      border-radius:9px;
+      background:var(--navy);
       color:#fff;
+      font-size:14px;
       font-weight:900;
       text-align:center;
       text-decoration:none;
     }
 
-    .activity-message{
+    .loading-message,
+    .error-message{
       margin:0;
-      color:#70645d;
+      color:var(--muted);
+    }
+
+    .error-message{
+      color:#9c382c;
+    }
+
+    .more-link{
+      display:block;
+      width:max-content;
+      margin:22px auto 0;
+      padding:11px 20px;
+      border:1px solid var(--navy);
+      border-radius:999px;
+      color:var(--navy);
+      font-weight:900;
+      text-decoration:none;
+    }
+
+    .text-columns{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:30px;
+    }
+
+    .text-block h3{
+      margin:0 0 10px;
+      color:var(--navy);
+      font-size:22px;
+      line-height:1.5;
+    }
+
+    .text-block p{
+      margin:0 0 16px;
+      white-space:pre-line;
+    }
+
+    .profile-note{
+      margin:18px 0 0;
+      padding:14px 16px;
+      border-left:4px solid var(--orange);
+      background:#f4f0e9;
+      color:var(--muted);
       font-size:15px;
     }
 
-    .activity-error{
-      color:#9d3827;
+    .policy-list{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:12px;
+      margin:0;
+      padding:0;
+      list-style:none;
+    }
+
+    .policy-list li{
+      position:relative;
+      padding:15px 16px 15px 40px;
+      border:1px solid var(--line);
+      border-radius:12px;
+      background:#fff;
+      font-weight:800;
+    }
+
+    .policy-list li::before{
+      position:absolute;
+      left:16px;
+      top:15px;
+      color:var(--orange);
+      content:'●';
+      font-size:13px;
+    }
+
+    .consultation{
+      border-color:var(--navy);
+      background:var(--navy);
+      color:#fff;
+    }
+
+    .consultation .section-heading{
+      border-color:#ffffff44;
+      color:#fff;
+    }
+
+    .consultation .section-heading span{
+      color:#f2b06d;
+    }
+
+    .consultation .section-lead{
+      color:#eef2f5;
+    }
+
+    .consultation-button{
+      display:inline-block;
+      padding:13px 22px;
+      border-radius:999px;
+      background:#fff;
+      color:var(--navy);
+      font-weight:900;
+      text-decoration:none;
+    }
+
+    .gallery{
+      display:flex;
+      gap:14px;
+      overflow-x:auto;
+      padding:3px 2px 12px;
+      scroll-snap-type:x mandatory;
+      -webkit-overflow-scrolling:touch;
+    }
+
+    .gallery img{
+      width:230px;
+      height:230px;
+      flex:0 0 230px;
+      object-fit:cover;
+      border-radius:12px;
+      scroll-snap-align:start;
+    }
+
+    .link-grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:12px;
+    }
+
+    .link-card{
+      display:block;
+      padding:15px;
+      border:1px solid var(--line);
+      border-radius:12px;
+      background:#fff;
+      color:var(--navy);
+      font-weight:900;
+      text-align:center;
+      text-decoration:none;
+    }
+
+    .contact-text{
+      margin:22px 0 0;
+      padding-top:18px;
+      border-top:1px solid var(--line);
+      color:var(--muted);
+      font-size:15px;
+      overflow-wrap:anywhere;
+    }
+
+    footer{
+      padding:0 20px 34px;
+      color:var(--muted);
+      font-size:13px;
+      text-align:center;
+    }
+
+    @media(max-width:720px){
+      body{
+        font-size:16px;
+      }
+
+      .header-inner{
+        width:min(100% - 22px,1040px);
+      }
+
+      .official-link{
+        font-size:12px;
+        padding:7px 10px;
+      }
+
+      main{
+        width:min(100% - 20px,1040px);
+        padding-top:14px;
+      }
+
+      .hero{
+        display:flex;
+        flex-direction:column-reverse;
+        border-radius:17px;
+      }
+
+      .hero-photo,
+      .hero-photo img{
+        min-height:280px;
+        height:280px;
+      }
+
+      .hero-copy{
+        padding:28px 22px 30px;
+      }
+
+      .hero h1{
+        font-size:34px;
+      }
+
+      .slogan{
+        font-size:24px;
+      }
+
+      .latest-list{
+        grid-template-columns:1fr;
+      }
+
+      .text-columns{
+        grid-template-columns:1fr;
+        gap:4px;
+      }
+
+      .policy-list{
+        grid-template-columns:1fr;
+      }
+
+      .section{
+        margin-top:22px;
+        padding:22px 18px;
+      }
+
+      .section-heading strong{
+        font-size:27px;
+      }
+
+      .link-grid{
+        grid-template-columns:1fr;
+      }
+
+      .gallery img{
+        width:210px;
+        height:210px;
+        flex-basis:210px;
+      }
     }
   </style>
 </head>
 
 <body>
-  <header class="topbar">
-    <div class="mark">DX</div>
-    <div class="brand">柿沼貴志</div>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="header-top">
+        <a class="site-name" href="index.html">
+          柿沼 貴志
+          <small>TAKASHI KAKINUMA OFFICIAL INFORMATION</small>
+        </a>
+
+        <a
+          class="official-link"
+          href="https://www.kakinuma-takashi.com/index.html"
+          target="_blank"
+          rel="noopener"
+        >公式サイト</a>
+      </div>
+
+      <nav class="nav" aria-label="ページ内メニュー">
+        <a href="index.html">HOME</a>
+        <a href="archive.html">活動報告</a>
+        <a href="#profile">プロフィール</a>
+        <a href="#policy">私の志・政策</a>
+        <a href="#contact">お問い合わせ</a>
+      </nav>
+    </div>
   </header>
 
   <main>
     <section class="hero">
-      <img
-        class="hero-image"
-        src="https://ichirohns-jpg.github.io/kakinuma-takashi-dx/profile_photo_3.jpg"
-        alt="柿沼貴志議員"
-      >
+      <div class="hero-copy">
+        <p class="eyebrow">埼玉県議会議員</p>
 
-      <div class="hero-cover">
-        <p class="eyebrow">地域活動・政策情報</p>
-        <h1>柿沼貴志議員 活動報告DX</h1>
-        <p>
-          埼玉県議会議員・柿沼貴志さんのプロフィール、活動報告、政策、行田市への思い、市民の声を県政へ届けるための情報DXです。
-          郷土の声を県政に届け、行田市と埼玉県をつなぐ活動を、スマートフォンで分かりやすく紹介します。
+        <h1>
+          <small>柿沼</small>
+          貴志
+        </h1>
+
+        <p class="slogan">
+          郷土の声を<br>
+          県政に!!
         </p>
+
+        <p class="hero-text">
+          行田市の声を県政に届け、県と市をつなぐ架け橋として活動しています。
+          日々の活動、政策、地域への思いを分かりやすくお伝えします。
+        </p>
+      </div>
+
+      <div class="hero-photo">
+        <img
+          src="https://ichirohns-jpg.github.io/kakinuma-takashi-dx/profile_photo_3.jpg"
+          alt="柿沼貴志議員"
+        >
       </div>
     </section>
 
-    <section class="card activity-news">
-      <h2>最新の活動報告</h2>
-      <p class="photo-note">
-        柿沼貴志さんの最新の活動をお知らせします。
+    <section class="section" id="reports">
+      <h2 class="section-heading">
+        <span>01</span>
+        <strong>活動報告</strong>
+      </h2>
+
+      <p class="section-lead">
+        柿沼貴志議員の活動風景や、地域での取り組みをお知らせします。
       </p>
 
-      <div id="latestReports" class="latest-list">
-        <p class="activity-message">活動報告を読み込んでいます。</p>
+      <div id="latestReports" class="latest-list" aria-live="polite">
+        <p class="loading-message">
+          活動報告を読み込んでいます。
+        </p>
       </div>
 
-      <a class="link-button" href="archive.html">
+      <a class="more-link" href="archive.html">
         活動報告をもっと読む
       </a>
     </section>
 
-    <section class="card">
-      <h2>柿沼貴志</h2>
+    <section class="section" id="profile">
+      <h2 class="section-heading">
+        <span>02</span>
+        <strong>プロフィール</strong>
+      </h2>
 
-      <p>
-        郷土の声を県政に。若い力で行動し、県と市のパイプ役・架け橋となる。
-        主なテーマは、教育改革、学校・部活動の地域展開、住みやすいまちづくり、
-        道路・通学路・インフラ整備、防災、福祉避難所、警察・危機管理、
-        子どもの健康、地域河川の改修、観光・地域活性化、
-        県や国の出先機関を守ることです。
-      </p>
+      <div class="text-columns">
+        <div class="text-block">
+          <h3>柿沼貴志について</h3>
 
-      <p>
-        市民の声を聞き、行田市の発展を埼玉県の発展につなげます。
-      </p>
+          <p>
+            柿沼貴志（かきぬまたかし）。
+            埼玉県行田市で生まれ育ち、地域の声を聞きながら活動しています。
+          </p>
 
-      <p>
-        柿沼貴志さんは、埼玉県議会議員（東第1区・行田市）として活動し、
-        2026年3月時点では総務県民生活委員会の委員長を務めています。
-      </p>
-    </section>
+          <p>
+            幼少期から野球・空手に取り組み、
+            高校時代は空手部主将として県の強化選手に選ばれ、
+            団体組手で関東大会に出場しました。
+          </p>
+        </div>
 
-    <section class="card">
-      <h2>プロフィール</h2>
+        <div class="text-block">
+          <h3>これまでの歩み</h3>
 
-      <p>
-        柿沼貴志（かきぬまたかし）。
-        昭和50年11月11日生まれ。
-        埼玉県行田市桜町出身、現在は栄町在住。
-        林英臣政経塾所属。
-        元行田市議会議員、現埼玉県議会議員です。
-      </p>
+          <p>
+            卒業後は建築石材業で修行し、
+            平成15年から地元に戻って家業に携わっています。
+          </p>
 
-      <p>
-        幼少期から野球・空手に取り組み、高校時代は空手部主将として県の強化選手に選ばれ、
-        団体組手で2年連続関東大会に出場しました。
-      </p>
+          <p>
+            平成23年に行田市議会議員に初当選。
+            平成31年に埼玉県議会議員に初当選し、
+            現在も行田市の発展と埼玉県の発展をつなぐ活動を続けています。
+          </p>
+        </div>
+      </div>
 
-      <p>
-        卒業後は建築石材業で9年修行し、平成15年から地元に戻り、
-        ムサシ石材有限会社で家業を営んでいます。
-      </p>
-
-      <p>
-        平成23年に行田市議会議員に初当選、
-        平成31年に埼玉県議会議員に初当選し、
-        令和5年に2期目へ当選。
-        現在は埼玉県議会議員として、
-        行田市の発展を埼玉県の発展につなげる活動を続けています。
-      </p>
-
-      <p class="small">
-        埼玉県議会議員（東第1区・行田市）／自民
-        埼玉県行田市・東第1区
+      <p class="profile-note">
+        県と市のパイプ役・架け橋として、
+        教育、子ども、道路、防災、福祉、地域活性化など、
+        暮らしに関わる課題に取り組んでいます。
       </p>
     </section>
 
-    <section class="card">
-      <h2>政策・活動</h2>
+    <section class="section" id="policy">
+      <h2 class="section-heading">
+        <span>03</span>
+        <strong>私の志・政策</strong>
+      </h2>
 
-      <p>
-        県と行田市のパイプ役となり、
-        県と市をつなぐ架け橋として行動します。
+      <p class="section-lead">
+        行田から教育を変える。心を育てる。
+        若い力と行動力で、行田市を活性化し、埼玉県につなげます。
       </p>
 
-      <p>
-        教育改革、学校教育環境の整備、部活動の地域展開、
-        子どもたちの未来、住みやすいまちづくり、
-        安全な道路・通学路、インフラ整備、
-        防災・福祉避難所、警察・危機管理、
-        地域河川の改修と調節池整備、
-        観光振興、地域活性化、
-        県や国の出先機関を守ることなどに取り組んでいます。
-      </p>
-
-      <p>
-        県議会では、警察本部庁舎の独立化、
-        ギャンブル等依存症対策、
-        新生児マススクリーニング検査、
-        学校・部活動改革、
-        福祉避難所の開設訓練、
-        忍川の河川改修、
-        見沼代用水開削300年に向けた支援などについて質問しています。
-      </p>
+      <ul class="policy-list">
+        <li>教育改革・学校教育環境の整備</li>
+        <li>学校・部活動の地域展開</li>
+        <li>子どもたちの未来を守る取り組み</li>
+        <li>安全な道路・通学路・インフラ整備</li>
+        <li>防災・福祉避難所・危機管理</li>
+        <li>地域河川の改修・調節池整備</li>
+        <li>観光振興・地域活性化</li>
+        <li>県と市をつなぐパイプ役</li>
+      </ul>
     </section>
 
-    <section class="card action">
-      <h2>市民相談</h2>
+    <section class="section consultation" id="contact">
+      <h2 class="section-heading">
+        <span>04</span>
+        <strong>皆様の声をお聞かせください</strong>
+      </h2>
 
-      <p>
+      <p class="section-lead">
         政治に関するご意見・ご要望、
         行田市や埼玉県の地域課題、
-        教育・子ども・学校に関する声、
-        防災・安全・道路・河川など暮らしに関する相談、
-        講演会のご依頼、
-        学生ボランティアへの参加希望を受け付けています。
+        教育・子ども・学校、
+        防災・安全・道路・河川など、
+        暮らしに関するご相談をお寄せください。
       </p>
 
-      <p>
-        ご意見やご要望は、
-        公式ホームページのお問い合わせフォーム、
-        電話、メールからお寄せください。
-      </p>
-
-      <a class="main-button" href="#contact">
-        相談・問い合わせ
+      <a
+        class="consultation-button"
+        href="https://www.kakinuma-takashi.com/contact/index.php"
+        target="_blank"
+        rel="noopener"
+      >
+        お問い合わせフォームへ
       </a>
     </section>
 
-    <section class="card">
-      <h2>写真</h2>
+    <section class="section">
+      <h2 class="section-heading">
+        <span>05</span>
+        <strong>活動写真</strong>
+      </h2>
 
-      <p class="photo-note">
+      <p class="section-lead">
         写真は左右にスワイプしてご覧いただけます。
       </p>
 
       <div class="gallery">
-        <img
-          src="https://ichirohns-jpg.github.io/kakinuma-takashi-dx/report_kaiha_2.jpg"
-          alt="柿沼貴志議員の活動写真"
-          loading="lazy"
-        >
-
-        <img
-          src="https://ichirohns-jpg.github.io/kakinuma-takashi-dx/resolution_photo_1.jpg"
-          alt="柿沼貴志議員の活動写真"
-          loading="lazy"
-        >
-
-        <img
-          src="https://ichirohns-jpg.github.io/kakinuma-takashi-dx/profile_photo_5.jpg"
-          alt="柿沼貴志議員の活動写真"
-          loading="lazy"
-        >
-
-        <img
-          src="https://ichirohns-jpg.github.io/kakinuma-takashi-dx/profile_photo_2.jpg"
-          alt="柿沼貴志議員の活動写真"
-          loading="lazy"
-        >
-
-        <img
-          src="https://ichirohns-jpg.github.io/kakinuma-takashi-dx/report_kaiha_1.jpg"
-          alt="柿沼貴志議員の活動写真"
-          loading="lazy"
-        >
+        <img src="https://ichirohns-jpg.github.io/kakinuma-takashi-dx/report_kaiha_2.jpg" alt="活動写真" loading="lazy">
+        <img src="https://ichirohns-jpg.github.io/kakinuma-takashi-dx/resolution_photo_1.jpg" alt="活動写真" loading="lazy">
+        <img src="https://ichirohns-jpg.github.io/kakinuma-takashi-dx/profile_photo_5.jpg" alt="活動写真" loading="lazy">
+        <img src="https://ichirohns-jpg.github.io/kakinuma-takashi-dx/profile_photo_2.jpg" alt="活動写真" loading="lazy">
+        <img src="https://ichirohns-jpg.github.io/kakinuma-takashi-dx/report_kaiha_1.jpg" alt="活動写真" loading="lazy">
       </div>
     </section>
 
-    <section id="contact" class="card">
-      <h2>リンク</h2>
+    <section class="section">
+      <h2 class="section-heading">
+        <span>06</span>
+        <strong>公式リンク</strong>
+      </h2>
 
-      <a
-        class="link-button"
-        href="https://www.kakinuma-takashi.com/index.html"
-        target="_blank"
-        rel="noopener"
-      >
-        ホームページ
-      </a>
+      <div class="link-grid">
+        <a class="link-card" href="https://www.kakinuma-takashi.com/index.html" target="_blank" rel="noopener">公式ホームページ</a>
+        <a class="link-card" href="https://www.kakinuma-takashi.com/blog/" target="_blank" rel="noopener">ブログ</a>
+        <a class="link-card" href="https://www.facebook.com/takashi.kakinuma.73" target="_blank" rel="noopener">Facebook</a>
+        <a class="link-card" href="https://twitter.com/KakinumaTakashi" target="_blank" rel="noopener">X（旧Twitter）</a>
+        <a class="link-card" href="https://www.youtube.com/@takashi5011" target="_blank" rel="noopener">YouTube</a>
+      </div>
 
-      <a
-        class="link-button"
-        href="https://www.facebook.com/takashi.kakinuma.73"
-        target="_blank"
-        rel="noopener"
-      >
-        Facebook
-      </a>
-
-      <a
-        class="link-button"
-        href="https://twitter.com/KakinumaTakashi"
-        target="_blank"
-        rel="noopener"
-      >
-        X（旧Twitter）
-      </a>
-
-      <a
-        class="link-button"
-        href="https://www.kakinuma-takashi.com/blog/"
-        target="_blank"
-        rel="noopener"
-      >
-        ブログ
-      </a>
-
-      <a
-        class="link-button"
-        href="https://www.youtube.com/@takashi5011"
-        target="_blank"
-        rel="noopener"
-      >
-        YouTubeチャンネル
-      </a>
-
-      <p class="contact">
-        連絡先：埼玉県議会議員 柿沼貴志 事務所<br>
+      <p class="contact-text">
+        埼玉県議会議員 柿沼貴志 事務所<br>
         〒361-0077 埼玉県行田市忍2-17-12<br>
         電話：048-554-1377<br>
         FAX：048-577-3154<br>
@@ -345,10 +758,8 @@
   </main>
 
   <footer>
-    DXコードジェネレーターで作成
+    柿沼貴志 活動報告DX
   </footer>
-
-  <script src="app.js?v=20260731" defer></script>
 
   <script>
     (function(){
@@ -360,7 +771,7 @@
 
       function escapeHtml(value){
         return String(value||'').replace(/[&<>"']/g,function(ch){
-          return{
+          return {
             '&':'&amp;',
             '<':'&lt;',
             '>':'&gt;',
@@ -370,70 +781,133 @@
         });
       }
 
-      function safeUrl(value){
-        var url=String(value||'').trim();
-        return /^https:\/\//i.test(url)?escapeHtml(url):'';
+      function textOnly(value){
+        var source=String(value||'')
+          .replace(/<br\s*\/?>/gi,'\n')
+          .replace(/<\/p\s*>/gi,'\n\n');
+
+        var box=document.createElement('div');
+        box.innerHTML=source;
+
+        return (box.textContent||box.innerText||'')
+          .replace(/\r\n/g,'\n')
+          .replace(/[ \t]+/g,' ')
+          .replace(/\n{3,}/g,'\n\n')
+          .trim();
       }
 
       function summary(value){
-        var text=String(value||'').replace(/\s+/g,' ').trim();
-        if(text.length>110)return text.slice(0,110)+'…';
-        return text;
+        var text=textOnly(value);
+        var paragraphs=text.split(/\n\s*\n/).filter(Boolean);
+        var result=paragraphs.slice(0,2).join('\n\n');
+
+        if(result.length>150){
+          result=result.slice(0,150)+'…';
+        }
+
+        return result;
+      }
+
+      function safeUrl(value){
+        var url=String(value||'').trim();
+        return /^https:\/\//i.test(url)
+          ? escapeHtml(url)
+          : '';
       }
 
       function articleCard(article){
-        var articleId=encodeURIComponent(article.articleId||'');
-        var articleUrl='article.html?id='+articleId+'&site='+encodeURIComponent(SITE_KEY);
-        var image='';
-        var images=Array.isArray(article.images)?article.images:[];
+        var articleId=encodeURIComponent(
+          article.articleId||article.id||''
+        );
 
-        if(images.length){
-          var imageUrl=safeUrl(images[0]);
-          if(imageUrl){
-            image='<img class="article-card-image" src="'+imageUrl+'" alt="'+escapeHtml(article.title||'活動報告')+'" loading="lazy">';
-          }
+        var articleUrl=
+          'article.html?id='+
+          articleId+
+          '&site='+
+          encodeURIComponent(SITE_KEY);
+
+        var images=
+          Array.isArray(article.images)
+            ? article.images
+            : [];
+
+        var image=
+          images.length
+            ? safeUrl(images[0])
+            : '';
+
+        return '<article class="report-card">'+
+          (
+            image
+              ? '<img class="report-image" src="'+
+                image+
+                '" alt="活動報告" loading="lazy">'
+              : ''
+          )+
+          '<div class="report-body">'+
+          '<p class="report-date">'+
+          escapeHtml(article.publishDate||article.date||'')+
+          '</p>'+
+          '<h3 class="report-title">'+
+          escapeHtml(
+            article.title||
+            article.articleTitle||
+            '活動報告'
+          )+
+          '</h3>'+
+          '<p class="report-summary">'+
+          escapeHtml(
+            summary(article.body||article.articleBody||'')
+          )+
+          '</p>'+
+          '<a class="report-link" href="'+
+          articleUrl+
+          '">この記事を読む</a>'+
+          '</div></article>';
+      }
+
+      fetch(
+        GAS_URL+
+        '?action=publicArticles&siteKey='+
+        encodeURIComponent(SITE_KEY)+
+        '&_='+
+        Date.now(),
+        {cache:'no-store'}
+      )
+      .then(function(response){
+        if(!response.ok){
+          throw new Error('記事データを取得できません。');
         }
 
-        return '<article class="article-card">'+
-          image+
-          '<div class="article-card-content">'+
-          '<p class="article-card-date">'+escapeHtml(article.publishDate||'')+'</p>'+
-          '<h3 class="article-card-title">'+escapeHtml(article.title||'活動報告')+'</h3>'+
-          '<p class="article-card-summary">'+escapeHtml(summary(article.body||''))+'</p>'+
-          '<a class="article-card-button" href="'+articleUrl+'">この記事を読む</a>'+
-          '</div>'+
-          '</article>';
-      }
+        return response.json();
+      })
+      .then(function(data){
+        var articles=
+          data&&
+          Array.isArray(data.articles)
+            ? data.articles
+            : [];
 
-      function loadArticles(){
-        fetch(
-          GAS_URL+'?action=publicArticles&siteKey='+encodeURIComponent(SITE_KEY),
-          {cache:'no-store'}
-        )
-        .then(function(response){
-          if(!response.ok)throw new Error('記事データを取得できません。');
-          return response.json();
-        })
-        .then(function(data){
-          if(!data||!data.ok||!Array.isArray(data.articles)){
-            throw new Error('公開記事がありません。');
-          }
+        if(!articles.length){
+          list.innerHTML=
+            '<p class="loading-message">'+
+            '現在公開中の活動報告はありません。'+
+            '</p>';
+          return;
+        }
 
-          var articles=data.articles.slice(0,3);
-
-          if(!articles.length){
-            list.innerHTML='<p class="activity-message">現在公開中の活動報告はありません。</p>';
-            return;
-          }
-
-          list.innerHTML=articles.map(articleCard).join('');
-        })
-        .catch(function(){
-          list.innerHTML='<p class="activity-message activity-error">活動報告は準備中です。</p>';
-        });
-      }
-
-      loadArticles();
+        list.innerHTML=
+          articles
+            .slice(0,3)
+            .map(articleCard)
+            .join('');
+      })
+      .catch(function(){
+        list.innerHTML=
+          '<p class="error-message">'+
+          '活動報告は準備中です。'+
+          '</p>';
+      });
     })();
   </script>
 </body>
