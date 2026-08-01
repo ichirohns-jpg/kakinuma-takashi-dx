@@ -3,71 +3,66 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#263b52">
+  <meta name="theme-color" content="#1f4058">
   <meta name="description" content="埼玉県議会議員・柿沼貴志の活動報告、プロフィール、政策、市民相談をご紹介します。">
-  <meta property="og:title" content="柿沼貴志｜郷土の声を県政に">
-  <meta property="og:description" content="埼玉県議会議員・柿沼貴志の活動報告、プロフィール、政策、市民相談をご紹介します。">
+  <meta property="og:title" content="柿沼貴志 活動報告DX">
+  <meta property="og:description" content="柿沼貴志の活動報告、プロフィール、政策、市民相談をご紹介します。">
   <meta property="og:image" content="https://ichirohns-jpg.github.io/kakinuma-takashi-dx/profile_photo_3.jpg">
   <meta property="og:url" content="https://ichirohns-jpg.github.io/kakinuma-takashi-dx/">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="manifest" href="manifest.json">
-  <title>柿沼貴志｜郷土の声を県政に</title>
+  <title>柿沼貴志 活動報告DX</title>
 
   <style>
     :root{
-      --navy:#263b52;
-      --navy-deep:#1b2b3c;
-      --orange:#d8792b;
-      --cream:#f5f1ea;
-      --paper:#fffdf9;
-      --text:#29313a;
-      --muted:#68727c;
-      --line:#ddd7ce;
-      --shadow:0 8px 26px rgba(35,48,61,.10);
+      --navy:#1f4058;
+      --navy-deep:#142d40;
+      --blue:#2e6d8f;
+      --blue-soft:#e8f5fb;
+      --green-soft:#edf8f0;
+      --cream:#fffaf0;
+      --paper:#ffffff;
+      --orange:#c97832;
+      --gold:#e7c35d;
+      --text:#182530;
+      --muted:#52616b;
+      --line:#b8ccd7;
+      --shadow:0 12px 28px rgba(20,45,64,.13);
     }
 
-    *{
-      box-sizing:border-box;
-    }
+    *{box-sizing:border-box}
 
-    html{
-      scroll-behavior:smooth;
-    }
+    html{scroll-behavior:smooth}
 
     body{
       margin:0;
-      background:var(--cream);
+      padding-bottom:82px;
+      background:
+        radial-gradient(circle at 0 0,rgba(218,240,248,.7),transparent 28%),
+        radial-gradient(circle at 100% 0,rgba(255,246,201,.65),transparent 25%),
+        linear-gradient(180deg,#f9fdff 0%,#ffffff 55%,#f2faf5 100%);
       color:var(--text);
-      font-family:-apple-system,BlinkMacSystemFont,
-      "Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+      font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
       font-size:18px;
-      line-height:1.85;
-      overflow-x:hidden;
+      line-height:1.75;
+      -webkit-text-size-adjust:100%;
     }
 
-    img{
-      display:block;
-      max-width:100%;
-    }
+    a{color:inherit;text-decoration:none}
 
-    a{
-      color:inherit;
-      -webkit-tap-highlight-color:transparent;
-    }
+    img{display:block;max-width:100%}
 
-    .site-header{
+    .wrap{width:min(100% - 24px,1000px);margin:auto}
+
+    .header{
       position:sticky;
       top:0;
-      z-index:10;
-      background:rgba(255,253,249,.96);
+      z-index:50;
+      gap:14px;
+      padding:12px 0;
+      background:rgba(249,253,255,.96);
       border-bottom:1px solid var(--line);
-      backdrop-filter:blur(10px);
-    }
-
-    .header-inner{
-      width:min(100% - 28px,1040px);
-      margin:auto;
-      padding:12px 0 10px;
+      backdrop-filter:blur(12px);
     }
 
     .header-top{
@@ -77,141 +72,265 @@
       gap:14px;
     }
 
-    .site-name{
+    .brand{
       display:block;
       color:var(--navy-deep);
-      font-size:24px;
-      font-weight:900;
-      line-height:1.25;
-      text-decoration:none;
-      letter-spacing:.04em;
+      font-weight:950;
+      line-height:1.15;
     }
 
-    .site-name small{
+    .brand-name{
+      font-size:clamp(24px,5vw,34px);
+      letter-spacing:.08em;
+    }
+
+    .brand-subtitle{
       display:block;
-      margin-top:3px;
+      margin-top:4px;
       color:var(--muted);
       font-family:Georgia,serif;
       font-size:10px;
-      font-weight:700;
-      letter-spacing:.16em;
+      letter-spacing:.14em;
     }
 
     .official-link{
-      padding:9px 13px;
-      border:1px solid var(--navy);
+      flex:0 0 auto;
+      padding:9px 14px;
+      border:2px solid var(--navy);
       border-radius:999px;
       color:var(--navy);
-      font-size:14px;
-      font-weight:900;
-      text-decoration:none;
+      font-size:15px;
+      font-weight:950;
       white-space:nowrap;
     }
 
-    .nav{
+    .header-nav{
       display:flex;
       gap:7px;
-      overflow-x:auto;
       margin-top:10px;
-      padding-bottom:2px;
+      overflow-x:auto;
       scrollbar-width:none;
     }
 
-    .nav::-webkit-scrollbar{
-      display:none;
-    }
+    .header-nav::-webkit-scrollbar{display:none}
 
-    .nav a{
+    .header-nav a{
       flex:0 0 auto;
-      padding:7px 11px;
-      border-radius:8px;
-      color:var(--muted);
-      font-size:15px;
-      font-weight:900;
-      text-decoration:none;
+      padding:8px 13px;
+      border-radius:12px;
+      background:#fff;
+      border:1px solid var(--line);
+      color:var(--navy);
+      font-size:16px;
+      font-weight:950;
     }
 
-    .nav a:first-child,
-    .nav a:hover{
+    .header-nav a:first-child{
       background:var(--navy);
       color:#fff;
     }
 
-    main{
-      width:min(100% - 28px,1040px);
-      margin:auto;
-      padding:24px 0 60px;
-    }
+    main{padding:18px 0 50px}
 
     .hero{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      min-height:430px;
       overflow:hidden;
-      border-radius:22px;
+      border:2px solid var(--line);
+      border-radius:30px;
       background:var(--paper);
       box-shadow:var(--shadow);
     }
 
-    .hero-copy{
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-      padding:clamp(28px,5vw,64px);
-    }
+    .hero-copy{padding:26px 26px 22px}
 
-    .eyebrow{
-      margin:0 0 12px;
-      color:var(--orange);
+    .kicker{
+      display:inline-flex;
+      padding:8px 13px;
+      border:1px solid #afd4c0;
+      border-radius:999px;
+      background:var(--green-soft);
+      color:#245d45;
       font-size:16px;
-      font-weight:900;
-      letter-spacing:.08em;
+      font-weight:950;
     }
 
     .hero h1{
-      margin:0;
+      margin:16px 0 0;
       color:var(--navy-deep);
-      font-size:clamp(44px,8vw,68px);
-      line-height:1.25;
+      font-size:clamp(48px,11vw,78px);
+      font-weight:950;
       letter-spacing:.06em;
+      line-height:1.1;
     }
 
-    .slogan{
-      margin:22px 0 0;
-      padding-left:16px;
-      border-left:5px solid var(--orange);
-      color:var(--navy);
-      font-size:clamp(24px,3vw,36px);
-      font-weight:900;
-      line-height:1.5;
+    .hero h1 span{
+      display:block;
+      margin-top:6px;
+      color:var(--blue);
+      font-size:clamp(31px,7vw,53px);
+      letter-spacing:.02em;
     }
 
-    .hero-text{
-      max-width:34em;
-      margin:20px 0 0;
-      color:var(--muted);
-      font-size:18px;
-      line-height:2;
+    .hero-copy > p:not(.kicker){
+      margin:17px 0 0;
+      color:var(--text);
+      font-size:19px;
+      font-weight:800;
+      line-height:1.8;
+    }
+
+    .hero-photos{
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:10px;
+      min-height:330px;
+      padding:12px;
+      background:var(--navy);
     }
 
     .hero-photo{
-      min-height:430px;
-      background:var(--navy);
+      overflow:hidden;
+      border-radius:18px;
+      background:#8da0ac;
     }
+
+    .hero-photo:first-child{grid-row:span 2}
 
     .hero-photo img{
       width:100%;
       height:100%;
-      min-height:430px;
+      min-height:150px;
       object-fit:cover;
     }
 
-    .section{
-      margin-top:34px;
-      padding:clamp(22px,4vw,42px);
-      border:1px solid var(--line);
+    .hero-photo:first-child img{min-height:306px}
+
+    .hero-photo-main{position:relative}
+
+    .hero-photo-label{
+      position:absolute;
+      right:12px;
+      bottom:12px;
+      left:12px;
+      padding:9px 11px;
+      border-radius:10px;
+      background:rgba(20,45,64,.88);
+      color:#fff;
+      font-size:16px;
+      font-weight:950;
+      line-height:1.4;
+    }
+
+    .main-actions{
+      display:grid;
+      grid-template-columns:1.25fr 1fr;
+      gap:12px;
+      padding:18px 26px 26px;
+    }
+
+    .main-actions a{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-height:72px;
+      padding:12px;
       border-radius:20px;
-      background:var(--paper);
+      font-size:20px;
+      font-weight:950;
+      line-height:1.35;
+      text-align:center;
+    }
+
+    .main-actions .primary{
+      background:var(--navy);
+      color:#fff;
+      box-shadow:0 10px 22px rgba(31,64,88,.22);
+    }
+
+    .main-actions .secondary{
+      border:2px solid var(--navy);
+      color:var(--navy);
+      background:#fff;
+    }
+
+    .menu-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:13px;
+      margin-top:18px;
+    }
+
+    .menu-card{
+      display:flex;
+      min-height:170px;
+      flex-direction:column;
+      justify-content:space-between;
+      padding:18px;
+      border:2px solid var(--line);
+      border-radius:24px;
+      background:#fff;
+      box-shadow:var(--shadow);
+    }
+
+    .menu-card:nth-child(1){
+      background:linear-gradient(135deg,#fff 0%,#edf8f0 100%);
+    }
+
+    .menu-card:nth-child(2){
+      background:linear-gradient(135deg,#fff 0%,#eaf6fc 100%);
+    }
+
+    .menu-card:nth-child(3){
+      background:linear-gradient(135deg,#fff 0%,#fff9dd 100%);
+      border-color:var(--gold);
+    }
+
+    .menu-card:nth-child(4){
+      background:linear-gradient(135deg,#fff 0%,#f2f4ff 100%);
+    }
+
+    .menu-icon{
+      font-size:32px;
+      line-height:1;
+    }
+
+    .menu-card h2{
+      margin:14px 0 0;
+      color:var(--navy-deep);
+      font-size:23px;
+      font-weight:950;
+      line-height:1.3;
+    }
+
+    .menu-card p{
+      margin:8px 0 0;
+      color:var(--text);
+      font-size:16px;
+      font-weight:750;
+      line-height:1.6;
+    }
+
+    .menu-button{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-height:48px;
+      margin-top:14px;
+      padding:8px;
+      border:2px solid var(--line);
+      border-radius:15px;
+      background:#fff;
+      color:var(--navy);
+      font-size:16px;
+      font-weight:950;
+      text-align:center;
+    }
+
+    .section-card{
+      margin-top:24px;
+      padding:24px;
+      border:2px solid var(--line);
+      border-radius:28px;
+      background:#fff;
       box-shadow:var(--shadow);
     }
 
@@ -219,562 +338,676 @@
       display:flex;
       align-items:baseline;
       gap:12px;
-      margin:0 0 18px;
+      margin:0 0 14px;
       padding-bottom:12px;
-      border-bottom:1px solid var(--line);
+      border-bottom:2px solid #dbe6eb;
       color:var(--navy-deep);
     }
 
-    .section-heading span{
+    .section-number{
       color:var(--orange);
       font-family:Georgia,serif;
-      font-size:15px;
-      font-weight:900;
-      letter-spacing:.12em;
+      font-size:18px;
+      font-weight:950;
+      letter-spacing:.1em;
     }
 
     .section-heading strong{
-      font-size:clamp(28px,4vw,38px);
-      line-height:1.35;
+      font-size:clamp(29px,6vw,43px);
+      font-weight:950;
+      line-height:1.3;
     }
 
     .section-lead{
-      margin:0 0 20px;
-      color:var(--muted);
+      margin:0 0 18px;
+      color:var(--text);
       font-size:18px;
+      font-weight:750;
+      line-height:1.8;
     }
 
     .latest-list{
       display:grid;
-      grid-template-columns:repeat(3,minmax(0,1fr));
-      gap:18px;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:14px;
     }
 
     .report-card{
       overflow:hidden;
-      border:1px solid var(--line);
-      border-radius:15px;
+      border:2px solid #d6e3e9;
+      border-radius:20px;
       background:#fff;
+    }
+
+    .report-card--featured{
+      grid-column:1 / -1;
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
     }
 
     .report-image{
       width:100%;
-      aspect-ratio:16/10;
+      height:220px;
       object-fit:cover;
-      background:#ebe6de;
+      background:#edf1f3;
     }
 
-    .report-body{
-      padding:16px;
+    .report-card--featured .report-image{
+      height:100%;
+      min-height:280px;
     }
+
+    .report-body{padding:17px}
 
     .report-date{
-      margin:0 0 6px;
+      margin:0;
       color:var(--orange);
       font-size:16px;
-      font-weight:900;
+      font-weight:950;
     }
 
     .report-title{
-      margin:0 0 8px;
+      margin:5px 0 8px;
       color:var(--navy-deep);
-      font-size:22px;
-      line-height:1.5;
+      font-size:23px;
+      font-weight:950;
+      line-height:1.45;
     }
+
+    .report-card--featured .report-title{font-size:28px}
 
     .report-summary{
       display:-webkit-box;
       margin:0;
       overflow:hidden;
-      color:var(--muted);
+      color:var(--text);
       font-size:17px;
-      line-height:1.9;
+      font-weight:650;
+      line-height:1.75;
       white-space:pre-line;
       -webkit-box-orient:vertical;
-      -webkit-line-clamp:4;
+      -webkit-line-clamp:5;
     }
 
     .report-link{
       display:block;
       margin-top:14px;
-      padding:13px 10px;
-      border-radius:9px;
+      padding:12px;
+      border-radius:13px;
       background:var(--navy);
       color:#fff;
       font-size:17px;
-      font-weight:900;
+      font-weight:950;
       text-align:center;
-      text-decoration:none;
     }
 
     .loading-message,
     .error-message{
       margin:0;
-      color:var(--muted);
-      font-size:17px;
+      color:var(--text);
+      font-size:18px;
+      font-weight:750;
     }
 
-    .error-message{
-      color:#9c382c;
-    }
+    .error-message{color:#9b372e}
 
     .more-link{
       display:block;
       width:max-content;
-      margin:22px auto 0;
+      margin:20px auto 0;
       padding:12px 22px;
-      border:1px solid var(--navy);
+      border:2px solid var(--navy);
       border-radius:999px;
       color:var(--navy);
       font-size:17px;
-      font-weight:900;
-      text-decoration:none;
+      font-weight:950;
     }
 
-    .text-columns{
+    .photo-grid{
+      display:grid;
+      grid-template-columns:1.15fr .85fr;
+      gap:12px;
+    }
+
+    .photo-grid-main{
+      position:relative;
+      overflow:hidden;
+      min-height:350px;
+      border-radius:18px;
+      background:var(--navy);
+    }
+
+    .photo-grid-main img{
+      width:100%;
+      height:100%;
+      min-height:350px;
+      object-fit:cover;
+    }
+
+    .photo-grid-caption{
+      position:absolute;
+      right:14px;
+      bottom:14px;
+      left:14px;
+      padding:11px;
+      border-radius:11px;
+      background:rgba(20,45,64,.88);
+      color:#fff;
+      font-size:18px;
+      font-weight:950;
+    }
+
+    .photo-grid-side{
+      display:grid;
+      grid-template-rows:1fr 1fr;
+      gap:12px;
+    }
+
+    .photo-grid-side img{
+      width:100%;
+      height:100%;
+      min-height:169px;
+      object-fit:cover;
+      border-radius:18px;
+    }
+
+    .two-columns{
       display:grid;
       grid-template-columns:1fr 1fr;
-      gap:30px;
+      gap:28px;
     }
 
-    .text-block h3{
-      margin:0 0 10px;
+    .two-columns h3{
+      margin:0 0 9px;
       color:var(--navy);
-      font-size:24px;
-      line-height:1.5;
+      font-size:25px;
+      font-weight:950;
+      line-height:1.4;
     }
 
-    .text-block p{
-      margin:0 0 16px;
+    .two-columns p{
+      margin:0 0 15px;
+      color:var(--text);
+      font-size:18px;
+      font-weight:650;
+      line-height:1.85;
       white-space:pre-line;
     }
 
     .person-name{
-      color:var(--navy-deep);
-      font-size:26px;
-      font-weight:900;
+      color:var(--navy-deep)!important;
+      font-size:27px!important;
+      font-weight:950!important;
     }
 
-    .profile-note{
+    .note{
       margin:18px 0 0;
       padding:14px 16px;
-      border-left:4px solid var(--orange);
-      background:#f4f0e9;
-      color:var(--muted);
+      border-left:5px solid var(--orange);
+      background:var(--cream);
+      color:var(--text);
       font-size:17px;
+      font-weight:700;
     }
 
     .policy-list{
       display:grid;
-      grid-template-columns:repeat(2,minmax(0,1fr));
-      gap:12px;
+      grid-template-columns:repeat(2,1fr);
+      gap:11px;
       margin:0;
       padding:0;
       list-style:none;
     }
 
     .policy-list li{
-      position:relative;
-      padding:15px 16px 15px 40px;
-      border:1px solid var(--line);
-      border-radius:12px;
+      padding:14px 15px;
+      border:2px solid #d7e2e8;
+      border-radius:15px;
       background:#fff;
+      color:var(--text);
       font-size:18px;
-      font-weight:800;
+      font-weight:850;
+      line-height:1.5;
     }
 
     .policy-list li::before{
-      position:absolute;
-      left:16px;
-      top:15px;
+      margin-right:8px;
       color:var(--orange);
-      content:'●';
-      font-size:13px;
+      content:"●";
     }
 
     .consultation{
       border-color:var(--navy);
       background:var(--navy);
-      color:#fff;
     }
 
     .consultation .section-heading{
-      border-color:#ffffff44;
+      border-color:#ffffff55;
       color:#fff;
     }
 
-    .consultation .section-heading span{
-      color:#f2b06d;
-    }
+    .consultation .section-number{color:#f2bd80}
 
-    .consultation .section-lead{
-      color:#eef2f5;
-    }
+    .consultation .section-lead{color:#fff}
 
     .consultation-button{
-      display:inline-block;
-      padding:14px 23px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:58px;
+      padding:12px 22px;
       border-radius:999px;
       background:#fff;
       color:var(--navy);
-      font-size:17px;
-      font-weight:900;
-      text-decoration:none;
-    }
-
-    .gallery{
-      display:flex;
-      gap:14px;
-      overflow-x:auto;
-      padding:3px 2px 12px;
-      scroll-snap-type:x mandatory;
-      -webkit-overflow-scrolling:touch;
-    }
-
-    .gallery img{
-      width:230px;
-      height:230px;
-      flex:0 0 230px;
-      object-fit:cover;
-      border-radius:12px;
-      scroll-snap-align:start;
+      font-size:18px;
+      font-weight:950;
     }
 
     .link-grid{
       display:grid;
-      grid-template-columns:repeat(2,minmax(0,1fr));
-      gap:12px;
+      grid-template-columns:repeat(2,1fr);
+      gap:11px;
     }
 
     .link-card{
-      display:block;
-      padding:16px;
-      border:1px solid var(--line);
-      border-radius:12px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-height:58px;
+      padding:12px;
+      border:2px solid #d7e2e8;
+      border-radius:15px;
       background:#fff;
       color:var(--navy);
       font-size:17px;
-      font-weight:900;
+      font-weight:950;
       text-align:center;
-      text-decoration:none;
     }
 
     .contact-text{
-      margin:22px 0 0;
-      padding-top:18px;
-      border-top:1px solid var(--line);
-      color:var(--muted);
+      margin:18px 0 0;
+      padding-top:16px;
+      border-top:2px solid #dbe6eb;
+      color:var(--text);
       font-size:17px;
+      font-weight:650;
+      line-height:1.8;
       overflow-wrap:anywhere;
     }
 
     footer{
-      padding:0 20px 34px;
+      padding:20px 0 0;
       color:var(--muted);
       font-size:14px;
+      font-weight:700;
       text-align:center;
     }
 
-    @media(max-width:720px){
-      body{
-        font-size:17px;
-      }
+    .bottom-nav{
+      position:fixed;
+      right:0;
+      bottom:0;
+      left:0;
+      z-index:100;
+      display:grid;
+      grid-template-columns:repeat(5,1fr);
+      border-top:1px solid var(--line);
+      background:rgba(255,255,255,.98);
+      box-shadow:0 -10px 26px rgba(20,45,64,.14);
+      backdrop-filter:blur(12px);
+    }
 
-      .header-inner{
-        width:min(100% - 22px,1040px);
-      }
+    .bottom-nav a{
+      padding:8px 3px 7px;
+      color:var(--navy);
+      font-size:12px;
+      font-weight:950;
+      text-align:center;
+    }
 
-      .site-name{
-        font-size:22px;
+    .bottom-nav a span{
+      display:block;
+      font-size:22px;
+      line-height:1.1;
+    }
+
+    .bottom-nav a.active{
+      background:var(--blue-soft);
+      color:var(--navy-deep);
+    }
+
+    @media(max-width:820px){
+      .menu-grid{grid-template-columns:repeat(2,1fr)}
+    }
+
+    @media(max-width:680px){
+      .wrap{width:min(100% - 16px,1000px)}
+
+      .header{padding:10px 0}
+
+      .brand-name{font-size:25px}
+
+      .brand-subtitle{
+        font-size:8px;
+        letter-spacing:.1em;
       }
 
       .official-link{
-        font-size:13px;
         padding:8px 10px;
+        font-size:13px;
       }
 
-      main{
-        width:min(100% - 20px,1040px);
-        padding-top:14px;
+      .header-nav{margin-top:9px}
+
+      .header-nav a{
+        padding:7px 10px;
+        font-size:14px;
       }
 
-      .hero{
-        display:flex;
-        flex-direction:column-reverse;
-        border-radius:17px;
+      main{padding-top:10px}
+
+      .hero{border-radius:23px}
+
+      .hero-copy{padding:21px 18px 18px}
+
+      .hero h1{font-size:48px}
+
+      .hero h1 span{font-size:32px}
+
+      .hero-copy > p:not(.kicker){font-size:17px}
+
+      .hero-photos{
+        min-height:285px;
+        height:285px;
+        padding:9px;
+        gap:8px;
       }
 
-      .hero-photo,
-      .hero-photo img{
-        min-height:280px;
-        height:280px;
+      .hero-photo:first-child img{min-height:267px}
+
+      .hero-photo img{min-height:129px}
+
+      .hero-photo-label{
+        right:8px;
+        bottom:8px;
+        left:8px;
+        padding:7px 8px;
+        font-size:14px;
       }
 
-      .hero-copy{
-        padding:28px 22px 30px;
-      }
-
-      .hero h1{
-        font-size:40px;
-      }
-
-      .slogan{
-        font-size:26px;
-      }
-
-      .hero-text{
-        font-size:17px;
-      }
-
-      .latest-list{
+      .main-actions{
         grid-template-columns:1fr;
+        padding:14px 18px 20px;
       }
 
-      .text-columns{
+      .main-actions a{
+        min-height:64px;
+        font-size:19px;
+      }
+
+      .menu-grid{
+        grid-template-columns:1fr;
+        gap:11px;
+      }
+
+      .menu-card{
+        min-height:0;
+        padding:17px;
+        border-radius:21px;
+      }
+
+      .menu-card h2{font-size:24px}
+
+      .section-card{
+        margin-top:20px;
+        padding:18px;
+        border-radius:22px;
+      }
+
+      .section-heading strong{font-size:30px}
+
+      .section-lead{font-size:17px}
+
+      .latest-list{grid-template-columns:1fr}
+
+      .report-card--featured{
+        display:block;
+        grid-column:auto;
+      }
+
+      .report-card--featured .report-image{
+        height:235px;
+        min-height:0;
+      }
+
+      .report-card--featured .report-title{font-size:25px}
+
+      .photo-grid{grid-template-columns:1fr}
+
+      .photo-grid-main,
+      .photo-grid-main img{min-height:275px}
+
+      .photo-grid-side{
+        grid-template-columns:1fr 1fr;
+        grid-template-rows:1fr;
+        gap:8px;
+      }
+
+      .photo-grid-side img{
+        min-height:145px;
+        border-radius:14px;
+      }
+
+      .two-columns{
         grid-template-columns:1fr;
         gap:4px;
       }
 
-      .policy-list{
-        grid-template-columns:1fr;
-      }
+      .policy-list,
+      .link-grid{grid-template-columns:1fr}
 
-      .section{
-        margin-top:22px;
-        padding:22px 18px;
-      }
+      .bottom-nav a{font-size:11px}
 
-      .section-heading strong{
-        font-size:29px;
-      }
-
-      .section-lead{
-        font-size:17px;
-      }
-
-      .link-grid{
-        grid-template-columns:1fr;
-      }
-
-      .gallery img{
-        width:210px;
-        height:210px;
-        flex-basis:210px;
-      }
+      .bottom-nav a span{font-size:20px}
     }
   </style>
 </head>
 
 <body>
-  <header class="site-header">
-    <div class="header-inner">
+  <div class="wrap">
+    <header class="header">
       <div class="header-top">
-        <a class="site-name" href="index.html">
-          柿沼貴志
-          <small>TAKASHI KAKINUMA OFFICIAL INFORMATION</small>
+        <a class="brand" href="index.html">
+          <span class="brand-name">柿沼貴志</span>
+          <span class="brand-subtitle">TAKASHI KAKINUMA OFFICIAL INFORMATION</span>
         </a>
 
-        <a class="official-link" href="https://www.kakinuma-takashi.com/index.html" target="_blank" rel="noopener">
-          公式サイト
-        </a>
+        <a class="official-link" href="https://www.kakinuma-takashi.com/index.html" target="_blank" rel="noopener">公式サイト</a>
       </div>
 
-      <nav class="nav" aria-label="ページ内メニュー">
+      <nav class="header-nav" aria-label="ページメニュー">
         <a href="index.html">HOME</a>
         <a href="archive.html">活動報告</a>
         <a href="#profile">プロフィール</a>
-        <a href="#policy">私の志・政策</a>
-        <a href="#contact">お問い合わせ</a>
+        <a href="#policy">政策</a>
+        <a href="#contact">相談</a>
       </nav>
-    </div>
-  </header>
+    </header>
 
-  <main>
-    <section class="hero">
-      <div class="hero-copy">
-        <p class="eyebrow">埼玉県議会議員</p>
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="kicker">埼玉県議会議員</p>
 
-        <h1>柿沼貴志</h1>
-
-        <p class="slogan">
-          郷土の声を<br>
-          県政に!!
-        </p>
-
-        <p class="hero-text">
-          行田市の声を県政に届け、県と市をつなぐ架け橋として活動しています。
-          日々の活動、政策、地域への思いを分かりやすくお伝えします。
-        </p>
-      </div>
-
-      <div class="hero-photo">
-        <img src="https://ichirohns-jpg.github.io/kakinuma-takashi-dx/profile_photo_3.jpg" alt="柿沼貴志議員">
-      </div>
-    </section>
-
-    <section class="section" id="reports">
-      <h2 class="section-heading">
-        <span>01</span>
-        <strong>活動報告</strong>
-      </h2>
-
-      <p class="section-lead">
-        柿沼貴志議員の活動風景や、地域での取り組みをお知らせします。
-      </p>
-
-      <div id="latestReports" class="latest-list" aria-live="polite">
-        <p class="loading-message">活動報告を読み込んでいます。</p>
-      </div>
-
-      <a class="more-link" href="archive.html">活動報告をもっと読む</a>
-    </section>
-
-    <section class="section" id="profile">
-      <h2 class="section-heading">
-        <span>02</span>
-        <strong>プロフィール</strong>
-      </h2>
-
-      <div class="text-columns">
-        <div class="text-block">
-          <h3>柿沼貴志について</h3>
-
-          <p class="person-name">柿沼貴志（かきぬまたかし）</p>
+          <h1>柿沼貴志<span>活動報告DX</span></h1>
 
           <p>
-            埼玉県行田市で生まれ育ち、地域の声を聞きながら活動しています。
-          </p>
-
-          <p>
-            幼少期から野球・空手に取り組み、
-            高校時代は空手部主将として県の強化選手に選ばれ、
-            団体組手で関東大会に出場しました。
+            郷土の声を県政に。<br>
+            行田市の声を聞き、県と市をつなぐ架け橋として活動しています。
           </p>
         </div>
 
-        <div class="text-block">
-          <h3>これまでの歩み</h3>
+        <div class="hero-photos" aria-label="柿沼貴志の活動写真">
+          <div class="hero-photo hero-photo-main">
+            <img src="https://ichirohns-jpg.github.io/kakinuma-takashi-dx/report_kaiha_2.jpg" alt="柿沼貴志の活動の様子">
+            <div class="hero-photo-label">現場の声を聞き、県政へ届ける</div>
+          </div>
 
-          <p>
-            卒業後は建築石材業で修行し、
-            平成15年から地元に戻って家業に携わっています。
-          </p>
+          <div class="hero-photo">
+            <img src="https://ichirohns-jpg.github.io/kakinuma-takashi-dx/profile_photo_3.jpg" alt="柿沼貴志" loading="lazy">
+          </div>
 
-          <p>
-            平成23年に行田市議会議員に初当選。
-            平成31年に埼玉県議会議員に初当選し、
-            現在も行田市の発展と埼玉県の発展をつなぐ活動を続けています。
-          </p>
+          <div class="hero-photo">
+            <img src="https://ichirohns-jpg.github.io/kakinuma-takashi-dx/resolution_photo_1.jpg" alt="活動写真" loading="lazy">
+          </div>
         </div>
-      </div>
 
-      <p class="profile-note">
-        県と市のパイプ役・架け橋として、
-        教育、子ども、道路、防災、福祉、地域活性化など、
-        暮らしに関わる課題に取り組んでいます。
-      </p>
-    </section>
+        <div class="main-actions">
+          <a class="primary" href="#reports">最新の活動報告を見る</a>
+          <a class="secondary" href="#profile">プロフィールを見る</a>
+        </div>
+      </section>
 
-    <section class="section" id="policy">
-      <h2 class="section-heading">
-        <span>03</span>
-        <strong>私の志・政策</strong>
-      </h2>
-
-      <p class="section-lead">
-        行田から教育を変える。心を育てる。
-        若い力と行動力で、行田市を活性化し、埼玉県につなげます。
-      </p>
-
-      <ul class="policy-list">
-        <li>教育改革・学校教育環境の整備</li>
-        <li>学校・部活動の地域展開</li>
-        <li>子どもたちの未来を守る取り組み</li>
-        <li>安全な道路・通学路・インフラ整備</li>
-        <li>防災・福祉避難所・危機管理</li>
-        <li>地域河川の改修・調節池整備</li>
-        <li>観光振興・地域活性化</li>
-        <li>県と市をつなぐパイプ役</li>
-      </ul>
-    </section>
-
-    <section class="section consultation" id="contact">
-      <h2 class="section-heading">
-        <span>04</span>
-        <strong>皆様の声をお聞かせください</strong>
-      </h2>
-
-      <p class="section-lead">
-        政治に関するご意見・ご要望、
-        行田市や埼玉県の地域課題、
-        教育・子ども・学校、
-        防災・安全・道路・河川など、
-        暮らしに関するご相談をお寄せください。
-      </p>
-
-      <a class="consultation-button" href="https://www.kakinuma-takashi.com/contact/index.php" target="_blank" rel="noopener">
-        お問い合わせフォームへ
-      </a>
-    </section>
-
-    <section class="section">
-      <h2 class="section-heading">
-        <span>05</span>
-        <strong>活動写真</strong>
-      </h2>
-
-      <p class="section-lead">
-        写真は左右にスワイプしてご覧いただけます。
-      </p>
-
-      <div class="gallery">
-        <img src="https://ichirohns-jpg.github.io/kakinuma-takashi-dx/report_kaiha_2.jpg" alt="活動写真" loading="lazy">
-        <img src="https://ichirohns-jpg.github.io/kakinuma-takashi-dx/resolution_photo_1.jpg" alt="活動写真" loading="lazy">
-        <img src="https://ichirohns-jpg.github.io/kakinuma-takashi-dx/profile_photo_5.jpg" alt="活動写真" loading="lazy">
-        <img src="https://ichirohns-jpg.github.io/kakinuma-takashi-dx/profile_photo_2.jpg" alt="活動写真" loading="lazy">
-        <img src="https://ichirohns-jpg.github.io/kakinuma-takashi-dx/report_kaiha_1.jpg" alt="活動写真" loading="lazy">
-      </div>
-    </section>
-
-    <section class="section">
-      <h2 class="section-heading">
-        <span>06</span>
-        <strong>公式リンク</strong>
-      </h2>
-
-      <div class="link-grid">
-        <a class="link-card" href="https://www.kakinuma-takashi.com/index.html" target="_blank" rel="noopener">
-          公式ホームページ
+      <section class="menu-grid" aria-label="主要メニュー">
+        <a class="menu-card" href="archive.html">
+          <div>
+            <div class="menu-icon">📸</div>
+            <h2>活動報告</h2>
+            <p>地域での活動を、写真と文章でお知らせします。</p>
+          </div>
+          <div class="menu-button">活動を見る</div>
         </a>
 
-        <a class="link-card" href="https://www.kakinuma-takashi.com/blog/" target="_blank" rel="noopener">
-          ブログ
+        <a class="menu-card" href="#profile">
+          <div>
+            <div class="menu-icon">👤</div>
+            <h2>プロフィール</h2>
+            <p>柿沼貴志の歩みと、地域への思いをご紹介します。</p>
+          </div>
+          <div class="menu-button">人物を見る</div>
         </a>
 
-        <a class="link-card" href="https://www.facebook.com/takashi.kakinuma.73" target="_blank" rel="noopener">
-          Facebook
+        <a class="menu-card" href="#policy">
+          <div>
+            <div class="menu-icon">🌱</div>
+            <h2>私の志・政策</h2>
+            <p>教育、防災、道路、福祉、地域活性化への取り組みです。</p>
+          </div>
+          <div class="menu-button">政策を見る</div>
         </a>
 
-        <a class="link-card" href="https://twitter.com/KakinumaTakashi" target="_blank" rel="noopener">
-          X（旧Twitter）
+        <a class="menu-card" href="#contact">
+          <div>
+            <div class="menu-icon">💬</div>
+            <h2>皆様の声</h2>
+            <p>ご意見・ご要望や、地域のご相談をお寄せください。</p>
+          </div>
+          <div class="menu-button">相談する</div>
         </a>
+      </section>
 
-        <a class="link-card" href="https://www.youtube.com/@takashi5011" target="_blank" rel="noopener">
-          YouTube
-        </a>
-      </div>
+      <section class="section-card" id="reports">
+        <h2 class="section-heading"><span class="section-number">01</span><strong>最新の活動報告</strong></h2>
+        <p class="section-lead">地域の現場での活動を、写真と文章でお伝えします。</p>
 
-      <p class="contact-text">
-        埼玉県議会議員 柿沼貴志 事務所<br>
-        〒361-0077 埼玉県行田市忍2-17-12<br>
-        電話：048-554-1377<br>
-        FAX：048-577-3154<br>
-        メール：takashi-kakinuma@mbr.nifty.com
-      </p>
-    </section>
-  </main>
+        <div id="latestReports" class="latest-list" aria-live="polite">
+          <p class="loading-message">活動報告を読み込んでいます。</p>
+        </div>
 
-  <footer>柿沼貴志 活動報告DX</footer>
+        <a class="more-link" href="archive.html">活動報告をすべて見る</a>
+      </section>
+
+      <section class="section-card">
+        <h2 class="section-heading"><span class="section-number">02</span><strong>写真で見る活動</strong></h2>
+        <p class="section-lead">活動の現場を、写真で身近に感じてください。</p>
+
+        <div class="photo-grid">
+          <div class="photo-grid-main">
+            <img src="https://ichirohns-jpg.github.io/kakinuma-takashi-dx/report_kaiha_1.jpg" alt="地域活動の様子" loading="lazy">
+            <div class="photo-grid-caption">行田の未来のために、今日も現場へ</div>
+          </div>
+
+          <div class="photo-grid-side">
+            <img src="https://ichirohns-jpg.github.io/kakinuma-takashi-dx/profile_photo_2.jpg" alt="活動写真" loading="lazy">
+            <img src="https://ichirohns-jpg.github.io/kakinuma-takashi-dx/profile_photo_5.jpg" alt="活動写真" loading="lazy">
+          </div>
+        </div>
+      </section>
+
+      <section class="section-card" id="profile">
+        <h2 class="section-heading"><span class="section-number">03</span><strong>プロフィール</strong></h2>
+
+        <div class="two-columns">
+          <div>
+            <h3>柿沼貴志について</h3>
+            <p class="person-name">柿沼貴志（かきぬまたかし）</p>
+            <p>埼玉県行田市で生まれ育ち、地域の声を聞きながら活動しています。</p>
+            <p>幼少期から野球・空手に取り組み、高校時代は空手部主将として県の強化選手に選ばれ、団体組手で関東大会に出場しました。</p>
+          </div>
+
+          <div>
+            <h3>これまでの歩み</h3>
+            <p>卒業後は建築石材業で修行し、平成15年から地元に戻って家業に携わっています。</p>
+            <p>平成23年に行田市議会議員に初当選。平成31年に埼玉県議会議員に初当選し、現在も行田市と埼玉県をつなぐ活動を続けています。</p>
+          </div>
+        </div>
+
+        <p class="note">県と市のパイプ役・架け橋として、教育、子ども、道路、防災、福祉、地域活性化など、暮らしに関わる課題に取り組んでいます。</p>
+      </section>
+
+      <section class="section-card" id="policy">
+        <h2 class="section-heading"><span class="section-number">04</span><strong>私の志・政策</strong></h2>
+        <p class="section-lead">行田から教育を変える。心を育てる。若い力と行動力で、行田市を活性化し、埼玉県につなげます。</p>
+
+        <ul class="policy-list">
+          <li>教育改革・学校教育環境の整備</li>
+          <li>学校・部活動の地域展開</li>
+          <li>子どもたちの未来を守る取り組み</li>
+          <li>安全な道路・通学路・インフラ整備</li>
+          <li>防災・福祉避難所・危機管理</li>
+          <li>地域河川の改修・調節池整備</li>
+          <li>観光振興・地域活性化</li>
+          <li>県と市をつなぐパイプ役</li>
+        </ul>
+      </section>
+
+      <section class="section-card consultation" id="contact">
+        <h2 class="section-heading"><span class="section-number">05</span><strong>皆様の声をお聞かせください</strong></h2>
+        <p class="section-lead">政治に関するご意見・ご要望、行田市や埼玉県の地域課題、教育・子ども・学校、防災・安全・道路・河川など、暮らしに関するご相談をお寄せください。</p>
+        <a class="consultation-button" href="https://www.kakinuma-takashi.com/contact/index.php" target="_blank" rel="noopener">お問い合わせフォームへ</a>
+      </section>
+
+      <section class="section-card">
+        <h2 class="section-heading"><span class="section-number">06</span><strong>公式リンク</strong></h2>
+
+        <div class="link-grid">
+          <a class="link-card" href="https://www.kakinuma-takashi.com/index.html" target="_blank" rel="noopener">公式ホームページ</a>
+          <a class="link-card" href="https://www.kakinuma-takashi.com/blog/" target="_blank" rel="noopener">ブログ</a>
+          <a class="link-card" href="https://www.facebook.com/takashi.kakinuma.73" target="_blank" rel="noopener">Facebook</a>
+          <a class="link-card" href="https://twitter.com/KakinumaTakashi" target="_blank" rel="noopener">X（旧Twitter）</a>
+          <a class="link-card" href="https://www.youtube.com/@takashi5011" target="_blank" rel="noopener">YouTube</a>
+        </div>
+
+        <p class="contact-text">
+          埼玉県議会議員 柿沼貴志 事務所<br>
+          〒361-0077 埼玉県行田市忍2-17-12<br>
+          電話：048-554-1377<br>
+          FAX：048-577-3154<br>
+          メール：takashi-kakinuma@mbr.nifty.com
+        </p>
+      </section>
+    </main>
+
+    <footer>柿沼貴志 活動報告DX</footer>
+  </div>
+
+  <nav class="bottom-nav" aria-label="固定メニュー">
+    <a class="active" href="index.html"><span>🏠</span>トップ</a>
+    <a href="archive.html"><span>📸</span>活動</a>
+    <a href="#profile"><span>👤</span>人物</a>
+    <a href="#policy"><span>🌱</span>政策</a>
+    <a href="#contact"><span>💬</span>相談</a>
+  </nav>
 
   <script>
     (function(){
@@ -785,14 +1018,8 @@
       var list=document.getElementById('latestReports');
 
       function escapeHtml(value){
-        return String(value||'').replace(/[&<>\"']/g,function(ch){
-          return {
-            '&':'&amp;',
-            '<':'&lt;',
-            '>':'&gt;',
-            '\"':'&quot;',
-            "'":'&#39;'
-          }[ch];
+        return String(value||'').replace(/[&<>"']/g,function(ch){
+          return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch];
         });
       }
 
@@ -816,11 +1043,9 @@
         var paragraphs=text.split(/\n\s*\n/).filter(Boolean);
         var result=paragraphs.slice(0,2).join('\n\n');
 
-        if(result.length>150){
-          result=result.slice(0,150)+'…';
-        }
-
-        return result;
+        return result.length>180
+          ? result.slice(0,180)+'…'
+          : result;
       }
 
       function imageValue(value){
@@ -837,49 +1062,27 @@
         return String(value||'').trim();
       }
 
-      function decodeDriveId(value){
-        try{
-          return decodeURIComponent(value);
-        }catch(error){
-          return value;
-        }
-      }
-
       function driveFileId(value){
         var url=imageValue(value);
-        var match=url.match(
-          /drive\.google\.com\/file\/d\/([^/?#]+)/i
-        );
+        var match=url.match(/drive\.google\.com\/file\/d\/([^/?#]+)/i);
 
-        if(match){
-          return decodeDriveId(match[1]);
-        }
+        if(match){return match[1]}
 
         match=url.match(
           /(?:drive\.google\.com|drive\.usercontent\.google\.com)\/[^?#]*[?&]id=([^&#]+)/i
         );
 
-        if(match){
-          return decodeDriveId(match[1]);
-        }
+        if(match){return match[1]}
 
-        match=url.match(
-          /lh3\.googleusercontent\.com\/d\/([^=/?#]+)/i
-        );
+        match=url.match(/lh3\.googleusercontent\.com\/d\/([^=/?#]+)/i);
 
-        if(match){
-          return decodeDriveId(match[1]);
-        }
-
-        return '';
+        return match?match[1]:'';
       }
 
       function safeUrl(value){
         var url=imageValue(value);
 
-        if(!url){
-          return '';
-        }
+        if(!url){return ''}
 
         var driveId=driveFileId(url);
 
@@ -889,15 +1092,11 @@
             '&sz=w1600';
         }
 
-        if(/^data:image\//i.test(url)){
-          return url;
-        }
-
-        if(/^https?:\/\//i.test(url)){
-          return url;
-        }
-
-        if(/^(?:\.{0,2}\/|\/)[^\s]+/.test(url)){
+        if(
+          /^data:image\//i.test(url)||
+          /^https?:\/\//i.test(url)||
+          /^(?:\.{0,2}\/|\/)[^\s]+/.test(url)
+        ){
           return url;
         }
 
@@ -907,9 +1106,7 @@
       function formatDate(value){
         var text=String(value||'').trim();
 
-        if(!text){
-          return '';
-        }
+        if(!text){return ''}
 
         var japanese=text.match(
           /^(\d{4})年(\d{1,2})月(\d{1,2})日/
@@ -933,9 +1130,7 @@
 
         var date=new Date(text);
 
-        if(isNaN(date.getTime())){
-          return text;
-        }
+        if(isNaN(date.getTime())){return text}
 
         try{
           var parts=new Intl.DateTimeFormat(
@@ -951,9 +1146,11 @@
           var values={};
 
           parts.forEach(function(part){
-            if(part.type==='year'||
+            if(
+              part.type==='year'||
               part.type==='month'||
-              part.type==='day'){
+              part.type==='day'
+            ){
               values[part.type]=part.value;
             }
           });
@@ -963,18 +1160,14 @@
               Number(values.month)+'月'+
               Number(values.day)+'日';
           }
-        }catch(error){
-          return date.getFullYear()+'年'+
-            (date.getMonth()+1)+'月'+
-            date.getDate()+'日';
-        }
+        }catch(error){}
 
         return date.getFullYear()+'年'+
           (date.getMonth()+1)+'月'+
           date.getDate()+'日';
       }
 
-      function articleCard(article){
+      function articleCard(article,index){
         var articleId=encodeURIComponent(
           article.articleId||
           article.id||
@@ -1003,11 +1196,16 @@
           ? safeUrl(images[0])
           : safeUrl(article.ogpImage||'');
 
-        var title=article.title||
+        var title=
+          article.title||
           article.articleTitle||
           '活動報告';
 
-        return '<article class="report-card">'+
+        var cardClass=index===0
+          ? 'report-card report-card--featured'
+          : 'report-card';
+
+        return '<article class="'+cardClass+'">'+
           (
             image
               ? '<img class="report-image"'+
