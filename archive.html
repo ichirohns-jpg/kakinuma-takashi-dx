@@ -3,43 +3,53 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-
-  <meta name="theme-color" content="#263b52">
-  <meta name="description" content="柿沼貴志議員の活動報告一覧">
+  <meta name="theme-color" content="#1f4058">
+  <meta name="description" content="柿沼貴志議員の活動報告一覧です。">
   <meta property="og:title" content="活動報告一覧｜柿沼貴志">
   <meta property="og:description" content="柿沼貴志議員の活動報告を新しい順にご覧いただけます。">
   <meta property="og:image" content="https://ichirohns-jpg.github.io/kakinuma-takashi-dx/profile_photo_3.jpg">
-
   <link rel="manifest" href="manifest.json">
-
   <title>活動報告一覧｜柿沼貴志</title>
 
   <style>
     :root{
-      --navy:#263b52;
-      --navy-deep:#1b2b3c;
-      --orange:#d8792b;
-      --cream:#f5f1ea;
-      --paper:#fffdf9;
-      --text:#1f2d3a;
-      --muted:#4d5d6c;
-      --line:#ddd7ce;
-      --shadow:0 8px 26px rgba(35,48,61,.10);
+      --navy:#1f4058;
+      --navy-deep:#142d40;
+      --blue-soft:#e8f5fb;
+      --green-soft:#edf8f0;
+      --cream:#fffaf0;
+      --paper:#fff;
+      --orange:#c97832;
+      --text:#182530;
+      --muted:#52616b;
+      --line:#b8ccd7;
+      --shadow:0 12px 28px rgba(20,45,64,.13);
     }
 
-    *{
-      box-sizing:border-box;
-    }
+    *{box-sizing:border-box}
 
     body{
       margin:0;
-      background:var(--cream);
+      padding-bottom:84px;
+      background:
+        radial-gradient(circle at 0 0,rgba(218,240,248,.7),transparent 28%),
+        linear-gradient(180deg,#f9fdff 0%,#fff 60%,#f2faf5 100%);
       color:var(--text);
       font-family:-apple-system,BlinkMacSystemFont,
       "Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
-      font-size:20px;
-      line-height:2.05;
-      overflow-x:hidden;
+      font-size:19px;
+      line-height:1.85;
+      -webkit-text-size-adjust:100%;
+    }
+
+    *:focus-visible{
+      outline:4px solid #efb45b;
+      outline-offset:3px;
+    }
+
+    a{
+      color:inherit;
+      text-decoration:none;
     }
 
     img{
@@ -47,27 +57,25 @@
       max-width:100%;
     }
 
-    a{
-      color:inherit;
-      -webkit-tap-highlight-color:transparent;
-    }
-
     .hidden{
       display:none!important;
+    }
+
+    .wrap{
+      width:min(100% - 24px,940px);
+      margin:auto;
     }
 
     .site-header{
       position:sticky;
       top:0;
-      z-index:10;
-      background:rgba(255,253,249,.96);
+      z-index:50;
+      background:rgba(249,253,255,.97);
       border-bottom:1px solid var(--line);
-      backdrop-filter:blur(10px);
+      backdrop-filter:blur(12px);
     }
 
     .header-inner{
-      width:min(100% - 28px,900px);
-      margin:auto;
       padding:12px 0 10px;
     }
 
@@ -81,16 +89,15 @@
     .site-name{
       display:block;
       color:var(--navy-deep);
-      font-size:25px;
-      font-weight:900;
-      line-height:1.25;
-      text-decoration:none;
-      letter-spacing:.04em;
+      font-size:clamp(24px,5vw,34px);
+      font-weight:950;
+      letter-spacing:.08em;
+      line-height:1.15;
     }
 
     .site-name small{
       display:block;
-      margin-top:3px;
+      margin-top:4px;
       color:var(--muted);
       font-family:Georgia,serif;
       font-size:10px;
@@ -98,25 +105,52 @@
     }
 
     .top-link{
-      padding:12px 16px;
-      border:1px solid var(--navy);
+      flex:0 0 auto;
+      padding:9px 14px;
+      border:2px solid var(--navy);
       border-radius:999px;
       color:var(--navy);
-      font-size:16px;
-      font-weight:900;
-      text-decoration:none;
+      font-size:15px;
+      font-weight:950;
       white-space:nowrap;
     }
 
+    .header-nav{
+      display:flex;
+      gap:7px;
+      margin-top:10px;
+      overflow-x:auto;
+      scrollbar-width:none;
+    }
+
+    .header-nav::-webkit-scrollbar{
+      display:none;
+    }
+
+    .header-nav a{
+      flex:0 0 auto;
+      padding:7px 12px;
+      border-radius:12px;
+      border:1px solid var(--line);
+      background:#fff;
+      color:var(--navy);
+      font-size:15px;
+      font-weight:950;
+    }
+
+    .header-nav a:first-child{
+      background:var(--navy);
+      color:#fff;
+    }
+
     main{
-      width:min(100% - 28px,900px);
-      margin:auto;
-      padding:24px 0 60px;
+      padding:18px 0 42px;
     }
 
     .page-heading{
-      padding:clamp(24px,5vw,46px);
-      border-radius:22px;
+      padding:26px;
+      border:2px solid var(--line);
+      border-radius:28px;
       background:var(--paper);
       box-shadow:var(--shadow);
     }
@@ -125,37 +159,40 @@
       margin:0 0 10px;
       color:var(--orange);
       font-size:17px;
-      font-weight:900;
+      font-weight:950;
       letter-spacing:.08em;
     }
 
     h1{
       margin:0;
       color:var(--navy-deep);
-      font-size:clamp(38px,6vw,58px);
-      line-height:1.4;
+      font-size:clamp(39px,7vw,59px);
+      font-weight:950;
+      line-height:1.35;
     }
 
     .lead{
-      margin:16px 0 0;
-      color:var(--muted);
-      font-size:20px;
+      margin:15px 0 0;
+      color:var(--text);
+      font-size:19px;
+      font-weight:750;
+      line-height:1.8;
     }
 
     .tools{
       display:flex;
       align-items:center;
       gap:12px;
-      margin-top:24px;
+      margin-top:18px;
     }
 
     .search{
       min-width:0;
       flex:1;
       padding:16px 17px;
-      border:1px solid var(--line);
-      border-radius:11px;
-      background:var(--paper);
+      border:2px solid var(--line);
+      border-radius:15px;
+      background:#fff;
       color:var(--text);
       font:inherit;
       font-size:19px;
@@ -164,77 +201,97 @@
 
     .search:focus{
       border-color:var(--navy);
-      box-shadow:0 0 0 3px rgba(38,59,82,.12);
+      box-shadow:0 0 0 3px rgba(31,64,88,.12);
     }
 
     .count{
       color:var(--muted);
       font-size:18px;
+      font-weight:850;
       white-space:nowrap;
     }
 
     .message{
       margin-top:18px;
       padding:26px;
-      border:1px solid var(--line);
-      border-radius:16px;
-      background:var(--paper);
-      color:var(--muted);
+      border:2px solid var(--line);
+      border-radius:20px;
+      background:#fff;
+      color:var(--text);
       font-size:19px;
+      font-weight:750;
       text-align:center;
+      box-shadow:var(--shadow);
     }
 
     .message.error{
-      color:#9c382c;
+      color:#9b372e;
     }
 
     .article-list{
       display:grid;
       grid-template-columns:repeat(2,minmax(0,1fr));
-      gap:20px;
+      gap:15px;
       margin-top:18px;
     }
 
     .article-card{
       overflow:hidden;
-      border:1px solid var(--line);
-      border-radius:17px;
-      background:var(--paper);
+      border:2px solid #d6e3e9;
+      border-radius:21px;
+      background:#fff;
       box-shadow:var(--shadow);
+    }
+
+    .article-card:first-child{
+      grid-column:1 / -1;
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
     }
 
     .article-image{
       width:100%;
-      aspect-ratio:16/10;
+      height:225px;
       object-fit:cover;
-      background:#ebe6de;
+      background:#edf1f3;
+    }
+
+    .article-card:first-child .article-image{
+      height:100%;
+      min-height:280px;
     }
 
     .article-content{
-      padding:20px;
+      padding:18px;
     }
 
     .article-date{
-      margin:0 0 5px;
+      margin:0;
       color:var(--orange);
-      font-size:17px;
-      font-weight:900;
+      font-size:16px;
+      font-weight:950;
     }
 
     .article-title{
-      margin:0 0 10px;
+      margin:5px 0 8px;
       color:var(--navy-deep);
-      font-size:27px;
-      line-height:1.5;
+      font-size:25px;
+      font-weight:950;
+      line-height:1.45;
+    }
+
+    .article-card:first-child .article-title{
+      font-size:29px;
     }
 
     .article-summary{
       display:-webkit-box;
       margin:0;
       overflow:hidden;
-      color:var(--muted);
-      font-size:18px;
-      line-height:2.05;
+      color:var(--text);
+      font-size:17px;
+      font-weight:650;
+      line-height:1.8;
       white-space:pre-line;
       -webkit-box-orient:vertical;
       -webkit-line-clamp:5;
@@ -242,67 +299,108 @@
 
     .read-link{
       display:block;
-      margin-top:16px;
-      padding:15px;
-      border-radius:10px;
+      margin-top:15px;
+      padding:13px;
+      border-radius:14px;
       background:var(--navy);
       color:#fff;
-      font-size:18px;
-      font-weight:900;
+      font-size:17px;
+      font-weight:950;
       text-align:center;
-      text-decoration:none;
     }
 
     .back-link{
       display:block;
       width:max-content;
-      margin:28px auto 0;
-      padding:14px 24px;
-      border:1px solid var(--navy);
+      margin:25px auto 0;
+      padding:13px 23px;
+      border:2px solid var(--navy);
       border-radius:999px;
       color:var(--navy);
-      font-size:18px;
-      font-weight:900;
-      text-decoration:none;
+      font-size:17px;
+      font-weight:950;
     }
 
     footer{
-      padding:0 20px 34px;
+      padding:0 20px 25px;
       color:var(--muted);
-      font-size:15px;
+      font-size:14px;
+      font-weight:700;
       text-align:center;
     }
 
-    @media(max-width:620px){
-      body{
-        font-size:20px;
-      }
+    .bottom-nav{
+      position:fixed;
+      right:0;
+      bottom:0;
+      left:0;
+      z-index:100;
+      display:grid;
+      grid-template-columns:repeat(5,1fr);
+      border-top:1px solid var(--line);
+      background:rgba(255,255,255,.98);
+      box-shadow:0 -10px 26px rgba(20,45,64,.14);
+      backdrop-filter:blur(12px);
+    }
 
-      .header-inner{
-        width:min(100% - 22px,900px);
+    .bottom-nav a{
+      padding:8px 3px 7px;
+      color:var(--navy);
+      font-size:12px;
+      font-weight:950;
+      text-align:center;
+    }
+
+    .bottom-nav a span{
+      display:block;
+      font-size:22px;
+      line-height:1.1;
+    }
+
+    .bottom-nav a.active{
+      background:var(--blue-soft);
+      color:var(--navy-deep);
+    }
+
+    @media(max-width:700px){
+      .wrap{
+        width:min(100% - 16px,940px);
       }
 
       .site-name{
-        font-size:23px;
+        font-size:25px;
+      }
+
+      .site-name small{
+        font-size:8px;
+        letter-spacing:.1em;
       }
 
       .top-link{
-        padding:10px 13px;
-        font-size:15px;
+        padding:8px 10px;
+        font-size:13px;
+      }
+
+      .header-nav a{
+        padding:7px 10px;
+        font-size:14px;
       }
 
       main{
-        width:min(100% - 20px,900px);
-        padding-top:14px;
+        padding-top:10px;
       }
 
       .page-heading{
-        border-radius:17px;
-        padding:26px 20px;
+        padding:22px 18px;
+        border-radius:22px;
       }
 
       h1{
-        font-size:36px;
+        font-size:38px;
+      }
+
+      .lead{
+        font-size:17px;
       }
 
       .tools{
@@ -319,26 +417,30 @@
         grid-template-columns:1fr;
       }
 
+      .article-card:first-child{
+        display:block;
+        grid-column:auto;
+      }
+
+      .article-card:first-child .article-image{
+        height:235px;
+        min-height:0;
+      }
+
       .article-content{
-        padding:20px;
+        padding:18px;
       }
 
-      .lead{
-        font-size:19px;
-      }
-
-      .article-title{
+      .article-card:first-child .article-title{
         font-size:26px;
       }
 
-      .article-summary{
-        font-size:18px;
-        line-height:2.05;
+      .bottom-nav a{
+        font-size:11px;
       }
 
-      .read-link{
-        font-size:18px;
-        padding:15px;
+      .bottom-nav a span{
+        font-size:20px;
       }
     }
   </style>
@@ -346,63 +448,56 @@
 
 <body>
   <header class="site-header">
-    <div class="header-inner">
+    <div class="wrap header-inner">
       <div class="header-top">
         <a class="site-name" href="index.html">
           柿沼貴志
           <small>TAKASHI KAKINUMA OFFICIAL INFORMATION</small>
         </a>
 
-        <a class="top-link" href="index.html">
-          トップへ戻る
-        </a>
+        <a class="top-link" href="index.html">トップへ戻る</a>
       </div>
+
+      <nav class="header-nav" aria-label="ページメニュー">
+        <a href="index.html">HOME</a>
+        <a href="archive.html">活動報告</a>
+        <a href="index.html#profile">プロフィール</a>
+        <a href="index.html#policy">政策</a>
+        <a href="index.html#contact">相談</a>
+      </nav>
     </div>
   </header>
 
-  <main>
+  <main class="wrap">
     <section class="page-heading">
       <p class="kicker">柿沼貴志議員｜活動報告</p>
-
       <h1>活動報告一覧</h1>
-
-      <p class="lead">
-        日々の活動や地域での取り組みを、新しい順にご紹介します。
-      </p>
+      <p class="lead">日々の活動や地域での取り組みを、新しい順にご紹介します。</p>
     </section>
 
     <div class="tools">
-      <input
-        id="search"
-        class="search"
-        type="search"
-        placeholder="活動報告を検索"
-        aria-label="活動報告を検索"
-      >
-
+      <input id="search" class="search" type="search" placeholder="活動報告を検索" aria-label="活動報告を検索">
       <span id="count" class="count"></span>
     </div>
 
-    <div id="loading" class="message">
-      活動報告を読み込んでいます。
-    </div>
-
+    <div id="loading" class="message">活動報告を読み込んでいます。</div>
     <div id="error" class="message error hidden"></div>
-
-    <div id="empty" class="message hidden">
-      公開中の活動報告はありません。
-    </div>
+    <div id="empty" class="message hidden">公開中の活動報告はありません。</div>
 
     <section id="articleList" class="article-list" aria-live="polite"></section>
 
-    <a class="back-link" href="index.html">
-      トップページへ戻る
-    </a>
+    <a class="back-link" href="index.html">トップページへ戻る</a>
   </main>
 
-  <footer>
-    柿沼貴志 活動報告DX
-  </footer>
+  <footer>柿沼貴志 活動報告DX</footer>
+
+  <nav class="bottom-nav" aria-label="固定メニュー">
+    <a class="active" href="index.html"><span>🏠</span>トップ</a>
+    <a href="archive.html"><span>📸</span>活動</a>
+    <a href="index.html#profile"><span>👤</span>人物</a>
+    <a href="index.html#policy"><span>🌱</span>政策</a>
+    <a href="index.html#contact"><span>💬</span>相談</a>
+  </nav>
 
   <script>
     (function(){
@@ -417,16 +512,15 @@
       var empty=document.getElementById('empty');
       var search=document.getElementById('search');
       var count=document.getElementById('count');
-
       var articles=[];
 
       function escapeHtml(value){
-        return String(value||'').replace(/[&<>\"']/g,function(ch){
+        return String(value||'').replace(/[&<>"']/g,function(ch){
           return {
             '&':'&amp;',
             '<':'&lt;',
             '>':'&gt;',
-            '\"':'&quot;',
+            '"':'&quot;',
             "'":'&#39;'
           }[ch];
         });
@@ -479,14 +573,6 @@
         return String(value||'').trim();
       }
 
-      function decodeDriveId(value){
-        try{
-          return decodeURIComponent(value);
-        }catch(error){
-          return value;
-        }
-      }
-
       function driveFileId(value){
         var url=imageValue(value);
 
@@ -495,7 +581,7 @@
         );
 
         if(match){
-          return decodeDriveId(match[1]);
+          return match[1];
         }
 
         match=url.match(
@@ -503,18 +589,14 @@
         );
 
         if(match){
-          return decodeDriveId(match[1]);
+          return match[1];
         }
 
         match=url.match(
           /lh3\.googleusercontent\.com\/d\/([^=/?#]+)/i
         );
 
-        if(match){
-          return decodeDriveId(match[1]);
-        }
-
-        return '';
+        return match?match[1]:'';
       }
 
       function safeUrl(value){
@@ -650,6 +732,14 @@
           }catch(error){}
         }
 
+        if(row&&row.image){
+          images.push(row.image);
+        }
+
+        if(row&&row.imageUrl){
+          images.push(row.imageUrl);
+        }
+
         for(var i=1;i<=6;i++){
           images.push(first(row,[
             'image'+i,
@@ -780,9 +870,7 @@
         empty.classList.toggle('hidden',filtered.length!==0);
 
         filtered.forEach(function(article){
-          var image=article.images[0]||
-            youtubeImage(article.youtube);
-
+          var image=article.images[0]||youtubeImage(article.youtube);
           var body=summary(article.body);
           var card=document.createElement('article');
 
@@ -800,8 +888,7 @@
             )+
             '<div class="article-content">'+
             '<p class="article-date">'+
-            escapeHtml(formatDate(article.date)||
-              '公開記事')+
+            escapeHtml(formatDate(article.date)||'公開記事')+
             '</p>'+
             '<h2 class="article-title">'+
             escapeHtml(article.title)+
