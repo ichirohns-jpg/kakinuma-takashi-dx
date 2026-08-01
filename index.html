@@ -27,7 +27,6 @@
     }
 
     *{box-sizing:border-box}
-
     html{scroll-behavior:smooth}
 
     body{
@@ -796,22 +795,79 @@
 
       function safeUrl(value){
         var url=String(value||'').trim();
+        var driveMatch=url.match(/drive\.google\.com\/file\/d\/([^/]+)/i);
+
+        if(driveMatch){
+          return escapeHtml(
+            'https://drive.google.com/uc?export=view&id='+
+            encodeURIComponent(driveMatch[1])
+          );
+        }
+
         return /^https:\/\//i.test(url)?escapeHtml(url):'';
+      }
+
+      function formatDate(value){
+        var text=String(value||'').trim();
+
+        if(!text){
+          return '';
+        }
+
+        var date=new Date(text);
+
+        if(!isNaN(date.getTime())){
+          return date.getFullYear()+'年'+
+            (date.getMonth()+1)+'月'+
+            date.getDate()+'日';
+        }
+
+        return text;
       }
 
       function articleCard(article){
         var articleId=encodeURIComponent(article.articleId||article.id||'');
-        var articleUrl='article.html?id='+articleId+'&site='+encodeURIComponent(SITE_KEY);
-        var images=Array.isArray(article.images)?article.images:[];
-        var image=images.length?safeUrl(images[0]):'';
+        var articleUrl=
+          'article.html?id='+
+          articleId+
+          '&site='+
+          encodeURIComponent(SITE_KEY);
+
+        var images=Array.isArray(article.images)
+          ? article.images
+          : [];
+
+        var image=images.length
+          ? safeUrl(images[0])
+          : safeUrl(article.ogpImage||'');
 
         return '<article class="report-card">'+
-          (image?'<img class="report-image" src="'+image+'" alt="活動報告" loading="lazy">':'')+
+          (
+            image
+              ? '<img class="report-image" src="'+
+                image+
+                '" alt="活動報告" loading="lazy">'
+              : ''
+          )+
           '<div class="report-body">'+
-          '<p class="report-date">'+escapeHtml(article.publishDate||article.date||'')+'</p>'+
-          '<h3 class="report-title">'+escapeHtml(article.title||article.articleTitle||'活動報告')+'</h3>'+
-          '<p class="report-summary">'+escapeHtml(summary(article.body||article.articleBody||''))+'</p>'+
-          '<a class="report-link" href="'+articleUrl+'">この記事を読む</a>'+
+          '<p class="report-date">'+
+          escapeHtml(
+            formatDate(article.publishDate||article.date||'')
+          )+
+          '</p>'+
+          '<h3 class="report-title">'+
+          escapeHtml(
+            article.title||article.articleTitle||'活動報告'
+          )+
+          '</h3>'+
+          '<p class="report-summary">'+
+          escapeHtml(
+            summary(article.body||article.articleBody||'')
+          )+
+          '</p>'+
+          '<a class="report-link" href="'+
+          articleUrl+
+          '">この記事を読む</a>'+
           '</div></article>';
       }
 
@@ -831,17 +887,26 @@
         return response.json();
       })
       .then(function(data){
-        var articles=data&&Array.isArray(data.articles)?data.articles:[];
+        var articles=
+          data&&Array.isArray(data.articles)
+            ? data.articles
+            : [];
 
         if(!articles.length){
-          list.innerHTML='<p class="loading-message">現在公開中の活動報告はありません。</p>';
+          list.innerHTML=
+            '<p class="loading-message">現在公開中の活動報告はありません。</p>';
+
           return;
         }
 
-        list.innerHTML=articles.slice(0,3).map(articleCard).join('');
+        list.innerHTML=articles
+          .slice(0,3)
+          .map(articleCard)
+          .join('');
       })
       .catch(function(){
-        list.innerHTML='<p class="error-message">活動報告は準備中です。</p>';
+        list.innerHTML=
+          '<p class="error-message">活動報告は準備中です。</p>';
       });
     })();
   </script>
