@@ -34,8 +34,7 @@
       margin:0;
       background:var(--cream);
       color:var(--text);
-      font-family:-apple-system,BlinkMacSystemFont,
-      "Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+      font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
       font-size:17px;
       line-height:1.85;
       overflow-x:hidden;
@@ -167,17 +166,9 @@
     .hero h1{
       margin:0;
       color:var(--navy-deep);
-      font-size:clamp(32px,5vw,58px);
+      font-size:clamp(38px,7vw,58px);
       line-height:1.25;
       letter-spacing:.06em;
-    }
-
-    .hero h1 small{
-      display:block;
-      margin-bottom:10px;
-      color:var(--muted);
-      font-size:clamp(16px,2vw,22px);
-      letter-spacing:.03em;
     }
 
     .slogan{
@@ -554,12 +545,9 @@
           <small>TAKASHI KAKINUMA OFFICIAL INFORMATION</small>
         </a>
 
-        <a
-          class="official-link"
-          href="https://www.kakinuma-takashi.com/index.html"
-          target="_blank"
-          rel="noopener"
-        >公式サイト</a>
+        <a class="official-link" href="https://www.kakinuma-takashi.com/index.html" target="_blank" rel="noopener">
+          公式サイト
+        </a>
       </div>
 
       <nav class="nav" aria-label="ページ内メニュー">
@@ -577,10 +565,7 @@
       <div class="hero-copy">
         <p class="eyebrow">埼玉県議会議員</p>
 
-        <h1>
-          <small>柿沼</small>
-          貴志
-        </h1>
+        <h1>柿沼 貴志</h1>
 
         <p class="slogan">
           郷土の声を<br>
@@ -594,10 +579,7 @@
       </div>
 
       <div class="hero-photo">
-        <img
-          src="https://ichirohns-jpg.github.io/kakinuma-takashi-dx/profile_photo_3.jpg"
-          alt="柿沼貴志議員"
-        >
+        <img src="https://ichirohns-jpg.github.io/kakinuma-takashi-dx/profile_photo_3.jpg" alt="柿沼貴志議員">
       </div>
     </section>
 
@@ -612,14 +594,10 @@
       </p>
 
       <div id="latestReports" class="latest-list" aria-live="polite">
-        <p class="loading-message">
-          活動報告を読み込んでいます。
-        </p>
+        <p class="loading-message">活動報告を読み込んでいます。</p>
       </div>
 
-      <a class="more-link" href="archive.html">
-        活動報告をもっと読む
-      </a>
+      <a class="more-link" href="archive.html">活動報告をもっと読む</a>
     </section>
 
     <section class="section" id="profile">
@@ -632,8 +610,9 @@
         <div class="text-block">
           <h3>柿沼貴志について</h3>
 
+          <p>柿沼貴志（かきぬまたかし）</p>
+
           <p>
-            柿沼貴志（かきぬまたかし）。
             埼玉県行田市で生まれ育ち、地域の声を聞きながら活動しています。
           </p>
 
@@ -704,12 +683,7 @@
         暮らしに関するご相談をお寄せください。
       </p>
 
-      <a
-        class="consultation-button"
-        href="https://www.kakinuma-takashi.com/contact/index.php"
-        target="_blank"
-        rel="noopener"
-      >
+      <a class="consultation-button" href="https://www.kakinuma-takashi.com/contact/index.php" target="_blank" rel="noopener">
         お問い合わせフォームへ
       </a>
     </section>
@@ -740,11 +714,25 @@
       </h2>
 
       <div class="link-grid">
-        <a class="link-card" href="https://www.kakinuma-takashi.com/index.html" target="_blank" rel="noopener">公式ホームページ</a>
-        <a class="link-card" href="https://www.kakinuma-takashi.com/blog/" target="_blank" rel="noopener">ブログ</a>
-        <a class="link-card" href="https://www.facebook.com/takashi.kakinuma.73" target="_blank" rel="noopener">Facebook</a>
-        <a class="link-card" href="https://twitter.com/KakinumaTakashi" target="_blank" rel="noopener">X（旧Twitter）</a>
-        <a class="link-card" href="https://www.youtube.com/@takashi5011" target="_blank" rel="noopener">YouTube</a>
+        <a class="link-card" href="https://www.kakinuma-takashi.com/index.html" target="_blank" rel="noopener">
+          公式ホームページ
+        </a>
+
+        <a class="link-card" href="https://www.kakinuma-takashi.com/blog/" target="_blank" rel="noopener">
+          ブログ
+        </a>
+
+        <a class="link-card" href="https://www.facebook.com/takashi.kakinuma.73" target="_blank" rel="noopener">
+          Facebook
+        </a>
+
+        <a class="link-card" href="https://twitter.com/KakinumaTakashi" target="_blank" rel="noopener">
+          X（旧Twitter）
+        </a>
+
+        <a class="link-card" href="https://www.youtube.com/@takashi5011" target="_blank" rel="noopener">
+          YouTube
+        </a>
       </div>
 
       <p class="contact-text">
@@ -757,9 +745,7 @@
     </section>
   </main>
 
-  <footer>
-    柿沼貴志 活動報告DX
-  </footer>
+  <footer>柿沼貴志 活動報告DX</footer>
 
   <script>
     (function(){
@@ -810,59 +796,22 @@
 
       function safeUrl(value){
         var url=String(value||'').trim();
-        return /^https:\/\//i.test(url)
-          ? escapeHtml(url)
-          : '';
+        return /^https:\/\//i.test(url)?escapeHtml(url):'';
       }
 
       function articleCard(article){
-        var articleId=encodeURIComponent(
-          article.articleId||article.id||''
-        );
-
-        var articleUrl=
-          'article.html?id='+
-          articleId+
-          '&site='+
-          encodeURIComponent(SITE_KEY);
-
-        var images=
-          Array.isArray(article.images)
-            ? article.images
-            : [];
-
-        var image=
-          images.length
-            ? safeUrl(images[0])
-            : '';
+        var articleId=encodeURIComponent(article.articleId||article.id||'');
+        var articleUrl='article.html?id='+articleId+'&site='+encodeURIComponent(SITE_KEY);
+        var images=Array.isArray(article.images)?article.images:[];
+        var image=images.length?safeUrl(images[0]):'';
 
         return '<article class="report-card">'+
-          (
-            image
-              ? '<img class="report-image" src="'+
-                image+
-                '" alt="活動報告" loading="lazy">'
-              : ''
-          )+
+          (image?'<img class="report-image" src="'+image+'" alt="活動報告" loading="lazy">':'')+
           '<div class="report-body">'+
-          '<p class="report-date">'+
-          escapeHtml(article.publishDate||article.date||'')+
-          '</p>'+
-          '<h3 class="report-title">'+
-          escapeHtml(
-            article.title||
-            article.articleTitle||
-            '活動報告'
-          )+
-          '</h3>'+
-          '<p class="report-summary">'+
-          escapeHtml(
-            summary(article.body||article.articleBody||'')
-          )+
-          '</p>'+
-          '<a class="report-link" href="'+
-          articleUrl+
-          '">この記事を読む</a>'+
+          '<p class="report-date">'+escapeHtml(article.publishDate||article.date||'')+'</p>'+
+          '<h3 class="report-title">'+escapeHtml(article.title||article.articleTitle||'活動報告')+'</h3>'+
+          '<p class="report-summary">'+escapeHtml(summary(article.body||article.articleBody||''))+'</p>'+
+          '<a class="report-link" href="'+articleUrl+'">この記事を読む</a>'+
           '</div></article>';
       }
 
@@ -882,31 +831,17 @@
         return response.json();
       })
       .then(function(data){
-        var articles=
-          data&&
-          Array.isArray(data.articles)
-            ? data.articles
-            : [];
+        var articles=data&&Array.isArray(data.articles)?data.articles:[];
 
         if(!articles.length){
-          list.innerHTML=
-            '<p class="loading-message">'+
-            '現在公開中の活動報告はありません。'+
-            '</p>';
+          list.innerHTML='<p class="loading-message">現在公開中の活動報告はありません。</p>';
           return;
         }
 
-        list.innerHTML=
-          articles
-            .slice(0,3)
-            .map(articleCard)
-            .join('');
+        list.innerHTML=articles.slice(0,3).map(articleCard).join('');
       })
       .catch(function(){
-        list.innerHTML=
-          '<p class="error-message">'+
-          '活動報告は準備中です。'+
-          '</p>';
+        list.innerHTML='<p class="error-message">活動報告は準備中です。</p>';
       });
     })();
   </script>
