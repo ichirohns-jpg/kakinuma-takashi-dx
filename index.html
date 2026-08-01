@@ -26,15 +26,21 @@
       --shadow:0 8px 26px rgba(35,48,61,.10);
     }
 
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
+    *{
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
 
     body{
       margin:0;
       background:var(--cream);
       color:var(--text);
-      font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
-      font-size:17px;
+      font-family:-apple-system,BlinkMacSystemFont,
+      "Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+      font-size:18px;
       line-height:1.85;
       overflow-x:hidden;
     }
@@ -74,7 +80,7 @@
     .site-name{
       display:block;
       color:var(--navy-deep);
-      font-size:20px;
+      font-size:24px;
       font-weight:900;
       line-height:1.25;
       text-decoration:none;
@@ -92,12 +98,12 @@
     }
 
     .official-link{
-      padding:8px 12px;
+      padding:9px 13px;
       border:1px solid var(--navy);
       border-radius:999px;
       color:var(--navy);
-      font-size:13px;
-      font-weight:800;
+      font-size:14px;
+      font-weight:900;
       text-decoration:none;
       white-space:nowrap;
     }
@@ -117,11 +123,11 @@
 
     .nav a{
       flex:0 0 auto;
-      padding:6px 10px;
+      padding:7px 11px;
       border-radius:8px;
       color:var(--muted);
-      font-size:13px;
-      font-weight:800;
+      font-size:15px;
+      font-weight:900;
       text-decoration:none;
     }
 
@@ -157,7 +163,7 @@
     .eyebrow{
       margin:0 0 12px;
       color:var(--orange);
-      font-size:14px;
+      font-size:16px;
       font-weight:900;
       letter-spacing:.08em;
     }
@@ -165,7 +171,7 @@
     .hero h1{
       margin:0;
       color:var(--navy-deep);
-      font-size:clamp(38px,7vw,58px);
+      font-size:clamp(44px,8vw,68px);
       line-height:1.25;
       letter-spacing:.06em;
     }
@@ -175,7 +181,7 @@
       padding-left:16px;
       border-left:5px solid var(--orange);
       color:var(--navy);
-      font-size:clamp(22px,3vw,34px);
+      font-size:clamp(24px,3vw,36px);
       font-weight:900;
       line-height:1.5;
     }
@@ -184,7 +190,7 @@
       max-width:34em;
       margin:20px 0 0;
       color:var(--muted);
-      font-size:16px;
+      font-size:18px;
       line-height:2;
     }
 
@@ -222,19 +228,20 @@
     .section-heading span{
       color:var(--orange);
       font-family:Georgia,serif;
-      font-size:14px;
+      font-size:15px;
       font-weight:900;
       letter-spacing:.12em;
     }
 
     .section-heading strong{
-      font-size:clamp(25px,4vw,36px);
+      font-size:clamp(28px,4vw,38px);
       line-height:1.35;
     }
 
     .section-lead{
       margin:0 0 20px;
       color:var(--muted);
+      font-size:18px;
     }
 
     .latest-list{
@@ -262,16 +269,16 @@
     }
 
     .report-date{
-      margin:0 0 5px;
+      margin:0 0 6px;
       color:var(--orange);
-      font-size:13px;
+      font-size:16px;
       font-weight:900;
     }
 
     .report-title{
       margin:0 0 8px;
       color:var(--navy-deep);
-      font-size:20px;
+      font-size:22px;
       line-height:1.5;
     }
 
@@ -280,8 +287,8 @@
       margin:0;
       overflow:hidden;
       color:var(--muted);
-      font-size:15px;
-      line-height:1.8;
+      font-size:17px;
+      line-height:1.9;
       white-space:pre-line;
       -webkit-box-orient:vertical;
       -webkit-line-clamp:4;
@@ -290,11 +297,11 @@
     .report-link{
       display:block;
       margin-top:14px;
-      padding:10px;
+      padding:13px 10px;
       border-radius:9px;
       background:var(--navy);
       color:#fff;
-      font-size:14px;
+      font-size:17px;
       font-weight:900;
       text-align:center;
       text-decoration:none;
@@ -304,6 +311,7 @@
     .error-message{
       margin:0;
       color:var(--muted);
+      font-size:17px;
     }
 
     .error-message{
@@ -314,10 +322,11 @@
       display:block;
       width:max-content;
       margin:22px auto 0;
-      padding:11px 20px;
+      padding:12px 22px;
       border:1px solid var(--navy);
       border-radius:999px;
       color:var(--navy);
+      font-size:17px;
       font-weight:900;
       text-decoration:none;
     }
@@ -331,7 +340,7 @@
     .text-block h3{
       margin:0 0 10px;
       color:var(--navy);
-      font-size:22px;
+      font-size:24px;
       line-height:1.5;
     }
 
@@ -340,13 +349,19 @@
       white-space:pre-line;
     }
 
+    .person-name{
+      color:var(--navy-deep);
+      font-size:26px;
+      font-weight:900;
+    }
+
     .profile-note{
       margin:18px 0 0;
       padding:14px 16px;
       border-left:4px solid var(--orange);
       background:#f4f0e9;
       color:var(--muted);
-      font-size:15px;
+      font-size:17px;
     }
 
     .policy-list{
@@ -364,6 +379,7 @@
       border:1px solid var(--line);
       border-radius:12px;
       background:#fff;
+      font-size:18px;
       font-weight:800;
     }
 
@@ -397,10 +413,11 @@
 
     .consultation-button{
       display:inline-block;
-      padding:13px 22px;
+      padding:14px 23px;
       border-radius:999px;
       background:#fff;
       color:var(--navy);
+      font-size:17px;
       font-weight:900;
       text-decoration:none;
     }
@@ -431,11 +448,12 @@
 
     .link-card{
       display:block;
-      padding:15px;
+      padding:16px;
       border:1px solid var(--line);
       border-radius:12px;
       background:#fff;
       color:var(--navy);
+      font-size:17px;
       font-weight:900;
       text-align:center;
       text-decoration:none;
@@ -446,29 +464,33 @@
       padding-top:18px;
       border-top:1px solid var(--line);
       color:var(--muted);
-      font-size:15px;
+      font-size:17px;
       overflow-wrap:anywhere;
     }
 
     footer{
       padding:0 20px 34px;
       color:var(--muted);
-      font-size:13px;
+      font-size:14px;
       text-align:center;
     }
 
     @media(max-width:720px){
       body{
-        font-size:16px;
+        font-size:17px;
       }
 
       .header-inner{
         width:min(100% - 22px,1040px);
       }
 
+      .site-name{
+        font-size:22px;
+      }
+
       .official-link{
-        font-size:12px;
-        padding:7px 10px;
+        font-size:13px;
+        padding:8px 10px;
       }
 
       main{
@@ -493,11 +515,15 @@
       }
 
       .hero h1{
-        font-size:34px;
+        font-size:40px;
       }
 
       .slogan{
-        font-size:24px;
+        font-size:26px;
+      }
+
+      .hero-text{
+        font-size:17px;
       }
 
       .latest-list{
@@ -519,7 +545,11 @@
       }
 
       .section-heading strong{
-        font-size:27px;
+        font-size:29px;
+      }
+
+      .section-lead{
+        font-size:17px;
       }
 
       .link-grid{
@@ -540,7 +570,7 @@
     <div class="header-inner">
       <div class="header-top">
         <a class="site-name" href="index.html">
-          柿沼 貴志
+          柿沼貴志
           <small>TAKASHI KAKINUMA OFFICIAL INFORMATION</small>
         </a>
 
@@ -564,7 +594,7 @@
       <div class="hero-copy">
         <p class="eyebrow">埼玉県議会議員</p>
 
-        <h1>柿沼 貴志</h1>
+        <h1>柿沼貴志</h1>
 
         <p class="slogan">
           郷土の声を<br>
@@ -609,7 +639,7 @@
         <div class="text-block">
           <h3>柿沼貴志について</h3>
 
-          <p>柿沼貴志（かきぬまたかし）</p>
+          <p class="person-name">柿沼貴志（かきぬまたかし）</p>
 
           <p>
             埼玉県行田市で生まれ育ち、地域の声を聞きながら活動しています。
@@ -755,12 +785,12 @@
       var list=document.getElementById('latestReports');
 
       function escapeHtml(value){
-        return String(value||'').replace(/[&<>"']/g,function(ch){
+        return String(value||'').replace(/[&<>\"']/g,function(ch){
           return {
             '&':'&amp;',
             '<':'&lt;',
             '>':'&gt;',
-            '"':'&quot;',
+            '\"':'&quot;',
             "'":'&#39;'
           }[ch];
         });
@@ -793,18 +823,85 @@
         return result;
       }
 
-      function safeUrl(value){
-        var url=String(value||'').trim();
-        var driveMatch=url.match(/drive\.google\.com\/file\/d\/([^/]+)/i);
-
-        if(driveMatch){
-          return escapeHtml(
-            'https://drive.google.com/uc?export=view&id='+
-            encodeURIComponent(driveMatch[1])
-          );
+      function imageValue(value){
+        if(value&&typeof value==='object'){
+          return String(
+            value.url||
+            value.src||
+            value.imageUrl||
+            value.value||
+            ''
+          ).trim();
         }
 
-        return /^https:\/\//i.test(url)?escapeHtml(url):'';
+        return String(value||'').trim();
+      }
+
+      function decodeDriveId(value){
+        try{
+          return decodeURIComponent(value);
+        }catch(error){
+          return value;
+        }
+      }
+
+      function driveFileId(value){
+        var url=imageValue(value);
+        var match=url.match(
+          /drive\.google\.com\/file\/d\/([^/?#]+)/i
+        );
+
+        if(match){
+          return decodeDriveId(match[1]);
+        }
+
+        match=url.match(
+          /(?:drive\.google\.com|drive\.usercontent\.google\.com)\/[^?#]*[?&]id=([^&#]+)/i
+        );
+
+        if(match){
+          return decodeDriveId(match[1]);
+        }
+
+        match=url.match(
+          /lh3\.googleusercontent\.com\/d\/([^=/?#]+)/i
+        );
+
+        if(match){
+          return decodeDriveId(match[1]);
+        }
+
+        return '';
+      }
+
+      function safeUrl(value){
+        var url=imageValue(value);
+
+        if(!url){
+          return '';
+        }
+
+        var driveId=driveFileId(url);
+
+        if(driveId){
+          return 'https://drive.google.com/thumbnail?id='+
+            encodeURIComponent(driveId)+
+            '&sz=w1600';
+        }
+
+        if(/^data:image\//i.test(url)){
+          return url;
+        }
+
+        if(/^https?:\/\//i.test(url)){
+          return url;
+        }
+
+        if(/^(?:\.{0,2}\/|\/)[^\s]+/.test(url)){
+          return url;
+        }
+
+        return '';
       }
 
       function formatDate(value){
@@ -814,19 +911,76 @@
           return '';
         }
 
+        var japanese=text.match(
+          /^(\d{4})年(\d{1,2})月(\d{1,2})日/
+        );
+
+        if(japanese){
+          return japanese[1]+'年'+
+            Number(japanese[2])+'月'+
+            Number(japanese[3])+'日';
+        }
+
+        var direct=text.match(
+          /^(\d{4})[-/](\d{1,2})[-/](\d{1,2})/
+        );
+
+        if(direct){
+          return direct[1]+'年'+
+            Number(direct[2])+'月'+
+            Number(direct[3])+'日';
+        }
+
         var date=new Date(text);
 
-        if(!isNaN(date.getTime())){
+        if(isNaN(date.getTime())){
+          return text;
+        }
+
+        try{
+          var parts=new Intl.DateTimeFormat(
+            'ja-JP',
+            {
+              timeZone:'Asia/Tokyo',
+              year:'numeric',
+              month:'numeric',
+              day:'numeric'
+            }
+          ).formatToParts(date);
+
+          var values={};
+
+          parts.forEach(function(part){
+            if(part.type==='year'||
+              part.type==='month'||
+              part.type==='day'){
+              values[part.type]=part.value;
+            }
+          });
+
+          if(values.year&&values.month&&values.day){
+            return values.year+'年'+
+              Number(values.month)+'月'+
+              Number(values.day)+'日';
+          }
+        }catch(error){
           return date.getFullYear()+'年'+
             (date.getMonth()+1)+'月'+
             date.getDate()+'日';
         }
 
-        return text;
+        return date.getFullYear()+'年'+
+          (date.getMonth()+1)+'月'+
+          date.getDate()+'日';
       }
 
       function articleCard(article){
-        var articleId=encodeURIComponent(article.articleId||article.id||'');
+        var articleId=encodeURIComponent(
+          article.articleId||
+          article.id||
+          ''
+        );
+
         var articleUrl=
           'article.html?id='+
           articleId+
@@ -837,32 +991,52 @@
           ? article.images
           : [];
 
+        if(!images.length&&article.image){
+          images=[article.image];
+        }
+
+        if(!images.length&&article.imageUrl){
+          images=[article.imageUrl];
+        }
+
         var image=images.length
           ? safeUrl(images[0])
           : safeUrl(article.ogpImage||'');
 
+        var title=article.title||
+          article.articleTitle||
+          '活動報告';
+
         return '<article class="report-card">'+
           (
             image
-              ? '<img class="report-image" src="'+
-                image+
-                '" alt="活動報告" loading="lazy">'
+              ? '<img class="report-image"'+
+                ' src="'+escapeHtml(image)+'"'+
+                ' alt="'+escapeHtml(title)+'"'+
+                ' loading="lazy"'+
+                ' referrerpolicy="no-referrer">'
               : ''
           )+
           '<div class="report-body">'+
           '<p class="report-date">'+
           escapeHtml(
-            formatDate(article.publishDate||article.date||'')
+            formatDate(
+              article.publishDate||
+              article.date||
+              ''
+            )
           )+
           '</p>'+
           '<h3 class="report-title">'+
-          escapeHtml(
-            article.title||article.articleTitle||'活動報告'
-          )+
+          escapeHtml(title)+
           '</h3>'+
           '<p class="report-summary">'+
           escapeHtml(
-            summary(article.body||article.articleBody||'')
+            summary(
+              article.body||
+              article.articleBody||
+              ''
+            )
           )+
           '</p>'+
           '<a class="report-link" href="'+
@@ -877,7 +1051,9 @@
         encodeURIComponent(SITE_KEY)+
         '&_='+
         Date.now(),
-        {cache:'no-store'}
+        {
+          cache:'no-store'
+        }
       )
       .then(function(response){
         if(!response.ok){
@@ -894,7 +1070,9 @@
 
         if(!articles.length){
           list.innerHTML=
-            '<p class="loading-message">現在公開中の活動報告はありません。</p>';
+            '<p class="loading-message">'+
+            '現在公開中の活動報告はありません。'+
+            '</p>';
 
           return;
         }
@@ -906,7 +1084,9 @@
       })
       .catch(function(){
         list.innerHTML=
-          '<p class="error-message">活動報告は準備中です。</p>';
+          '<p class="error-message">'+
+          '活動報告は準備中です。'+
+          '</p>';
       });
     })();
   </script>
