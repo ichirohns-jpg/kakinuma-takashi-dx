@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#263b52">
+  <meta name="theme-color" content="#1f4058">
   <meta property="og:type" content="article">
   <meta property="og:title" content="活動報告｜柿沼貴志議員">
   <meta property="og:description" content="柿沼貴志議員の活動報告をご紹介します。">
@@ -13,31 +13,37 @@
   <meta name="twitter:title" content="活動報告｜柿沼貴志議員">
   <meta name="twitter:description" content="柿沼貴志議員の活動報告をご紹介します。">
   <meta name="twitter:image" content="https://ichirohns-jpg.github.io/kakinuma-takashi-dx/profile_photo_3.jpg">
+  <link rel="manifest" href="manifest.json">
   <title>活動報告を共有｜柿沼貴志</title>
 
   <style>
     :root{
-      --navy:#263b52;
-      --navy-deep:#1b2b3c;
-      --orange:#d8792b;
-      --cream:#f5f1ea;
-      --paper:#fffdf9;
-      --text:#29313a;
-      --muted:#68727c;
-      --line:#ddd7ce;
+      --navy:#1f4058;
+      --navy-deep:#142d40;
+      --blue-soft:#e8f5fb;
+      --cream:#fffaf0;
+      --paper:#fff;
+      --orange:#c97832;
+      --text:#182530;
+      --muted:#52616b;
+      --line:#b8ccd7;
       --facebook:#1877f2;
       --x:#111;
       --line-green:#06c755;
-      --shadow:0 8px 26px rgba(35,48,61,.10);
+      --shadow:0 12px 28px rgba(20,45,64,.13);
     }
 
     *{box-sizing:border-box}
 
     body{
       margin:0;
-      background:var(--cream);
+      padding-bottom:84px;
+      background:
+        radial-gradient(circle at 0 0,rgba(218,240,248,.7),transparent 28%),
+        linear-gradient(180deg,#f9fdff 0%,#fff 60%,#f2faf5 100%);
       color:var(--text);
-      font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+      font-family:-apple-system,BlinkMacSystemFont,
+      "Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
       font-size:18px;
       line-height:1.85;
     }
@@ -49,119 +55,150 @@
 
     a{color:inherit}
 
+    button{font:inherit}
+
+    .hidden{display:none!important}
+
+    .wrap{
+      width:min(100% - 24px,860px);
+      margin:auto;
+    }
+
     .site-header{
       position:sticky;
       top:0;
-      z-index:10;
-      background:rgba(255,253,249,.96);
+      z-index:50;
+      background:rgba(249,253,255,.97);
       border-bottom:1px solid var(--line);
-      backdrop-filter:blur(10px);
+      backdrop-filter:blur(12px);
     }
 
     .header-inner{
-      width:min(100% - 28px,860px);
-      margin:auto;
-      padding:14px 0 12px;
+      padding:12px 0 10px;
+    }
+
+    .header-top{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
     }
 
     .site-name{
       display:block;
       color:var(--navy-deep);
-      font-size:23px;
-      font-weight:900;
-      line-height:1.3;
+      font-size:clamp(24px,5vw,34px);
+      font-weight:950;
+      letter-spacing:.08em;
+      line-height:1.15;
       text-decoration:none;
-      letter-spacing:.04em;
     }
 
     .site-name small{
       display:block;
-      margin-top:2px;
+      margin-top:4px;
       color:var(--muted);
       font-family:Georgia,serif;
       font-size:10px;
-      font-weight:700;
       letter-spacing:.14em;
     }
 
+    .top-link{
+      flex:0 0 auto;
+      padding:9px 14px;
+      border:2px solid var(--navy);
+      border-radius:999px;
+      color:var(--navy);
+      font-size:15px;
+      font-weight:950;
+      text-decoration:none;
+      white-space:nowrap;
+    }
+
     main{
-      width:min(100% - 28px,760px);
-      margin:auto;
-      padding:28px 0 60px;
+      padding:20px 0 42px;
     }
 
     .page-heading{
-      margin:0 0 22px;
+      margin:0 0 18px;
       color:var(--navy-deep);
-      font-size:clamp(32px,6vw,48px);
+      font-size:clamp(33px,6vw,49px);
+      font-weight:950;
       line-height:1.35;
-      letter-spacing:.04em;
     }
 
     .page-lead{
-      margin:0 0 24px;
-      color:var(--muted);
+      margin:0 0 22px;
+      color:var(--text);
+      font-size:19px;
+      font-weight:750;
     }
 
     .message{
-      margin:0;
-      padding:24px;
-      border:1px solid var(--line);
-      border-radius:18px;
+      padding:25px;
+      border:2px solid var(--line);
+      border-radius:20px;
       background:var(--paper);
+      color:var(--text);
+      font-size:19px;
+      font-weight:750;
+      text-align:center;
       box-shadow:var(--shadow);
     }
 
-    .error{color:#9c382c}
-
-    .hidden{display:none!important}
+    .error{color:#9b372e}
 
     .share-card{
       overflow:hidden;
-      border:1px solid var(--line);
-      border-radius:22px;
+      border:2px solid var(--line);
+      border-radius:28px;
       background:var(--paper);
       box-shadow:var(--shadow);
     }
 
     .preview-image{
       width:100%;
-      max-height:420px;
+      max-height:460px;
       object-fit:cover;
-      background:#ebe6de;
+      background:#edf1f3;
     }
 
-    .card-body{padding:clamp(24px,5vw,44px)}
+    .card-body{
+      padding:clamp(22px,5vw,42px);
+    }
 
     .article-date{
       margin:0 0 8px;
       color:var(--orange);
       font-size:17px;
-      font-weight:900;
+      font-weight:950;
     }
 
     .article-title{
       margin:0;
       color:var(--navy-deep);
-      font-size:clamp(28px,5vw,42px);
+      font-size:clamp(29px,6vw,45px);
+      font-weight:950;
       line-height:1.45;
       overflow-wrap:anywhere;
     }
 
     .article-summary{
-      margin:22px 0 0;
+      margin:20px 0 0;
       color:var(--text);
       font-size:20px;
+      font-weight:650;
       line-height:2;
       white-space:pre-line;
     }
 
     .share-heading{
-      margin:32px 0 14px;
-      padding-top:24px;
-      border-top:1px solid var(--line);
+      margin:30px 0 14px;
+      padding-top:23px;
+      border-top:2px solid #dbe6eb;
       color:var(--navy);
-      font-size:25px;
+      font-size:27px;
+      font-weight:950;
       line-height:1.5;
     }
 
@@ -175,14 +212,13 @@
       display:flex;
       align-items:center;
       justify-content:center;
-      min-height:54px;
+      min-height:58px;
       padding:10px 8px;
       border:0;
-      border-radius:11px;
+      border-radius:14px;
       color:#fff;
-      font:inherit;
       font-size:17px;
-      font-weight:900;
+      font-weight:950;
       text-align:center;
       text-decoration:none;
       cursor:pointer;
@@ -203,53 +239,115 @@
       margin:12px 0 0;
       color:var(--orange);
       font-size:16px;
-      font-weight:800;
+      font-weight:850;
     }
 
     .link-grid{
       display:grid;
       grid-template-columns:1fr 1fr;
-      gap:12px;
-      margin-top:28px;
+      gap:11px;
+      margin-top:26px;
     }
 
     .back-link{
       display:flex;
       align-items:center;
       justify-content:center;
-      min-height:54px;
+      min-height:56px;
       padding:10px 14px;
-      border:1px solid var(--navy);
-      border-radius:999px;
+      border:2px solid var(--navy);
+      border-radius:16px;
       color:var(--navy);
       font-size:17px;
-      font-weight:900;
+      font-weight:950;
       text-align:center;
       text-decoration:none;
     }
 
     footer{
-      padding:0 20px 34px;
+      padding:0 20px 25px;
       color:var(--muted);
       font-size:14px;
+      font-weight:700;
       text-align:center;
     }
 
-    @media(max-width:600px){
-      body{font-size:17px}
+    .bottom-nav{
+      position:fixed;
+      right:0;
+      bottom:0;
+      left:0;
+      z-index:100;
+      display:grid;
+      grid-template-columns:repeat(5,1fr);
+      border-top:1px solid var(--line);
+      background:rgba(255,255,255,.98);
+      box-shadow:0 -10px 26px rgba(20,45,64,.14);
+      backdrop-filter:blur(12px);
+    }
 
-      .header-inner{
-        width:min(100% - 22px,860px);
+    .bottom-nav a{
+      padding:8px 3px 7px;
+      color:var(--navy);
+      font-size:12px;
+      font-weight:950;
+      text-align:center;
+      text-decoration:none;
+    }
+
+    .bottom-nav a span{
+      display:block;
+      font-size:22px;
+      line-height:1.1;
+    }
+
+    .bottom-nav a.active{
+      background:var(--blue-soft);
+      color:var(--navy-deep);
+    }
+
+    @media(max-width:600px){
+      .wrap{
+        width:min(100% - 16px,860px);
+      }
+
+      .site-name{
+        font-size:25px;
+      }
+
+      .site-name small{
+        font-size:8px;
+        letter-spacing:.1em;
+      }
+
+      .top-link{
+        padding:8px 10px;
+        font-size:13px;
       }
 
       main{
-        width:min(100% - 20px,760px);
-        padding-top:20px;
+        padding-top:15px;
       }
 
-      .page-heading{font-size:34px}
+      .page-heading{
+        font-size:35px;
+      }
 
-      .article-title{font-size:29px}
+      .page-lead{
+        font-size:17px;
+      }
+
+      .share-card{
+        border-radius:22px;
+      }
+
+      .card-body{
+        padding:21px 17px;
+      }
+
+      .article-title{
+        font-size:30px;
+      }
 
       .article-summary{
         font-size:19px;
@@ -263,28 +361,42 @@
       .link-grid{
         grid-template-columns:1fr;
       }
+
+      .bottom-nav a{
+        font-size:11px;
+      }
+
+      .bottom-nav a span{
+        font-size:20px;
+      }
     }
   </style>
 </head>
 
 <body>
   <header class="site-header">
-    <div class="header-inner">
-      <a class="site-name" href="index.html">
-        柿沼 貴志
-        <small>TAKASHI KAKINUMA OFFICIAL INFORMATION</small>
-      </a>
+    <div class="wrap header-inner">
+      <div class="header-top">
+        <a class="site-name" href="index.html">
+          柿沼貴志
+          <small>TAKASHI KAKINUMA OFFICIAL INFORMATION</small>
+        </a>
+
+        <a class="top-link" href="index.html">トップへ戻る</a>
+      </div>
     </div>
   </header>
 
-  <main>
+  <main class="wrap">
     <h1 class="page-heading">活動報告を共有</h1>
 
     <p class="page-lead">
-      下のボタンから、活動報告をSNSで共有できます。
+      活動報告の内容を確認して、SNSで共有できます。
     </p>
 
-    <p id="loadingMessage" class="message">記事を読み込んでいます。</p>
+    <p id="loadingMessage" class="message">
+      記事を読み込んでいます。
+    </p>
 
     <p id="errorMessage" class="message error hidden"></p>
 
@@ -328,6 +440,14 @@
 
   <footer>柿沼貴志 活動報告DX</footer>
 
+  <nav class="bottom-nav" aria-label="固定メニュー">
+    <a class="active" href="index.html"><span>🏠</span>トップ</a>
+    <a href="archive.html"><span>📸</span>活動</a>
+    <a href="index.html#profile"><span>👤</span>人物</a>
+    <a href="index.html#policy"><span>🌱</span>政策</a>
+    <a href="index.html#contact"><span>💬</span>相談</a>
+  </nav>
+
   <script>
     (function(){
       'use strict';
@@ -335,6 +455,7 @@
       var GAS_URL='https://script.google.com/macros/s/AKfycby4VxnadXWsXtn27EcABG-TEVP3b5oKUsKxoGzhztNolL6LojXTyb5h3-VXaIJRC7Xx/exec';
       var SITE_KEY='kakinuma-takashi-dx';
       var DEFAULT_IMAGE='https://ichirohns-jpg.github.io/kakinuma-takashi-dx/profile_photo_3.jpg';
+
       var params=new URLSearchParams(location.search);
       var articleId=params.get('id')||'';
 
@@ -364,6 +485,80 @@
         return '';
       }
 
+      function imageValue(value){
+        if(value&&typeof value==='object'){
+          return String(
+            value.url||
+            value.src||
+            value.imageUrl||
+            value.value||
+            ''
+          ).trim();
+        }
+
+        return String(value||'').trim();
+      }
+
+      function decodeValue(value){
+        try{
+          return decodeURIComponent(value);
+        }catch(error){
+          return value;
+        }
+      }
+
+      function driveFileId(value){
+        var url=imageValue(value);
+
+        var match=url.match(
+          /drive\.google\.com\/file\/d\/([^/?#]+)/i
+        );
+
+        if(match){
+          return decodeValue(match[1]);
+        }
+
+        match=url.match(
+          /(?:drive\.google\.com|drive\.usercontent\.google\.com)\/[^?#]*[?&]id=([^&#]+)/i
+        );
+
+        if(match){
+          return decodeValue(match[1]);
+        }
+
+        match=url.match(
+          /lh3\.googleusercontent\.com\/d\/([^=/?#]+)/i
+        );
+
+        return match?decodeValue(match[1]):'';
+      }
+
+      function safeUrl(value){
+        var url=imageValue(value);
+
+        if(!url){
+          return '';
+        }
+
+        var driveId=driveFileId(url);
+
+        if(driveId){
+          return 'https://drive.google.com/thumbnail?id='+
+            encodeURIComponent(driveId)+
+            '&sz=w1600';
+        }
+
+        if(
+          /^data:image\//i.test(url)||
+          /^https?:\/\//i.test(url)||
+          /^(?:\.{0,2}\/|\/)[^\s]+/.test(url)
+        ){
+          return url;
+        }
+
+        return '';
+      }
+
       function plainText(value){
         var source=String(value||'')
           .replace(/<br\s*\/?>/gi,'\n')
@@ -379,29 +574,86 @@
           .trim();
       }
 
-      function safeUrl(value){
-        var url=String(value||'').trim();
-        return /^https:\/\//i.test(url)?url:'';
-      }
-
       function youtubeId(value){
         var match=String(value||'').match(
-          /(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|shorts\/|embed\/))([A-Za-z0-9_-]{6,})/i
+          /(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|shorts\/|embed\/|live\/))([A-Za-z0-9_-]{6,})/i
         );
 
         return match?match[1]:'';
       }
 
-      function showError(message){
-        loadingMessage.classList.add('hidden');
-        errorMessage.textContent=message;
-        errorMessage.classList.remove('hidden');
+      function formatDate(value){
+        var text=String(value||'').trim();
+
+        if(!text){
+          return '';
+        }
+
+        var japanese=text.match(
+          /^(\d{4})年(\d{1,2})月(\d{1,2})日/
+        );
+
+        if(japanese){
+          return japanese[1]+'年'+
+            Number(japanese[2])+'月'+
+            Number(japanese[3])+'日';
+        }
+
+        var direct=text.match(
+          /^(\d{4})[-/](\d{1,2})[-/](\d{1,2})/
+        );
+
+        if(direct){
+          return direct[1]+'年'+
+            Number(direct[2])+'月'+
+            Number(direct[3])+'日';
+        }
+
+        var date=new Date(text);
+
+        if(isNaN(date.getTime())){
+          return text;
+        }
+
+        try{
+          var parts=new Intl.DateTimeFormat(
+            'ja-JP',
+            {
+              timeZone:'Asia/Tokyo',
+              year:'numeric',
+              month:'numeric',
+              day:'numeric'
+            }
+          ).formatToParts(date);
+
+          var result={};
+
+          parts.forEach(function(part){
+            if(
+              part.type==='year'||
+              part.type==='month'||
+              part.type==='day'
+            ){
+              result[part.type]=part.value;
+            }
+          });
+
+          if(result.year&&result.month&&result.day){
+            return result.year+'年'+
+              Number(result.month)+'月'+
+              Number(result.day)+'日';
+          }
+        }catch(error){}
+
+        return date.getFullYear()+'年'+
+          (date.getMonth()+1)+'月'+
+          date.getDate()+'日';
       }
 
       function updateMeta(title,description,image,url){
-        document.title=title+'｜柿沼貴志 活動報告';
-
         var titleText=title+'｜柿沼貴志 活動報告';
+
+        document.title=titleText;
 
         document.querySelector('meta[property="og:title"]')
           .setAttribute('content',titleText);
@@ -425,8 +677,37 @@
           .setAttribute('content',image);
       }
 
+      function showError(message){
+        loadingMessage.classList.add('hidden');
+        errorMessage.textContent=message;
+        errorMessage.classList.remove('hidden');
+      }
+
+      function fallbackCopy(url){
+        var textarea=document.createElement('textarea');
+
+        textarea.value=url;
+        textarea.style.position='fixed';
+        textarea.style.left='-9999px';
+
+        document.body.appendChild(textarea);
+        textarea.select();
+
+        try{
+          document.execCommand('copy');
+          copyMessage.textContent='記事URLをコピーしました。';
+        }catch(error){
+          copyMessage.textContent='URLを長押ししてコピーしてください。';
+        }
+
+        document.body.removeChild(textarea);
+      }
+
       function copyUrl(url){
-        if(navigator.clipboard&&navigator.clipboard.writeText){
+        if(
+          navigator.clipboard&&
+          navigator.clipboard.writeText
+        ){
           navigator.clipboard.writeText(url)
             .then(function(){
               copyMessage.textContent='記事URLをコピーしました。';
@@ -439,24 +720,6 @@
         }
 
         fallbackCopy(url);
-      }
-
-      function fallbackCopy(url){
-        var textarea=document.createElement('textarea');
-        textarea.value=url;
-        textarea.style.position='fixed';
-        textarea.style.left='-9999px';
-        document.body.appendChild(textarea);
-        textarea.select();
-
-        try{
-          document.execCommand('copy');
-          copyMessage.textContent='記事URLをコピーしました。';
-        }catch(error){
-          copyMessage.textContent='URLを長押ししてコピーしてください。';
-        }
-
-        document.body.removeChild(textarea);
       }
 
       function renderArticle(article){
@@ -486,6 +749,14 @@
           images=images.concat(article.images);
         }
 
+        if(article.image){
+          images.push(article.image);
+        }
+
+        if(article.imageUrl){
+          images.push(article.imageUrl);
+        }
+
         for(var i=1;i<=6;i++){
           images.push(first(article,[
             'image'+i,
@@ -498,28 +769,26 @@
           .map(safeUrl)
           .filter(Boolean);
 
-        var youtubeUrl=first(article,[
+        var youtubeVideoId=youtubeId(first(article,[
           'youtubeUrl',
           'youtubeURL',
           'YouTube',
           '動画URL',
           'videoUrl'
-        ]);
+        ]));
 
-        var youtubeVideoId=youtubeId(youtubeUrl);
         var image=images[0]||(
           youtubeVideoId
             ? 'https://i.ytimg.com/vi/'+youtubeVideoId+'/hqdefault.jpg'
             : DEFAULT_IMAGE
         );
 
-        var description=body||'柿沼貴志議員の活動報告をご紹介します。';
+        var description=body||
+          '柿沼貴志議員の活動報告をご紹介します。';
 
         if(description.length>150){
           description=description.slice(0,150)+'…';
         }
-
-        var shareUrl=location.href;
 
         var articleUrl=new URL(
           'article.html?id='+
@@ -533,36 +802,39 @@
         previewImage.alt=title+'の写真';
 
         previewImage.onerror=function(){
-          if(previewImage.src!==DEFAULT_IMAGE){
-            previewImage.src=DEFAULT_IMAGE;
-          }
+          previewImage.src=DEFAULT_IMAGE;
         };
 
-        articleDate.textContent=date;
+        articleDate.textContent=formatDate(date);
         articleTitle.textContent=title;
         articleSummary.textContent=description;
 
         document.getElementById('facebookButton').href=
           'https://www.facebook.com/sharer/sharer.php?u='+
-          encodeURIComponent(shareUrl);
+          encodeURIComponent(articleUrl);
 
         document.getElementById('xButton').href=
           'https://twitter.com/intent/tweet?text='+
           encodeURIComponent(title)+
           '&url='+
-          encodeURIComponent(shareUrl);
+          encodeURIComponent(articleUrl);
 
         document.getElementById('lineButton').href=
           'https://line.me/R/msg/text/?'+
-          encodeURIComponent(title+'\n'+shareUrl);
+          encodeURIComponent(title+'\n'+articleUrl);
 
         document.getElementById('copyButton').onclick=function(){
-          copyUrl(shareUrl);
+          copyUrl(articleUrl);
         };
 
         document.getElementById('readButton').href=articleUrl;
 
-        updateMeta(title,description,image,shareUrl);
+        updateMeta(
+          title,
+          description,
+          image,
+          articleUrl
+        );
 
         loadingMessage.classList.add('hidden');
         shareCard.classList.remove('hidden');
@@ -579,7 +851,9 @@
         encodeURIComponent(SITE_KEY)+
         '&_='+
         Date.now(),
-        {cache:'no-store'}
+        {
+          cache:'no-store'
+        }
       )
       .then(function(response){
         if(!response.ok){
@@ -589,12 +863,17 @@
         return response.json();
       })
       .then(function(data){
-        var articles=data&&Array.isArray(data.articles)
-          ? data.articles
-          : [];
+        var articles=
+          data&&Array.isArray(data.articles)
+            ? data.articles
+            : [];
 
         var article=articles.find(function(item){
-          return String(item.articleId||item.id||'')===String(articleId);
+          return String(
+            item.articleId||
+            item.id||
+            ''
+          )===String(articleId);
         });
 
         if(!article){
@@ -604,7 +883,9 @@
         renderArticle(article);
       })
       .catch(function(){
-        showError('記事を読み込めませんでした。時間をおいて再度お試しください。');
+        showError(
+          '記事を読み込めませんでした。時間をおいて再度お試しください。'
+        );
       });
     })();
   </script>
