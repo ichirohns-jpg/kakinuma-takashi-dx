@@ -37,7 +37,10 @@
       overflow-x:hidden;
     }
 
-    img{display:block;max-width:100%}
+    img{
+      display:block;
+      max-width:100%;
+    }
 
     a{
       color:inherit;
@@ -343,9 +346,7 @@
           <small>TAKASHI KAKINUMA OFFICIAL INFORMATION</small>
         </a>
 
-        <a class="top-link" href="index.html">
-          トップへ戻る
-        </a>
+        <a class="top-link" href="index.html">トップへ戻る</a>
       </div>
     </div>
   </header>
@@ -368,9 +369,7 @@
 
       <section id="photoSection" class="section hidden">
         <h2 class="section-title">活動報告の写真</h2>
-        <p class="note">
-          写真は左右にスワイプしてご覧いただけます。
-        </p>
+        <p class="note">写真は左右にスワイプしてご覧いただけます。</p>
         <div id="articleGallery" class="gallery"></div>
       </section>
 
@@ -383,10 +382,21 @@
         <h2 class="section-title">この記事を共有</h2>
 
         <div class="share-grid">
-          <a id="facebookButton" class="share-button facebook" href="#" target="_blank" rel="noopener">Facebook</a>
-          <a id="xButton" class="share-button x" href="#" target="_blank" rel="noopener">X</a>
-          <a id="lineButton" class="share-button line" href="#" target="_blank" rel="noopener">LINE</a>
-          <button id="copyButton" class="share-button copy" type="button">URLをコピー</button>
+          <a id="facebookButton" class="share-button facebook" href="#" target="_blank" rel="noopener">
+            Facebook
+          </a>
+
+          <a id="xButton" class="share-button x" href="#" target="_blank" rel="noopener">
+            X
+          </a>
+
+          <a id="lineButton" class="share-button line" href="#" target="_blank" rel="noopener">
+            LINE
+          </a>
+
+          <button id="copyButton" class="share-button copy" type="button">
+            URLをコピー
+          </button>
         </div>
 
         <p id="copyMessage" class="copy-message"></p>
@@ -394,19 +404,12 @@
     </article>
 
     <div class="back-grid">
-      <a class="back-link" href="index.html">
-        トップページへ戻る
-      </a>
-
-      <a class="back-link" href="archive.html">
-        活動報告一覧
-      </a>
+      <a class="back-link" href="index.html">トップページへ戻る</a>
+      <a class="back-link" href="archive.html">活動報告一覧</a>
     </div>
   </main>
 
-  <footer>
-    柿沼貴志 活動報告DX
-  </footer>
+  <footer>柿沼貴志 活動報告DX</footer>
 
   <script>
     (function(){
@@ -494,7 +497,6 @@
 
       function youtubeId(value){
         var text=String(value||'');
-
         var match=text.match(
           /(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|shorts\/|embed\/))([A-Za-z0-9_-]{6,})/i
         );
@@ -636,17 +638,7 @@
         }
 
         var currentUrl=location.href;
-
-        var shareUrl=
-          new URL(
-            'share.html?id='+
-            encodeURIComponent(
-              article.articleId||article.id||articleId
-            )+
-            '&site='+
-            encodeURIComponent(SITE_KEY),
-            location.href
-          ).href;
+        var shareUrl=currentUrl;
 
         document.getElementById('facebookButton').href=
           'https://www.facebook.com/sharer/sharer.php?u='+
