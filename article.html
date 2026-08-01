@@ -1,336 +1,237 @@
 <!doctype html>
 <html lang="ja">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#263b52">
-  <meta name="description" content="柿沼貴志議員の活動報告">
-  <meta property="og:title" content="活動報告｜柿沼貴志議員">
-  <meta property="og:description" content="柿沼貴志議員の活動報告をご紹介します。">
-  <meta property="og:image" content="https://ichirohns-jpg.github.io/kakinuma-takashi-dx/profile_photo_3.jpg">
-  <link rel="manifest" href="manifest.json">
-  <title>活動報告｜柿沼貴志議員</title>
+  <base target="_top">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>活動報告を書く</title>
 
   <style>
     :root{
-      --navy:#263b52;
-      --navy-deep:#1b2b3c;
-      --orange:#d8792b;
-      --cream:#f5f1ea;
-      --paper:#fffdf9;
-      --text:#29313a;
-      --muted:#68727c;
-      --line:#ddd7ce;
-      --shadow:0 8px 26px rgba(35,48,61,.10);
+      --orange:#d66d29;
+      --dark:#6f3516;
+      --soft:#fff5eb;
+      --line:#ead5c4;
+      --text:#2e241e;
     }
 
     *{box-sizing:border-box}
 
     body{
       margin:0;
-      background:var(--cream);
+      background:linear-gradient(180deg,var(--soft),#fff 55%);
       color:var(--text);
       font-family:-apple-system,BlinkMacSystemFont,
-      "Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+      "Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
       font-size:17px;
-      line-height:1.85;
-      overflow-x:hidden;
+      line-height:1.7;
     }
 
-    img{
+    header{
+      padding:20px 16px;
+      background:var(--orange);
+      color:#fff;
+      box-shadow:0 3px 12px #0002;
+    }
+
+    header h1{
+      margin:0;
+      font-size:24px;
+      line-height:1.3;
+    }
+
+    header p{
+      margin:6px 0 0;
+      font-size:14px;
+    }
+
+    main{
+      max-width:760px;
+      margin:auto;
+      padding:16px 12px 44px;
+    }
+
+    .panel{
+      margin:14px 0;
+      padding:20px 16px;
+      border:2px solid var(--line);
+      border-radius:20px;
+      background:#fffffff5;
+      box-shadow:0 5px 18px #7b4b2214;
+    }
+
+    h2{
+      margin:0 0 14px;
+      color:var(--dark);
+      font-size:22px;
+    }
+
+    label{
       display:block;
-      max-width:100%;
+      margin:16px 0 7px;
+      color:var(--dark);
+      font-weight:800;
     }
 
-    a{
-      color:inherit;
-      -webkit-tap-highlight-color:transparent;
+    input,
+    textarea,
+    select{
+      width:100%;
+      padding:13px 12px;
+      border:1px solid #cdb9a8;
+      border-radius:11px;
+      background:#fff;
+      color:var(--text);
+      font:inherit;
+      font-size:17px;
+    }
+
+    input[type="file"]{
+      padding:10px;
+      background:#fffaf6;
+      font-size:16px;
+    }
+
+    textarea{
+      min-height:150px;
+      resize:vertical;
+    }
+
+    .small{
+      color:#75695f;
+      font-size:14px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:0 12px;
+    }
+
+    button{
+      width:100%;
+      margin-top:14px;
+      padding:14px 12px;
+      border:0;
+      border-radius:12px;
+      background:var(--orange);
+      color:#fff;
+      font:inherit;
+      font-size:17px;
+      font-weight:900;
+      cursor:pointer;
+    }
+
+    button.secondary{
+      background:#f3e4d7;
+      color:var(--dark);
+    }
+
+    button.danger{
+      border:1px solid #e5aaa0;
+      background:#fff0ed;
+      color:#a03528;
+    }
+
+    button:disabled{
+      opacity:.55;
     }
 
     .hidden{
       display:none!important;
     }
 
-    .site-header{
-      position:sticky;
-      top:0;
-      z-index:10;
-      background:rgba(255,253,249,.96);
-      border-bottom:1px solid var(--line);
-      backdrop-filter:blur(10px);
-    }
-
-    .header-inner{
-      width:min(100% - 28px,900px);
-      margin:auto;
-      padding:12px 0 10px;
-    }
-
-    .header-top{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:14px;
-    }
-
-    .site-name{
-      color:var(--navy-deep);
-      font-size:20px;
-      font-weight:900;
-      line-height:1.25;
-      text-decoration:none;
-      letter-spacing:.04em;
-    }
-
-    .site-name small{
-      display:block;
-      margin-top:3px;
-      color:var(--muted);
-      font-family:Georgia,serif;
-      font-size:10px;
-      letter-spacing:.14em;
-    }
-
-    .top-link{
-      padding:8px 13px;
-      border:1px solid var(--navy);
-      border-radius:999px;
-      color:var(--navy);
-      font-size:13px;
-      font-weight:900;
-      text-decoration:none;
-      white-space:nowrap;
-    }
-
-    main{
-      width:min(100% - 28px,900px);
-      margin:auto;
-      padding:24px 0 60px;
-    }
-
     .message{
-      padding:22px;
-      border:1px solid var(--line);
-      border-radius:18px;
-      background:var(--paper);
-      color:var(--muted);
-      text-align:center;
+      margin:14px 0;
+      padding:13px;
+      border-radius:11px;
+      background:#f7f2ed;
+      color:var(--dark);
+      white-space:pre-wrap;
     }
 
     .message.error{
-      color:#9c382c;
+      background:#fff0ed;
+      color:#a03528;
     }
 
-    .article-header{
-      padding:clamp(24px,5vw,50px);
-      border-radius:22px;
-      background:var(--paper);
-      box-shadow:var(--shadow);
+    .message.success{
+      background:#edf8ef;
+      color:#236b36;
     }
 
-    .kicker{
-      margin:0 0 12px;
-      color:var(--orange);
-      font-size:14px;
-      font-weight:900;
-      letter-spacing:.08em;
-    }
-
-    .article-title{
-      margin:0;
-      color:var(--navy-deep);
-      font-size:clamp(28px,6vw,48px);
-      line-height:1.45;
-      letter-spacing:.03em;
-    }
-
-    .article-date{
-      margin:14px 0 0;
-      color:var(--muted);
-      font-size:15px;
-      font-weight:800;
-    }
-
-    .section{
-      margin-top:24px;
-      padding:clamp(22px,4vw,42px);
+    .image-item{
+      margin:12px 0;
+      padding:12px;
       border:1px solid var(--line);
-      border-radius:20px;
-      background:var(--paper);
-      box-shadow:var(--shadow);
-    }
-
-    .section-title{
-      margin:0 0 18px;
-      padding-bottom:12px;
-      border-bottom:1px solid var(--line);
-      color:var(--navy-deep);
-      font-size:clamp(23px,4vw,32px);
-      line-height:1.4;
-    }
-
-    .article-body{
-      font-size:20px;
-      line-height:2.15;
-      overflow-wrap:anywhere;
-    }
-
-    .article-body p{
-      margin:0 0 1.35em;
-    }
-
-    .article-body p:last-child{
-      margin-bottom:0;
-    }
-
-    .gallery{
-      display:flex;
-      gap:14px;
-      overflow-x:auto;
-      padding:3px 2px 12px;
-      scroll-snap-type:x mandatory;
-      -webkit-overflow-scrolling:touch;
-    }
-
-    .gallery img{
-      width:270px;
-      height:240px;
-      flex:0 0 270px;
-      object-fit:cover;
-      border-radius:13px;
-      scroll-snap-align:start;
-      background:#ebe6de;
-    }
-
-    .note{
-      margin:0 0 16px;
-      color:var(--muted);
-      font-size:15px;
-    }
-
-    .video{
-      position:relative;
-      aspect-ratio:16/9;
-      overflow:hidden;
       border-radius:14px;
-      background:var(--navy-deep);
+      background:#fffaf6;
     }
 
-    .video iframe{
-      position:absolute;
-      inset:0;
-      width:100%;
-      height:100%;
-      border:0;
+    .image-item label{
+      margin:0 0 8px;
+      font-size:16px;
     }
 
-    .share-grid{
-      display:grid;
-      grid-template-columns:repeat(4,minmax(0,1fr));
-      gap:10px;
-    }
-
-    .share-button{
-      display:block;
-      padding:12px 8px;
-      border:0;
+    .image-preview{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-height:110px;
+      margin-top:9px;
+      overflow:hidden;
       border-radius:10px;
-      color:#fff;
-      font:inherit;
-      font-size:14px;
-      font-weight:900;
-      text-align:center;
-      text-decoration:none;
-      cursor:pointer;
-    }
-
-    .facebook{background:#1877f2}
-    .x{background:#111}
-    .line{background:#06c755}
-    .copy{background:var(--navy)}
-
-    .copy-message{
-      min-height:1.8em;
-      margin:12px 0 0;
-      color:var(--muted);
+      background:#f1e8df;
+      color:#8b7b70;
       font-size:14px;
       text-align:center;
     }
 
-    .back-grid{
+    .image-preview img{
+      display:block;
+      width:100%;
+      max-height:220px;
+      object-fit:contain;
+    }
+
+    .image-status{
+      margin:6px 0 0;
+      color:#75695f;
+      font-size:13px;
+    }
+
+    .article{
+      margin:12px 0;
+      padding:15px;
+      border:1px solid var(--line);
+      border-radius:14px;
+      background:#fffaf6;
+    }
+
+    .article h3{
+      margin:0;
+      color:var(--dark);
+      font-size:19px;
+    }
+
+    .article-meta{
+      margin:4px 0;
+      color:#75695f;
+      font-size:14px;
+    }
+
+    .article-actions{
       display:grid;
       grid-template-columns:1fr 1fr;
-      gap:12px;
-      margin-top:24px;
+      gap:8px;
     }
 
-    .back-link{
-      display:block;
-      padding:13px;
-      border:1px solid var(--navy);
-      border-radius:11px;
-      color:var(--navy);
-      font-weight:900;
-      text-align:center;
-      text-decoration:none;
-    }
-
-    footer{
-      padding:0 20px 34px;
-      color:var(--muted);
-      font-size:13px;
-      text-align:center;
-    }
-
-    @media(max-width:620px){
-      body{
-        font-size:16px;
+    @media(max-width:560px){
+      .grid{
+        display:block;
       }
 
-      .header-inner{
-        width:min(100% - 22px,900px);
-      }
-
-      .top-link{
-        padding:7px 10px;
-        font-size:12px;
-      }
-
-      main{
-        width:min(100% - 20px,900px);
-        padding-top:14px;
-      }
-
-      .article-header{
-        border-radius:17px;
-        padding:26px 20px;
-      }
-
-      .article-title{
-        font-size:30px;
-      }
-
-      .article-body{
-        font-size:18px;
-        line-height:2.05;
-      }
-
-      .section{
-        margin-top:18px;
-        padding:22px 18px;
-      }
-
-      .gallery img{
-        width:230px;
-        height:215px;
-        flex-basis:230px;
-      }
-
-      .share-grid{
-        grid-template-columns:1fr 1fr;
-      }
-
-      .back-grid{
+      .article-actions{
         grid-template-columns:1fr;
       }
     }
@@ -338,365 +239,680 @@
 </head>
 
 <body>
-  <header class="site-header">
-    <div class="header-inner">
-      <div class="header-top">
-        <a class="site-name" href="index.html">
-          柿沼 貴志
-          <small>TAKASHI KAKINUMA OFFICIAL INFORMATION</small>
-        </a>
-
-        <a class="top-link" href="index.html">トップへ戻る</a>
-      </div>
-    </div>
+  <header>
+    <h1>活動報告を書く</h1>
+    <p>管理者専用・柿沼貴志議員 活動報告DX</p>
   </header>
 
   <main>
-    <div id="loadingMessage" class="message">
-      活動報告を読み込んでいます。
-    </div>
+    <section id="loginPanel" class="panel">
+      <h2>管理者ログイン</h2>
+      <p class="small">管理者パスワードを入力してください。</p>
 
-    <article id="articleArea" class="hidden">
-      <header class="article-header">
-        <p class="kicker">柿沼貴志議員｜活動報告</p>
-        <h1 id="articleTitle" class="article-title"></h1>
-        <p id="articleDate" class="article-date"></p>
-      </header>
+      <label for="password">パスワード</label>
+      <input
+        id="password"
+        type="password"
+        inputmode="numeric"
+        autocomplete="current-password"
+      >
 
-      <section class="section">
-        <div id="articleBody" class="article-body"></div>
-      </section>
+      <button id="loginButton" type="button">ログイン</button>
+      <div id="loginMessage" class="message hidden"></div>
+    </section>
 
-      <section id="photoSection" class="section hidden">
-        <h2 class="section-title">活動報告の写真</h2>
-        <p class="note">写真は左右にスワイプしてご覧いただけます。</p>
-        <div id="articleGallery" class="gallery"></div>
-      </section>
+    <section id="editorPanel" class="hidden">
+      <div class="panel">
+        <h2>記事を書く</h2>
 
-      <section id="videoSection" class="section hidden">
-        <h2 class="section-title">活動報告の動画</h2>
-        <div id="articleVideo" class="video"></div>
-      </section>
+        <p class="small">
+          写真は「写真を選択」を押して、iPhoneの写真から直接登録します。
+          最大6枚。YouTubeは動画URLを入力すると記事内で再生されます。
+        </p>
 
-      <section class="section">
-        <h2 class="section-title">この記事を共有</h2>
+        <input id="articleId" type="hidden">
 
-        <div class="share-grid">
-          <a id="facebookButton" class="share-button facebook" href="#" target="_blank" rel="noopener">
-            Facebook
-          </a>
+        <div class="grid">
+          <div>
+            <label for="siteKey">サイト識別名</label>
+            <input id="siteKey" value="kakinuma-takashi-dx" autocomplete="off">
+          </div>
 
-          <a id="xButton" class="share-button x" href="#" target="_blank" rel="noopener">
-            X
-          </a>
-
-          <a id="lineButton" class="share-button line" href="#" target="_blank" rel="noopener">
-            LINE
-          </a>
-
-          <button id="copyButton" class="share-button copy" type="button">
-            URLをコピー
-          </button>
+          <div>
+            <label for="requestId">受付番号（任意）</label>
+            <input id="requestId" placeholder="REQ-..." autocomplete="off">
+          </div>
         </div>
 
-        <p id="copyMessage" class="copy-message"></p>
-      </section>
-    </article>
+        <div class="grid">
+          <div>
+            <label for="publishDate">記事の日付</label>
+            <input id="publishDate" type="date">
+          </div>
 
-    <div class="back-grid">
-      <a class="back-link" href="index.html">トップページへ戻る</a>
-      <a class="back-link" href="archive.html">活動報告一覧</a>
-    </div>
+          <div>
+            <label for="status">状態</label>
+            <select id="status">
+              <option>下書き</option>
+              <option>公開</option>
+              <option>非公開</option>
+            </select>
+          </div>
+        </div>
+
+        <label for="title">記事タイトル</label>
+        <input
+          id="title"
+          placeholder="例：県議会で地域の課題を質問しました"
+        >
+
+        <label for="body">記事本文</label>
+        <textarea
+          id="body"
+          placeholder="段落ごとに改行して入力してください。"
+        ></textarea>
+
+        <label>写真（iPhoneから直接選択・最大6枚）</label>
+        <div id="imageFields"></div>
+
+        <label for="youtubeUrl">YouTube動画URL（任意）</label>
+        <input
+          id="youtubeUrl"
+          type="url"
+          placeholder="https://www.youtube.com/watch?v=..."
+        >
+
+        <label for="ogpImage">シェア用画像（任意）</label>
+        <p class="small">
+          空欄の場合は、1枚目に選んだ写真を使用します。
+        </p>
+        <input
+          id="ogpImage"
+          type="url"
+          placeholder="通常は空欄で大丈夫です"
+        >
+
+        <label for="publicUrl">公開ページURL</label>
+        <input
+          id="publicUrl"
+          type="url"
+          value="https://ichirohns-jpg.github.io/kakinuma-takashi-dx/"
+        >
+
+        <label for="sortOrder">表示順（通常は0）</label>
+        <input
+          id="sortOrder"
+          type="number"
+          value="0"
+          inputmode="numeric"
+        >
+
+        <label for="note">管理メモ（任意）</label>
+        <input id="note" placeholder="管理者だけが見るメモ">
+
+        <button id="saveDraftButton" type="button">下書き保存</button>
+        <button id="publishButton" type="button">公開する</button>
+        <button id="newButton" class="secondary" type="button">
+          新しい記事に戻す
+        </button>
+        <button id="logoutButton" class="secondary" type="button">
+          ログアウト
+        </button>
+
+        <div id="editorMessage" class="message hidden"></div>
+      </div>
+
+      <div class="panel">
+        <h2>記事一覧</h2>
+
+        <button id="reloadButton" class="secondary" type="button">
+          記事一覧を更新
+        </button>
+
+        <div id="articleList">
+          <p class="small">読み込み中です。</p>
+        </div>
+      </div>
+    </section>
   </main>
-
-  <footer>柿沼貴志 活動報告DX</footer>
 
   <script>
     (function(){
       'use strict';
 
-      var GAS_URL='https://script.google.com/macros/s/AKfycby4VxnadXWsXtn27EcABG-TEVP3b5oKUsKxoGzhztNolL6LojXTyb5h3-VXaIJRC7Xx/exec';
-      var SITE_KEY='kakinuma-takashi-dx';
-      var params=new URLSearchParams(location.search);
-      var articleId=params.get('id')||'';
+      var token='';
+      var existingImages=[];
 
-      var loadingMessage=document.getElementById('loadingMessage');
-      var articleArea=document.getElementById('articleArea');
-      var titleElement=document.getElementById('articleTitle');
-      var dateElement=document.getElementById('articleDate');
-      var bodyElement=document.getElementById('articleBody');
-      var photoSection=document.getElementById('photoSection');
-      var gallery=document.getElementById('articleGallery');
-      var videoSection=document.getElementById('videoSection');
-      var videoElement=document.getElementById('articleVideo');
-      var copyMessage=document.getElementById('copyMessage');
+      var $=function(id){
+        return document.getElementById(id);
+      };
 
-      function escapeHtml(value){
-        return String(value||'').replace(/[&<>"']/g,function(ch){
-          return {
-            '&':'&amp;',
-            '<':'&lt;',
-            '>':'&gt;',
-            '"':'&quot;',
-            "'":'&#39;'
-          }[ch];
-        });
-      }
+      var imageFields=$('imageFields');
 
-      function plainText(value){
-        var source=String(value||'')
-          .replace(/<br\s*\/?>/gi,'\n')
-          .replace(/<\/p\s*>/gi,'\n\n');
+      function createImageField(number){
+        var item=document.createElement('div');
+        item.className='image-item';
 
-        var box=document.createElement('div');
-        box.innerHTML=source;
+        var label=document.createElement('label');
+        label.textContent='写真'+number;
+        label.setAttribute('for','image_'+number);
 
-        return (box.textContent||box.innerText||'')
-          .replace(/\r\n/g,'\n')
-          .replace(/\r/g,'\n')
-          .replace(/\n{3,}/g,'\n\n')
-          .trim();
-      }
+        var input=document.createElement('input');
+        input.id='image_'+number;
+        input.type='file';
+        input.accept='image/*';
 
-      function formatBody(value){
-        var text=plainText(value);
-        var blocks=text.split(/\n\s*\n/).filter(Boolean);
+        var preview=document.createElement('div');
+        preview.id='preview_'+number;
+        preview.className='image-preview';
+        preview.textContent='写真を選択してください';
 
-        if(!blocks.length){
-          return '<p>本文はありません。</p>';
-        }
+        var status=document.createElement('p');
+        status.id='image_status_'+number;
+        status.className='image-status';
+        status.textContent='未選択';
 
-        return blocks.map(function(block){
-          return '<p>'+
-            escapeHtml(block).replace(/\n/g,'<br>')+
-            '</p>';
-        }).join('');
-      }
+        input.addEventListener('change',function(){
+          var file=input.files&&input.files[0];
 
-      function safeUrl(value){
-        var url=String(value||'').trim();
-        return /^https:\/\//i.test(url)?url:'';
-      }
-
-      function first(obj,keys){
-        for(var i=0;i<keys.length;i++){
-          var key=keys[i];
-
-          if(
-            obj &&
-            obj[key]!==undefined &&
-            obj[key]!==null &&
-            String(obj[key]).trim()!==''
-          ){
-            return obj[key];
+          if(!file){
+            showExistingPreview(number);
+            return;
           }
-        }
 
-        return '';
+          if(!file.type||file.type.indexOf('image/')!==0){
+            input.value='';
+            preview.textContent='画像ファイルを選択してください';
+            status.textContent='選択できないファイルです';
+            return;
+          }
+
+          var reader=new FileReader();
+
+          reader.onload=function(){
+            preview.innerHTML='';
+
+            var image=document.createElement('img');
+            image.src=reader.result;
+            image.alt='写真'+number+'プレビュー';
+            preview.appendChild(image);
+
+            status.textContent=file.name+'を選択中';
+          };
+
+          reader.readAsDataURL(file);
+        });
+
+        item.appendChild(label);
+        item.appendChild(input);
+        item.appendChild(preview);
+        item.appendChild(status);
+        imageFields.appendChild(item);
       }
 
-      function youtubeId(value){
-        var text=String(value||'');
-        var match=text.match(
-          /(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|shorts\/|embed\/))([A-Za-z0-9_-]{6,})/i
-        );
-
-        return match?match[1]:'';
+      for(var fieldNumber=1;fieldNumber<=6;fieldNumber++){
+        createImageField(fieldNumber);
       }
 
-      function showError(message){
-        loadingMessage.textContent=message;
-        loadingMessage.className='message error';
+      function message(el,text,type){
+        el.textContent=text;
+        el.className='message '+(type||'');
+        el.classList.remove('hidden');
       }
 
-      function loadArticle(){
-        if(!articleId){
-          showError('記事IDが指定されていません。');
+      function hide(el){
+        el.classList.add('hidden');
+      }
+
+      function showExistingPreview(number){
+        var preview=$('preview_'+number);
+        var status=$('image_status_'+number);
+        var url=existingImages[number-1]||'';
+
+        preview.innerHTML='';
+
+        if(!url){
+          preview.textContent='写真を選択してください';
+          status.textContent='未選択';
           return;
         }
 
-        fetch(
-          GAS_URL+
-          '?action=publicArticles&siteKey='+
-          encodeURIComponent(SITE_KEY)+
-          '&_='+
-          Date.now(),
-          {cache:'no-store'}
-        )
-        .then(function(response){
-          if(!response.ok){
-            throw new Error('記事データを取得できません。');
-          }
+        var image=document.createElement('img');
+        image.src=url;
+        image.alt='登録済み写真'+number;
 
-          return response.json();
-        })
-        .then(function(data){
-          var articles=
-            data&&Array.isArray(data.articles)
-              ? data.articles
-              : [];
-
-          var article=articles.find(function(item){
-            return String(
-              item.articleId||item.id||''
-            )===String(articleId);
-          });
-
-          if(!article){
-            throw new Error('この記事は見つかりません。');
-          }
-
-          renderArticle(article);
-        })
-        .catch(function(){
-          showError(
-            '記事を読み込めませんでした。時間をおいて再度お試しください。'
-          );
-        });
-      }
-
-      function renderArticle(article){
-        var title=first(article,[
-          'title',
-          'articleTitle',
-          '記事タイトル'
-        ])||'活動報告';
-
-        var date=first(article,[
-          'publishDate',
-          'date',
-          '公開日',
-          'createdAt'
-        ])||'';
-
-        var body=first(article,[
-          'body',
-          'articleBody',
-          '本文',
-          '記事本文'
-        ])||'';
-
-        titleElement.textContent=title;
-        dateElement.textContent=date;
-        bodyElement.innerHTML=formatBody(body);
-        document.title=title+'｜柿沼貴志 活動報告';
-
-        var images=[];
-
-        if(Array.isArray(article.images)){
-          images=images.concat(article.images);
-        }
-
-        for(var i=1;i<=6;i++){
-          images.push(first(article,[
-            'image'+i,
-            '画像'+i,
-            'photo'+i
-          ]));
-        }
-
-        images=images
-          .map(safeUrl)
-          .filter(Boolean)
-          .filter(function(value,index,array){
-            return array.indexOf(value)===index;
-          });
-
-        if(images.length){
-          gallery.innerHTML='';
-
-          images.slice(0,6).forEach(function(imageUrl){
-            var image=document.createElement('img');
-            image.src=imageUrl;
-            image.alt=title+'の写真';
-            image.loading='lazy';
-            gallery.appendChild(image);
-          });
-
-          photoSection.classList.remove('hidden');
-        }
-
-        var youtubeUrl=first(article,[
-          'youtubeUrl',
-          'youtubeURL',
-          'YouTube',
-          '動画URL',
-          'videoUrl'
-        ]);
-
-        var videoId=youtubeId(youtubeUrl);
-
-        if(videoId){
-          videoElement.innerHTML=
-            '<iframe src="https://www.youtube.com/embed/'+
-            encodeURIComponent(videoId)+
-            '" title="'+
-            escapeHtml(title+'の動画')+
-            '" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
-
-          videoSection.classList.remove('hidden');
-        }
-
-        var currentUrl=location.href;
-        var shareUrl=currentUrl;
-
-        document.getElementById('facebookButton').href=
-          'https://www.facebook.com/sharer/sharer.php?u='+
-          encodeURIComponent(shareUrl);
-
-        document.getElementById('xButton').href=
-          'https://twitter.com/intent/tweet?text='+
-          encodeURIComponent(title)+
-          '&url='+
-          encodeURIComponent(shareUrl);
-
-        document.getElementById('lineButton').href=
-          'https://line.me/R/msg/text/?'+
-          encodeURIComponent(title+'\n'+shareUrl);
-
-        document.getElementById('copyButton').onclick=function(){
-          copyUrl(currentUrl);
+        image.onerror=function(){
+          preview.textContent='登録済み画像を表示できません';
         };
 
-        loadingMessage.classList.add('hidden');
-        articleArea.classList.remove('hidden');
+        preview.appendChild(image);
+        status.textContent=
+          '登録済み。変更しない場合はこの写真を使用します';
       }
 
-      function copyUrl(url){
-        if(navigator.clipboard&&navigator.clipboard.writeText){
-          navigator.clipboard.writeText(url)
-            .then(function(){
-              copyMessage.textContent='記事URLをコピーしました。';
-            })
-            .catch(function(){
-              fallbackCopy(url);
-            });
+      function run(name,args,ok){
+        var runner=google.script.run
+          .withSuccessHandler(ok)
+          .withFailureHandler(function(err){
+            message(
+              $('editorMessage'),
+              err&&err.message||String(err),
+              'error'
+            );
+          });
 
+        runner[name].apply(runner,args);
+      }
+
+      function login(){
+        var button=$('loginButton');
+
+        button.disabled=true;
+        button.textContent='確認中…';
+        hide($('loginMessage'));
+
+        google.script.run
+          .withSuccessHandler(function(data){
+            if(!data||!data.ok){
+              message(
+                $('loginMessage'),
+                data&&data.error||'ログインできません。',
+                'error'
+              );
+
+              button.disabled=false;
+              button.textContent='ログイン';
+              return;
+            }
+
+            token=data.token;
+            $('loginPanel').classList.add('hidden');
+            $('editorPanel').classList.remove('hidden');
+            loadList();
+          })
+          .withFailureHandler(function(err){
+            message(
+              $('loginMessage'),
+              err&&err.message||String(err),
+              'error'
+            );
+
+            button.disabled=false;
+            button.textContent='ログイン';
+          })
+          .adminLogin($('password').value);
+      }
+
+      function readFileAsDataUrl(file){
+        return new Promise(function(resolve,reject){
+          var reader=new FileReader();
+
+          reader.onload=function(){
+            resolve(reader.result);
+          };
+
+          reader.onerror=function(){
+            reject(new Error('写真を読み込めませんでした。'));
+          };
+
+          reader.readAsDataURL(file);
+        });
+      }
+
+      function loadImage(dataUrl){
+        return new Promise(function(resolve,reject){
+          var image=new Image();
+
+          image.onload=function(){
+            resolve(image);
+          };
+
+          image.onerror=function(){
+            reject(new Error('写真を読み込めませんでした。'));
+          };
+
+          image.src=dataUrl;
+        });
+      }
+
+      async function compressImage(file){
+        var source=await readFileAsDataUrl(file);
+        var image=await loadImage(source);
+        var edgeList=[900,760,640,520,420];
+        var qualityList=[0.72,0.62,0.52,0.44,0.36];
+        var best='';
+
+        for(var e=0;e<edgeList.length;e++){
+          var maxEdge=edgeList[e];
+          var ratio=Math.min(
+            1,
+            maxEdge/Math.max(image.width,image.height)
+          );
+
+          var width=Math.max(1,Math.round(image.width*ratio));
+          var height=Math.max(1,Math.round(image.height*ratio));
+          var canvas=document.createElement('canvas');
+
+          canvas.width=width;
+          canvas.height=height;
+
+          var context=canvas.getContext('2d');
+
+          context.fillStyle='#ffffff';
+          context.fillRect(0,0,width,height);
+          context.drawImage(image,0,0,width,height);
+
+          for(var q=0;q<qualityList.length;q++){
+            var result=canvas.toDataURL(
+              'image/jpeg',
+              qualityList[q]
+            );
+
+            best=result;
+
+            if(result.length<=45000){
+              return result;
+            }
+          }
+        }
+
+        return best;
+      }
+
+      async function collect(status){
+        var images=[];
+
+        for(var i=1;i<=6;i++){
+          var input=$('image_'+i);
+          var file=input.files&&input.files[0];
+
+          if(file){
+            images.push(await compressImage(file));
+          }else{
+            images.push(existingImages[i-1]||'');
+          }
+        }
+
+        return {
+          articleId:$('articleId').value.trim(),
+          siteKey:$('siteKey').value.trim(),
+          requestId:$('requestId').value.trim(),
+          publishDate:$('publishDate').value,
+          title:$('title').value.trim(),
+          body:$('body').value.trim(),
+          images:images,
+          youtubeUrl:$('youtubeUrl').value.trim(),
+          ogpImage:$('ogpImage').value.trim(),
+          status:status||$('status').value,
+          publicUrl:$('publicUrl').value.trim(),
+          sortOrder:Number($('sortOrder').value||0),
+          note:$('note').value.trim()
+        };
+      }
+
+      async function save(status){
+        var button=status==='公開'
+          ? $('publishButton')
+          : $('saveDraftButton');
+
+        if(
+          !$('title').value.trim()||
+          !$('body').value.trim()
+        ){
+          message(
+            $('editorMessage'),
+            '記事タイトルと本文を入力してください。',
+            'error'
+          );
           return;
         }
 
-        fallbackCopy(url);
-      }
+        button.disabled=true;
+        button.textContent=status==='公開'
+          ? '公開中…'
+          : '保存中…';
 
-      function fallbackCopy(url){
-        var textarea=document.createElement('textarea');
-        textarea.value=url;
-        textarea.style.position='fixed';
-        textarea.style.left='-9999px';
-        document.body.appendChild(textarea);
-        textarea.select();
+        hide($('editorMessage'));
 
         try{
-          document.execCommand('copy');
-          copyMessage.textContent='記事URLをコピーしました。';
-        }catch(error){
-          copyMessage.textContent='URLを長押ししてコピーしてください。';
-        }
+          var article=await collect(status);
 
-        document.body.removeChild(textarea);
+          run(
+            'postArticleSave',
+            [token,article],
+            function(data){
+              button.disabled=false;
+              button.textContent=status==='公開'
+                ? '公開する'
+                : '下書き保存';
+
+              if(!data||!data.ok){
+                message(
+                  $('editorMessage'),
+                  data&&data.error||'保存できません。',
+                  'error'
+                );
+                return;
+              }
+
+              $('articleId').value=data.article.articleId;
+              $('status').value=data.article.status;
+              existingImages=
+                data.article.images||
+                article.images||
+                [];
+
+              message(
+                $('editorMessage'),
+                data.message+
+                '\n記事ID：'+
+                data.article.articleId,
+                'success'
+              );
+
+              loadList();
+            }
+          );
+        }catch(error){
+          button.disabled=false;
+          button.textContent=status==='公開'
+            ? '公開する'
+            : '下書き保存';
+
+          message(
+            $('editorMessage'),
+            error&&error.message||
+            '写真を処理できませんでした。',
+            'error'
+          );
+        }
       }
 
-      loadArticle();
+      function resetForm(){
+        $('articleId').value='';
+        $('requestId').value='';
+        $('publishDate').value='';
+        $('title').value='';
+        $('body').value='';
+        $('youtubeUrl').value='';
+        $('ogpImage').value='';
+        $('sortOrder').value='0';
+        $('note').value='';
+        $('status').value='下書き';
+        existingImages=[];
+
+        for(var i=1;i<=6;i++){
+          $('image_'+i).value='';
+          showExistingPreview(i);
+        }
+
+        hide($('editorMessage'));
+        window.scrollTo({
+          top:0,
+          behavior:'smooth'
+        });
+      }
+
+      function edit(article){
+        $('articleId').value=article.articleId||'';
+        $('siteKey').value=
+          article.siteKey||
+          'kakinuma-takashi-dx';
+
+        $('requestId').value=article.requestId||'';
+        $('publishDate').value=article.publishDate||'';
+        $('title').value=article.title||'';
+        $('body').value=article.body||'';
+        $('youtubeUrl').value=article.youtubeUrl||'';
+        $('ogpImage').value=article.ogpImage||'';
+        $('status').value=article.status||'下書き';
+        $('publicUrl').value=
+          article.publicUrl||
+          $('publicUrl').value;
+
+        $('sortOrder').value=article.sortOrder||0;
+        $('note').value=article.note||'';
+        existingImages=article.images||[];
+
+        for(var i=1;i<=6;i++){
+          $('image_'+i).value='';
+          showExistingPreview(i);
+        }
+
+        window.scrollTo({
+          top:0,
+          behavior:'smooth'
+        });
+
+        message(
+          $('editorMessage'),
+          '記事を読み込みました。写真を変更する場合は、写真を選び直してください。',
+          'success'
+        );
+      }
+
+      function loadList(){
+        $('articleList').innerHTML=
+          '<p class="small">読み込み中です。</p>';
+
+        run(
+          'postArticleList',
+          [
+            token,
+            $('siteKey').value.trim()
+          ],
+          function(data){
+            if(!data||!data.ok){
+              $('articleList').textContent=
+                data&&data.error||
+                '読み込めません。';
+
+              return;
+            }
+
+            if(!data.articles.length){
+              $('articleList').innerHTML=
+                '<p class="small">まだ記事がありません。</p>';
+
+              return;
+            }
+
+            $('articleList').innerHTML='';
+
+            data.articles.forEach(function(article){
+              var box=document.createElement('div');
+              box.className='article';
+
+              var heading=document.createElement('h3');
+              heading.textContent=
+                article.title||
+                '(タイトルなし)';
+
+              var meta=document.createElement('p');
+              meta.className='article-meta';
+              meta.textContent=
+                (article.publishDate||'日付なし')+
+                '　｜　'+
+                (article.status||'');
+
+              var actions=document.createElement('div');
+              actions.className='article-actions';
+
+              var editButton=document.createElement('button');
+              editButton.type='button';
+              editButton.className='secondary';
+              editButton.textContent='この記事を修正';
+
+              editButton.onclick=function(){
+                edit(article);
+              };
+
+              var hideButton=document.createElement('button');
+              hideButton.type='button';
+              hideButton.className='danger';
+              hideButton.textContent='非公開にする';
+
+              hideButton.onclick=function(){
+                if(!confirm('この記事を非公開にしますか？')){
+                  return;
+                }
+
+                run(
+                  'postArticleHide',
+                  [
+                    token,
+                    article.articleId
+                  ],
+                  function(result){
+                    message(
+                      $('editorMessage'),
+                      result.message||
+                      '非公開にしました。',
+                      'success'
+                    );
+
+                    loadList();
+                  }
+                );
+              };
+
+              actions.appendChild(editButton);
+              actions.appendChild(hideButton);
+              box.appendChild(heading);
+              box.appendChild(meta);
+              box.appendChild(actions);
+              $('articleList').appendChild(box);
+            });
+          }
+        );
+      }
+
+      $('loginButton').onclick=login;
+
+      $('password').addEventListener('keydown',function(event){
+        if(event.key==='Enter'){
+          login();
+        }
+      });
+
+      $('saveDraftButton').onclick=function(){
+        save('下書き');
+      };
+
+      $('publishButton').onclick=function(){
+        save('公開');
+      };
+
+      $('newButton').onclick=resetForm;
+      $('reloadButton').onclick=loadList;
+
+      $('logoutButton').onclick=function(){
+        google.script.run
+          .withSuccessHandler(function(){
+            location.reload();
+          })
+          .adminLogout(token);
+      };
     })();
   </script>
 </body>
