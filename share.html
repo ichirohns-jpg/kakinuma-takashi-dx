@@ -1,0 +1,612 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#263b52">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="活動報告｜柿沼貴志議員">
+  <meta property="og:description" content="柿沼貴志議員の活動報告をご紹介します。">
+  <meta property="og:image" content="https://ichirohns-jpg.github.io/kakinuma-takashi-dx/profile_photo_3.jpg">
+  <meta property="og:url" content="https://ichirohns-jpg.github.io/kakinuma-takashi-dx/share.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="活動報告｜柿沼貴志議員">
+  <meta name="twitter:description" content="柿沼貴志議員の活動報告をご紹介します。">
+  <meta name="twitter:image" content="https://ichirohns-jpg.github.io/kakinuma-takashi-dx/profile_photo_3.jpg">
+  <title>活動報告を共有｜柿沼貴志</title>
+
+  <style>
+    :root{
+      --navy:#263b52;
+      --navy-deep:#1b2b3c;
+      --orange:#d8792b;
+      --cream:#f5f1ea;
+      --paper:#fffdf9;
+      --text:#29313a;
+      --muted:#68727c;
+      --line:#ddd7ce;
+      --facebook:#1877f2;
+      --x:#111;
+      --line-green:#06c755;
+      --shadow:0 8px 26px rgba(35,48,61,.10);
+    }
+
+    *{box-sizing:border-box}
+
+    body{
+      margin:0;
+      background:var(--cream);
+      color:var(--text);
+      font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+      font-size:18px;
+      line-height:1.85;
+    }
+
+    a,
+    button{
+      -webkit-tap-highlight-color:transparent;
+    }
+
+    a{color:inherit}
+
+    .site-header{
+      position:sticky;
+      top:0;
+      z-index:10;
+      background:rgba(255,253,249,.96);
+      border-bottom:1px solid var(--line);
+      backdrop-filter:blur(10px);
+    }
+
+    .header-inner{
+      width:min(100% - 28px,860px);
+      margin:auto;
+      padding:14px 0 12px;
+    }
+
+    .site-name{
+      display:block;
+      color:var(--navy-deep);
+      font-size:23px;
+      font-weight:900;
+      line-height:1.3;
+      text-decoration:none;
+      letter-spacing:.04em;
+    }
+
+    .site-name small{
+      display:block;
+      margin-top:2px;
+      color:var(--muted);
+      font-family:Georgia,serif;
+      font-size:10px;
+      font-weight:700;
+      letter-spacing:.14em;
+    }
+
+    main{
+      width:min(100% - 28px,760px);
+      margin:auto;
+      padding:28px 0 60px;
+    }
+
+    .page-heading{
+      margin:0 0 22px;
+      color:var(--navy-deep);
+      font-size:clamp(32px,6vw,48px);
+      line-height:1.35;
+      letter-spacing:.04em;
+    }
+
+    .page-lead{
+      margin:0 0 24px;
+      color:var(--muted);
+    }
+
+    .message{
+      margin:0;
+      padding:24px;
+      border:1px solid var(--line);
+      border-radius:18px;
+      background:var(--paper);
+      box-shadow:var(--shadow);
+    }
+
+    .error{color:#9c382c}
+
+    .hidden{display:none!important}
+
+    .share-card{
+      overflow:hidden;
+      border:1px solid var(--line);
+      border-radius:22px;
+      background:var(--paper);
+      box-shadow:var(--shadow);
+    }
+
+    .preview-image{
+      width:100%;
+      max-height:420px;
+      object-fit:cover;
+      background:#ebe6de;
+    }
+
+    .card-body{padding:clamp(24px,5vw,44px)}
+
+    .article-date{
+      margin:0 0 8px;
+      color:var(--orange);
+      font-size:17px;
+      font-weight:900;
+    }
+
+    .article-title{
+      margin:0;
+      color:var(--navy-deep);
+      font-size:clamp(28px,5vw,42px);
+      line-height:1.45;
+      overflow-wrap:anywhere;
+    }
+
+    .article-summary{
+      margin:22px 0 0;
+      color:var(--text);
+      font-size:20px;
+      line-height:2;
+      white-space:pre-line;
+    }
+
+    .share-heading{
+      margin:32px 0 14px;
+      padding-top:24px;
+      border-top:1px solid var(--line);
+      color:var(--navy);
+      font-size:25px;
+      line-height:1.5;
+    }
+
+    .share-grid{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:10px;
+    }
+
+    .share-button{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-height:54px;
+      padding:10px 8px;
+      border:0;
+      border-radius:11px;
+      color:#fff;
+      font:inherit;
+      font-size:17px;
+      font-weight:900;
+      text-align:center;
+      text-decoration:none;
+      cursor:pointer;
+    }
+
+    .facebook{background:var(--facebook)}
+    .x{background:var(--x)}
+    .line{background:var(--line-green)}
+
+    .copy-button{
+      width:100%;
+      margin-top:10px;
+      background:var(--navy);
+    }
+
+    .copy-message{
+      min-height:1.8em;
+      margin:12px 0 0;
+      color:var(--orange);
+      font-size:16px;
+      font-weight:800;
+    }
+
+    .link-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+      margin-top:28px;
+    }
+
+    .back-link{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-height:54px;
+      padding:10px 14px;
+      border:1px solid var(--navy);
+      border-radius:999px;
+      color:var(--navy);
+      font-size:17px;
+      font-weight:900;
+      text-align:center;
+      text-decoration:none;
+    }
+
+    footer{
+      padding:0 20px 34px;
+      color:var(--muted);
+      font-size:14px;
+      text-align:center;
+    }
+
+    @media(max-width:600px){
+      body{font-size:17px}
+
+      .header-inner{
+        width:min(100% - 22px,860px);
+      }
+
+      main{
+        width:min(100% - 20px,760px);
+        padding-top:20px;
+      }
+
+      .page-heading{font-size:34px}
+
+      .article-title{font-size:29px}
+
+      .article-summary{
+        font-size:19px;
+        line-height:2;
+      }
+
+      .share-grid{
+        grid-template-columns:1fr;
+      }
+
+      .link-grid{
+        grid-template-columns:1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="site-name" href="index.html">
+        柿沼 貴志
+        <small>TAKASHI KAKINUMA OFFICIAL INFORMATION</small>
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <h1 class="page-heading">活動報告を共有</h1>
+
+    <p class="page-lead">
+      下のボタンから、活動報告をSNSで共有できます。
+    </p>
+
+    <p id="loadingMessage" class="message">記事を読み込んでいます。</p>
+
+    <p id="errorMessage" class="message error hidden"></p>
+
+    <article id="shareCard" class="share-card hidden">
+      <img id="previewImage" class="preview-image" src="" alt="活動報告の写真">
+
+      <div class="card-body">
+        <p id="articleDate" class="article-date"></p>
+        <h2 id="articleTitle" class="article-title"></h2>
+        <p id="articleSummary" class="article-summary"></p>
+
+        <h3 class="share-heading">この活動報告を共有</h3>
+
+        <div class="share-grid">
+          <a id="facebookButton" class="share-button facebook" href="#" target="_blank" rel="noopener">
+            Facebook
+          </a>
+
+          <a id="xButton" class="share-button x" href="#" target="_blank" rel="noopener">
+            X
+          </a>
+
+          <a id="lineButton" class="share-button line" href="#" target="_blank" rel="noopener">
+            LINE
+          </a>
+        </div>
+
+        <button id="copyButton" class="share-button copy-button" type="button">
+          記事URLをコピー
+        </button>
+
+        <p id="copyMessage" class="copy-message"></p>
+
+        <div class="link-grid">
+          <a id="readButton" class="back-link" href="#">記事を読む</a>
+          <a class="back-link" href="index.html">トップページ</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer>柿沼貴志 活動報告DX</footer>
+
+  <script>
+    (function(){
+      'use strict';
+
+      var GAS_URL='https://script.google.com/macros/s/AKfycby4VxnadXWsXtn27EcABG-TEVP3b5oKUsKxoGzhztNolL6LojXTyb5h3-VXaIJRC7Xx/exec';
+      var SITE_KEY='kakinuma-takashi-dx';
+      var DEFAULT_IMAGE='https://ichirohns-jpg.github.io/kakinuma-takashi-dx/profile_photo_3.jpg';
+      var params=new URLSearchParams(location.search);
+      var articleId=params.get('id')||'';
+
+      var loadingMessage=document.getElementById('loadingMessage');
+      var errorMessage=document.getElementById('errorMessage');
+      var shareCard=document.getElementById('shareCard');
+      var previewImage=document.getElementById('previewImage');
+      var articleDate=document.getElementById('articleDate');
+      var articleTitle=document.getElementById('articleTitle');
+      var articleSummary=document.getElementById('articleSummary');
+      var copyMessage=document.getElementById('copyMessage');
+
+      function first(obj,keys){
+        for(var i=0;i<keys.length;i++){
+          var key=keys[i];
+
+          if(
+            obj&&
+            obj[key]!==undefined&&
+            obj[key]!==null&&
+            String(obj[key]).trim()!==''
+          ){
+            return obj[key];
+          }
+        }
+
+        return '';
+      }
+
+      function plainText(value){
+        var source=String(value||'')
+          .replace(/<br\s*\/?>/gi,'\n')
+          .replace(/<\/p\s*>/gi,'\n\n');
+
+        var box=document.createElement('div');
+        box.innerHTML=source;
+
+        return (box.textContent||box.innerText||'')
+          .replace(/\r\n/g,'\n')
+          .replace(/\r/g,'\n')
+          .replace(/\n{3,}/g,'\n\n')
+          .trim();
+      }
+
+      function safeUrl(value){
+        var url=String(value||'').trim();
+        return /^https:\/\//i.test(url)?url:'';
+      }
+
+      function youtubeId(value){
+        var match=String(value||'').match(
+          /(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|shorts\/|embed\/))([A-Za-z0-9_-]{6,})/i
+        );
+
+        return match?match[1]:'';
+      }
+
+      function showError(message){
+        loadingMessage.classList.add('hidden');
+        errorMessage.textContent=message;
+        errorMessage.classList.remove('hidden');
+      }
+
+      function updateMeta(title,description,image,url){
+        document.title=title+'｜柿沼貴志 活動報告';
+
+        var titleText=title+'｜柿沼貴志 活動報告';
+
+        document.querySelector('meta[property="og:title"]')
+          .setAttribute('content',titleText);
+
+        document.querySelector('meta[property="og:description"]')
+          .setAttribute('content',description);
+
+        document.querySelector('meta[property="og:image"]')
+          .setAttribute('content',image);
+
+        document.querySelector('meta[property="og:url"]')
+          .setAttribute('content',url);
+
+        document.querySelector('meta[name="twitter:title"]')
+          .setAttribute('content',titleText);
+
+        document.querySelector('meta[name="twitter:description"]')
+          .setAttribute('content',description);
+
+        document.querySelector('meta[name="twitter:image"]')
+          .setAttribute('content',image);
+      }
+
+      function copyUrl(url){
+        if(navigator.clipboard&&navigator.clipboard.writeText){
+          navigator.clipboard.writeText(url)
+            .then(function(){
+              copyMessage.textContent='記事URLをコピーしました。';
+            })
+            .catch(function(){
+              fallbackCopy(url);
+            });
+
+          return;
+        }
+
+        fallbackCopy(url);
+      }
+
+      function fallbackCopy(url){
+        var textarea=document.createElement('textarea');
+        textarea.value=url;
+        textarea.style.position='fixed';
+        textarea.style.left='-9999px';
+        document.body.appendChild(textarea);
+        textarea.select();
+
+        try{
+          document.execCommand('copy');
+          copyMessage.textContent='記事URLをコピーしました。';
+        }catch(error){
+          copyMessage.textContent='URLを長押ししてコピーしてください。';
+        }
+
+        document.body.removeChild(textarea);
+      }
+
+      function renderArticle(article){
+        var title=first(article,[
+          'title',
+          'articleTitle',
+          '記事タイトル'
+        ])||'活動報告';
+
+        var date=first(article,[
+          'publishDate',
+          'date',
+          '公開日',
+          'createdAt'
+        ])||'';
+
+        var body=plainText(first(article,[
+          'body',
+          'articleBody',
+          '本文',
+          '記事本文'
+        ])||'');
+
+        var images=[];
+
+        if(Array.isArray(article.images)){
+          images=images.concat(article.images);
+        }
+
+        for(var i=1;i<=6;i++){
+          images.push(first(article,[
+            'image'+i,
+            '画像'+i,
+            'photo'+i
+          ]));
+        }
+
+        images=images
+          .map(safeUrl)
+          .filter(Boolean);
+
+        var youtubeUrl=first(article,[
+          'youtubeUrl',
+          'youtubeURL',
+          'YouTube',
+          '動画URL',
+          'videoUrl'
+        ]);
+
+        var youtubeVideoId=youtubeId(youtubeUrl);
+        var image=images[0]||(
+          youtubeVideoId
+            ? 'https://i.ytimg.com/vi/'+youtubeVideoId+'/hqdefault.jpg'
+            : DEFAULT_IMAGE
+        );
+
+        var description=body||'柿沼貴志議員の活動報告をご紹介します。';
+
+        if(description.length>150){
+          description=description.slice(0,150)+'…';
+        }
+
+        var shareUrl=location.href;
+
+        var articleUrl=new URL(
+          'article.html?id='+
+          encodeURIComponent(article.articleId||article.id||articleId)+
+          '&site='+
+          encodeURIComponent(SITE_KEY),
+          location.href
+        ).href;
+
+        previewImage.src=image;
+        previewImage.alt=title+'の写真';
+
+        previewImage.onerror=function(){
+          if(previewImage.src!==DEFAULT_IMAGE){
+            previewImage.src=DEFAULT_IMAGE;
+          }
+        };
+
+        articleDate.textContent=date;
+        articleTitle.textContent=title;
+        articleSummary.textContent=description;
+
+        document.getElementById('facebookButton').href=
+          'https://www.facebook.com/sharer/sharer.php?u='+
+          encodeURIComponent(shareUrl);
+
+        document.getElementById('xButton').href=
+          'https://twitter.com/intent/tweet?text='+
+          encodeURIComponent(title)+
+          '&url='+
+          encodeURIComponent(shareUrl);
+
+        document.getElementById('lineButton').href=
+          'https://line.me/R/msg/text/?'+
+          encodeURIComponent(title+'\n'+shareUrl);
+
+        document.getElementById('copyButton').onclick=function(){
+          copyUrl(shareUrl);
+        };
+
+        document.getElementById('readButton').href=articleUrl;
+
+        updateMeta(title,description,image,shareUrl);
+
+        loadingMessage.classList.add('hidden');
+        shareCard.classList.remove('hidden');
+      }
+
+      if(!articleId){
+        showError('記事IDが指定されていません。');
+        return;
+      }
+
+      fetch(
+        GAS_URL+
+        '?action=publicArticles&siteKey='+
+        encodeURIComponent(SITE_KEY)+
+        '&_='+
+        Date.now(),
+        {cache:'no-store'}
+      )
+      .then(function(response){
+        if(!response.ok){
+          throw new Error('記事データを取得できません。');
+        }
+
+        return response.json();
+      })
+      .then(function(data){
+        var articles=data&&Array.isArray(data.articles)
+          ? data.articles
+          : [];
+
+        var article=articles.find(function(item){
+          return String(item.articleId||item.id||'')===String(articleId);
+        });
+
+        if(!article){
+          throw new Error('この記事は見つかりません。');
+        }
+
+        renderArticle(article);
+      })
+      .catch(function(){
+        showError('記事を読み込めませんでした。時間をおいて再度お試しください。');
+      });
+    })();
+  </script>
+</body>
+</html>
