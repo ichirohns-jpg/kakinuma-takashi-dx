@@ -452,7 +452,7 @@
     (function(){
       'use strict';
 
-      var GAS_URL='https://script.google.com/macros/s/AKfycbwg6TXW4gaquwrkoPxYtJhoFCs4BPykoyZcLinNKljwtfLQD5G1M6EfTAgmhxBVsZa5/exec';
+      var GAS_URL='https://script.google.com/macros/s/AKfycbyC5VN3w3hDcJB13eK9YL9x5ulg7T-P3h0hpo5eLm7i6js4uOJ731pP0QMCAigCxGTyBQ/exec';
       var SITE_KEY='kakinuma-takashi-dx';
       var DEFAULT_IMAGE='https://ichirohns-jpg.github.io/kakinuma-takashi-dx/profile_photo_3.jpg';
 
@@ -847,7 +847,7 @@
 
       fetch(
         GAS_URL+
-        '?action=publicArticles&siteKey='+
+        '?mode=publicNews&siteKey='+
         encodeURIComponent(SITE_KEY)+
         '&_='+
         Date.now(),
@@ -864,8 +864,8 @@
       })
       .then(function(data){
         var articles=
-          data&&Array.isArray(data.articles)
-            ? data.articles
+          data&&Array.isArray(data.news)
+            ? data.news
             : [];
 
         var article=articles.find(function(item){
