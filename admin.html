@@ -235,19 +235,42 @@
     }
 
     function api(data){
-      return fetch(GAS_URL,{
-        method:"POST",
-        headers:{"Content-Type":"text/plain;charset=utf-8"},
-        body:JSON.stringify(data)
-      }).then(function(r){
-        return r.text()
-      }).then(function(text){
-        try{
-          return JSON.parse(text)
-        }catch(error){
-          throw new Error("GAS\u304B\u3089\u6B63\u3057\u3044\u8FD4\u7B54\u3092\u53D7\u3051\u53D6\u308C\u307E\u305B\u3093\u3067\u3057\u305F\u3002")
-        }
-      })
+      var retryList=data&&data.mode==="adminNewsList";
+      var attempt=0;
+
+      function request(){
+        return fetch(GAS_URL,{
+          method:"POST",
+          headers:{"Content-Type":"text/plain;charset=utf-8"},
+          body:JSON.stringify(data)
+        }).then(function(r){
+          return r.text()
+        }).then(function(text){
+          try{
+            return JSON.parse(text)
+          }catch(error){
+            if(retryList&&attempt===0){
+              attempt++;
+              return new Promise(function(resolve){
+                setTimeout(resolve,1200)
+              }).then(request)
+            }
+
+            throw new Error("GAS\u304B\u3089\u6B63\u3057\u3044\u8FD4\u7B54\u3092\u53D7\u3051\u53D6\u308C\u307E\u305B\u3093\u3067\u3057\u305F\u3002")
+          }
+        }).catch(function(error){
+          if(retryList&&attempt===0){
+            attempt++;
+            return new Promise(function(resolve){
+              setTimeout(resolve,1200)
+            }).then(request)
+          }
+
+          throw error
+        })
+      }
+
+      return request()
     }
 
     function toDate(value){
