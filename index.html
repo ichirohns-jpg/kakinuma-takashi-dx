@@ -385,16 +385,56 @@
       grid-template-columns:1.1fr .9fr;
     }
 
-    .report-image{
+    .report-gallery-wrap{
+      min-width:0;
+      background:#edf1f3;
+    }
+
+    .report-gallery{
+      display:flex;
+      gap:10px;
+      width:100%;
+      min-width:0;
+      overflow-x:auto;
+      overflow-y:hidden;
+      padding:0;
+      scroll-snap-type:x mandatory;
+      overscroll-behavior-x:contain;
+      -webkit-overflow-scrolling:touch;
+      touch-action:pan-x;
+      scrollbar-width:thin;
+      scrollbar-color:#8caab8 #edf1f3;
+    }
+
+    .report-gallery::-webkit-scrollbar{height:7px}
+    .report-gallery::-webkit-scrollbar-track{background:#edf1f3}
+    .report-gallery::-webkit-scrollbar-thumb{
+      border-radius:999px;
+      background:#8caab8;
+    }
+
+    .report-gallery-item{
+      flex:0 0 100%;
       width:100%;
       height:220px;
       object-fit:cover;
       background:#edf1f3;
+      scroll-snap-align:start;
     }
 
-    .report-card--featured .report-image{
+    .report-card--featured .report-gallery-item{
       height:100%;
       min-height:280px;
+    }
+
+    .report-gallery-hint{
+      margin:0;
+      padding:5px 10px 7px;
+      color:#607784;
+      background:#f5f8fa;
+      font-size:12px;
+      font-weight:800;
+      text-align:center;
     }
 
     .report-body{padding:17px}
@@ -775,7 +815,7 @@
         grid-column:auto;
       }
 
-      .report-card--featured .report-image{
+      .report-card--featured .report-gallery-item{
         height:235px;
         min-height:0;
       }
@@ -1180,6 +1220,11 @@
           '&site='+
           encodeURIComponent(SITE_KEY);
 
+        var title=
+          article.title||
+          article.articleTitle||
+          '活動報告';
+
         var images=Array.isArray(article.images)
           ? article.images
           : [];
@@ -1192,29 +1237,42 @@
           images=[article.imageUrl];
         }
 
-        var image=images.length
-          ? safeUrl(images[0])
-          : safeUrl(article.ogpImage||'');
+        if(!images.length&&article.ogpImage){
+          images=[article.ogpImage];
+        }
 
-        var title=
-          article.title||
-          article.articleTitle||
-          '活動報告';
+        var galleryItems=images
+          .map(function(value,index){
+            var url=safeUrl(value);
+
+            if(!url){return ''}
+
+            return '<img class="report-gallery-item"'+
+              ' src="'+escapeHtml(url)+'"'+
+              ' alt="'+escapeHtml(title)+' 写真'+(index+1)+'"'+
+              ' loading="'+(index===0?'eager':'lazy')+'"'+
+              ' referrerpolicy="no-referrer">';
+          })
+          .filter(Boolean);
+
+        var gallery=galleryItems.length
+          ? '<div class="report-gallery-wrap">'+
+            '<div class="report-gallery" aria-label="'+
+            escapeHtml(title)+'の活動報告写真">'+
+            galleryItems.join('')+
+            '</div>'+
+            (galleryItems.length>1
+              ? '<p class="report-gallery-hint">写真'+galleryItems.length+'枚｜横にスワイプできます</p>'
+              : '')+
+            '</div>'
+          : '';
 
         var cardClass=index===0
           ? 'report-card report-card--featured'
           : 'report-card';
 
         return '<article class="'+cardClass+'">'+
-          (
-            image
-              ? '<img class="report-image"'+
-                ' src="'+escapeHtml(image)+'"'+
-                ' alt="'+escapeHtml(title)+'"'+
-                ' loading="lazy"'+
-                ' referrerpolicy="no-referrer">'
-              : ''
-          )+
+          gallery+
           '<div class="report-body">'+
           '<p class="report-date">'+
           escapeHtml(
