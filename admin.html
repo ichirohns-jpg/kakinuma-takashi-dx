@@ -236,41 +236,39 @@
 
     function api(data){
       var retryList=data&&data.mode==="adminNewsList";
-      var attempt=0;
+      var maxRetries=retryList?3:0;
 
-      function request(){
+      function request(attempt){
         return fetch(GAS_URL,{
           method:"POST",
           headers:{"Content-Type":"text/plain;charset=utf-8"},
           body:JSON.stringify(data)
-        }).then(function(r){
-          return r.text()
-        }).then(function(text){
-          try{
-            return JSON.parse(text)
-          }catch(error){
-            if(retryList&&attempt===0){
-              attempt++;
-              return new Promise(function(resolve){
-                setTimeout(resolve,1200)
-              }).then(request)
+        }).then(function(response){
+          return response.text().then(function(text){
+            if(!response.ok){
+              throw new Error("GASとの通信に失敗しました。")
             }
 
-            throw new Error("GAS\u304B\u3089\u6B63\u3057\u3044\u8FD4\u7B54\u3092\u53D7\u3051\u53D6\u308C\u307E\u305B\u3093\u3067\u3057\u305F\u3002")
-          }
+            try{
+              return JSON.parse(text)
+            }catch(error){
+              throw new Error("GASから正しい返答を受け取れませんでした。")
+            }
+          })
         }).catch(function(error){
-          if(retryList&&attempt===0){
-            attempt++;
+          if(attempt<maxRetries){
             return new Promise(function(resolve){
-              setTimeout(resolve,1200)
-            }).then(request)
+              setTimeout(resolve,1200*(attempt+1))
+            }).then(function(){
+              return request(attempt+1)
+            })
           }
 
           throw error
         })
       }
 
-      return request()
+      return request(0)
     }
 
     function toDate(value){
@@ -394,7 +392,6 @@
         var body=document.createElement("p");
         var actions=document.createElement("div");
         var editButton=document.createElement("button");
-        var deleteButton=document.createElement("button");
 
         row.className="article-item";
         title.textContent=item.title||"\u7121\u984C";
@@ -409,52 +406,12 @@
           edit(item)
         };
 
-        deleteButton.className="button danger";
-        deleteButton.type="button";
-        deleteButton.textContent="\u524A\u9664";
-        deleteButton.onclick=function(){
-          deleteArticle(item)
-        };
-
         actions.appendChild(editButton);
-        actions.appendChild(deleteButton);
         row.appendChild(title);
         row.appendChild(date);
         row.appendChild(body);
         row.appendChild(actions);
         box.appendChild(row)
-      })
-    }
-
-    function deleteArticle(item){
-      var newsId=itemId(item);
-
-      if(!newsId){
-        status("\u3053\u306E\u8A18\u4E8B\u306EID\u3092\u53D6\u5F97\u3067\u304D\u306A\u3044\u305F\u3081\u524A\u9664\u3067\u304D\u307E\u305B\u3093\u3002","error");
-        return
-      }
-
-      if(!window.confirm(
-        "\u3053\u306E\u8A18\u4E8B\u3092\u524A\u9664\u3057\u307E\u3059\u304B\uFF1F\n\u524A\u9664\u3059\u308B\u3068\u5143\u306B\u623B\u305B\u307E\u305B\u3093\u3002"
-      ))return;
-
-      status("\u524A\u9664\u3057\u3066\u3044\u307E\u3059\u3002","loading");
-
-      api({
-        mode:"adminNewsDelete",
-        adminPassword:password(),
-        siteKey:"kakinuma-takashi-dx",
-        newsId:newsId
-      }).then(function(data){
-        if(!data||data.success!==true){
-          throw new Error((data&&data.message)||"\u524A\u9664\u306B\u5931\u6557\u3057\u307E\u3057\u305F\u3002")
-        }
-
-        clearEditor();
-        status("\u8A18\u4E8B\u3092\u524A\u9664\u3057\u307E\u3057\u305F\u3002","ok");
-        loadList()
-      }).catch(function(error){
-        status(error.message,"error")
       })
     }
 
