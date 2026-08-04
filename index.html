@@ -1301,23 +1301,42 @@
           '</div></article>';
       }
 
-      fetch(
-        GAS_URL+
-        '?mode=publicNews&siteKey='+
-        encodeURIComponent(SITE_KEY)+
-        '&_='+
-        Date.now(),
-        {
-          cache:'no-store'
-        }
-      )
-      .then(function(response){
-        if(!response.ok){
-          throw new Error('記事データを取得できません。');
-        }
+      function loadNews(attempt){
+        var requestUrl=
+          GAS_URL+
+          '?mode=publicNews&siteKey='+
+          encodeURIComponent(SITE_KEY)+
+          '&_='+
+          Date.now();
 
-        return response.json();
-      })
+        return fetch(requestUrl,{cache:'no-store'})
+          .then(function(response){
+            return response.text().then(function(text){
+              if(!response.ok){
+                throw new Error('記事データを取得できません。');
+              }
+
+              try{
+                return JSON.parse(text);
+              }catch(error){
+                throw new Error('記事データの形式が正しくありません。');
+              }
+            });
+          })
+          .catch(function(error){
+            if(attempt<2){
+              return new Promise(function(resolve){
+                setTimeout(resolve,1200*(attempt+1));
+              }).then(function(){
+                return loadNews(attempt+1);
+              });
+            }
+
+            throw error;
+          });
+      }
+
+      loadNews(0)
       .then(function(data){
         var articles=
           data&&Array.isArray(data.news)
